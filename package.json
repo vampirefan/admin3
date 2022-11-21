@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "element-plus": "^2.2.22"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.31.0",
+    "@iconify-json/carbon": "^1.1.10",
+    "@iconify-json/ep": "^1.1.8",
+    "@iconify-json/logos": "^1.1.18",
+    "@iconify-json/twemoji": "^1.1.5",
+    "@unocss/nuxt": "^0.46.5",
+    "eslint": "^8.28.0",
+    "nuxt": "3.0.0",
+    "typescript": "^4.9.3"
+  }
+}
