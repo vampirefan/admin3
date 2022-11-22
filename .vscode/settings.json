@@ -1,9 +1,15 @@
 {
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
   "cSpell.words": [
     "antfu",
     "Attributify",
     "iconify",
     "nuxt",
-    "unocss"
+    "nuxtjs",
+    "twemoji",
+    "unocss",
+    "vitesse"
   ]
 }
