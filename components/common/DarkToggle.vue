@@ -1,0 +1,13 @@
+<script setup lang="ts">
+const color = useColorMode()
+
+function toggleDark() {
+  color.value = color.value === 'dark' ? 'light' : 'dark'
+}
+</script>
+
+<template>
+  <el-button @click="toggleDark">
+    <div class="dark:i-carbon-moon i-carbon-sun" />
+  </el-button>
+</template>

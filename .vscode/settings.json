@@ -1,10 +1,15 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true
+  },
   "[markdown]": {
     "files.trimTrailingWhitespace": false
   },
   "cSpell.words": [
     "antfu",
     "Attributify",
+    "Commitizen",
     "iconify",
     "nuxt",
     "nuxtjs",

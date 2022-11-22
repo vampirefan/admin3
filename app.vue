@@ -1,7 +1,12 @@
 <template>
   <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <NuxtPage />
   </div>
 </template>
+
+<style>
+html.dark {
+  background: #27272b;
+  color: white;
+}
+</style>
