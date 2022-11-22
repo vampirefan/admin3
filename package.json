@@ -2,21 +2,23 @@
   "name": "admin3",
   "version": "0.0.1",
   "anthor": "vampirefan",
-  "repository": "https://github.com/vampirefan/admin3.git",
-  "license": "MIT",
   "private": true,
+  "license": "MIT",
+  "repository": "https://github.com/vampirefan/admin3.git",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "cz": "git-cz"
   },
   "dependencies": {
     "element-plus": "^2.2.22"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.31.0",
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.3.0",
     "@commitlint/cz-commitlint": "^17.3.0",
@@ -26,7 +28,7 @@
     "@iconify-json/twemoji": "^1.1.5",
     "@nuxt/content": "^2.2.2",
     "@nuxtjs/color-mode": "^3.1.8",
-    "@nuxtjs/eslint-config": "^12.0.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@unocss/nuxt": "^0.46.5",
     "commitizen": "^4.2.5",
     "eslint": "^8.28.0",
