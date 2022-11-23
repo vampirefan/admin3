@@ -26,7 +26,7 @@ Admin 3
     - "@iconify-json/ep", element-plus icon
     - "@iconify-json/carbon",
     - "@iconify-json/logos", 
-    - "@iconify-json/twemoji"]
+    - "@iconify-json/twemoji"
 
 
 ## 开发日志

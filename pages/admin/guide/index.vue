@@ -1,6 +1,10 @@
+<script lang="ts" setup>
+
+</script>
+
 <template>
   <NuxtLayout name="guide">
-    <p pt-12>
+    <p>
       content
     </p>
   </NuxtLayout>

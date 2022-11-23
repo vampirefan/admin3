@@ -5,6 +5,7 @@
     "source.fixAll.eslint": true, // this allows ESLint to auto fix on save
     "source.organizeImports": false
   },
+  "editor.linkedEditing": true,
   "[markdown]": {
     "files.trimTrailingWhitespace": false
   },
@@ -12,12 +13,17 @@
     "antfu",
     "Attributify",
     "Commitizen",
+    "Cpath",
+    "Csvg",
+    "dimm",
     "iconify",
     "nuxt",
     "nuxtjs",
     "Pinia",
+    "Prefixs",
     "twemoji",
     "unocss",
-    "vitesse"
+    "vitesse",
+    "vueuse"
   ]
 }
