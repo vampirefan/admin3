@@ -6,6 +6,7 @@
     <CommonDarkToggle float-right />
   </header>
 </template>
+
 <style>
 .navbar {
   padding: .7rem 1.5rem;
