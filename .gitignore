@@ -1,5 +1,4 @@
 node_modules
-node_modules_pack
 *.log*
 .nuxt
 .nitro
@@ -7,3 +6,6 @@ node_modules_pack
 .output
 .env
 dist
+
+# for my offline pack-util
+node_modules_pack

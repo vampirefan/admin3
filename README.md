@@ -31,9 +31,15 @@ Admin 3
 
 ## 开发日志
 
+
+2022.11.23
+- 在 `doc Layout` 中使用 `vitepress` 的 `css` 样式。
+- 完善 `guide Layout`
+- 使用 `VueUse` 激活 `Element-Plus` 自带的 `Dark Mode`
+
 2022.11.22  
-- [x] 规范化 `conventional-changelog` 规范化 `commit`  
-- [x] 集成 `content` 模块。
+- 规范化 `conventional-changelog` 规范化 `commit`  
+- 集成 `content` 模块。
   
 2022.11.21  
 前些天找了好多目前开源的 `vue 3` admin 框架，发现了几个特别好的，比如：  
@@ -41,7 +47,7 @@ Admin 3
 - [vue-next-admin](https://github.com/lyt-Top/vue-next-admin): 组件比较丰富，界面非常干净。  
 
 最后还是决定通过造轮子来学习新技术，原因是`Nuxt 3.0` 刚刚发布，想学习和实现更自由的定制化，就从这里开始吧。  
-- [x] 使用 `Nuxt 3` 初始化项目
-- [x] 集成 `Element UI`
-- [x] 比较 `tailwindCSS` 和 `UnoCSS` ，决定尝试使用后者
-- [x] 通过 `UnoCSS` 集成 `iconify` 图标
+- 使用 `Nuxt 3` 初始化项目
+- 集成 `Element UI`
+- 比较 `tailwindCSS` 和 `UnoCSS` ，决定尝试使用后者
+- 通过 `UnoCSS` 集成 `iconify` 图标
