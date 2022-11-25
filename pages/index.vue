@@ -31,9 +31,9 @@ const ui = [
       @click="router.push(item.link)">
       <div :class="item.icon" /><span class="pl-4">{{ item.title }}</span>
     </el-button>
-    <div text="xl gray4" m-5 flex justify-center gap-3>
+    <div class="text-2xl m-6 flex justify-center gap-4">
       <BaseHomeLink />
-      <a i-carbon-logo-github href="https://github.com/vampirefan/admin3" target="_blank" />
+      <a i-logos-github-octocat href="https://github.com/vampirefan/admin3" target="_blank" />
       <BaseDarkToggle />
     </div>
 
