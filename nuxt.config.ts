@@ -15,7 +15,4 @@ export default defineNuxtConfig({
       layoutFallbacks: ['content'],
     },
   },
-  colorMode: {
-    classSuffix: '',
-  },
 })

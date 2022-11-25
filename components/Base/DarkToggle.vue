@@ -1,0 +1,12 @@
+<script setup lang="ts">
+import { useDark, useToggle } from '@vueuse/core'
+
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
+</script>
+
+<template>
+  <el-link :underline="false" @click="toggleDark()">
+    <i class="dark:i-twemoji-last-quarter-moon-face i-twemoji-sun" />
+  </el-link>
+</template>

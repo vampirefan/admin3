@@ -1,8 +1,7 @@
 <script setup lang="ts">
 const router = useRouter()
 const menuButton = [
-  { title: '快速开始', icon: 'i-twemoji:star-struck', link: '/admin/guide' },
-  { title: '相关文档', icon: 'i-twemoji-blue-book', link: '/admin/doc' },
+  { title: '使用指南', icon: 'i-twemoji-blue-book', link: '/doc' },
   { title: '示例组件', icon: 'i-twemoji:toolbox', link: '' },
 ]
 const framework = [
@@ -21,16 +20,23 @@ const ui = [
 
 <template>
   <main class="w-1/2 ma py-20 px-10 text-center">
-    <h1 class="color-green-5">
+    <h1 class="color-green-5 text-4xl">
       ADMIN 3
     </h1>
-    <p class="color-teal-6">
+    <p class="color-teal-6 text-xl">
       Another Vue3 admin template. Just want to get a clean and ready-to-use template.
     </p>
 
-    <el-button v-for="item in menuButton" :key="item.title" class="m-16" size="large" @click="router.push(item.link)">
-      <div :class="item.icon" /><span class="pl-2">{{ item.title }}</span>
+    <el-button v-for="item in menuButton" :key="item.title" class="m-8 w-48 h-12 text-xl" size="large"
+      @click="router.push(item.link)">
+      <div :class="item.icon" /><span class="pl-4">{{ item.title }}</span>
     </el-button>
+    <div text="xl gray4" m-5 flex justify-center gap-3>
+      <BaseHomeLink />
+      <a i-carbon-logo-github href="https://github.com/vampirefan/admin3" target="_blank" />
+      <BaseDarkToggle />
+    </div>
+
     <el-divider />
 
     <h3 class="color-green-4 text-left ml-8">
