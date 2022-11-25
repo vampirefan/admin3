@@ -13,10 +13,7 @@ Admin 3
 - Nuxt 3， `Node.js` 版本要 `>16.1`, 集成 `Vue 3`  
 - TypeScript, 拥抱 `any`, 用起来再说。  
 - eslint, ["@antfu/eslint-config"]  
-- commitlint, 规范化 `commit`  
-  - ["@commitlint/config-conventional", "@commitlint/cli"], 实现 `commit` 校验  
-  - husky, 使用 `git hook` 帮助  
-  - commitizen，交互式提交
+- czg, 交互式提交(commitizen)
 
 ### UI 框架
 - Element-Plus
@@ -30,7 +27,8 @@ Admin 3
 
 
 ## 开发日志
-
+2022.11.24
+- 删除所有 `commitlint` 相关内容，仅留下 `czg` 交互式提交，以最简单的方式实现项目提交规范化即可。
 
 2022.11.23
 - 在 `doc Layout` 中使用 `vitepress` 的 `css` 样式。

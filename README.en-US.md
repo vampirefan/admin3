@@ -12,10 +12,7 @@ Another Vue3 admin template. Just want to get a clean and ready-to-use template.
 - Nuxt 3  
 - TypeScript  
 - eslint, ["@antfu/eslint-config"]  
-- commitlint, for conventional `commit`  
-  - ["@commitlint/config-conventional", "@commitlint/cli"], for `commit` lint  
-  - husky, for `git commit hook`   
-  - czg，commitizen alternative  
+- czg，a commitizen alternative  
 
 ## UIs
 - Element-Plus
