@@ -3,7 +3,8 @@
 const route = useRoute()
 
 const { page } = useContent()
-const frontmatter = useContentHead(page)
+const hasToc = computed(() => !!page.value?.body?.toc?.links?.length)
+useContentHead(page)
 </script>
 
 <template>

@@ -11,8 +11,13 @@ export default defineNuxtConfig({
     '@/assets/css/content.css',
   ],
   content: {
-    documentDriven: {
-      layoutFallbacks: ['content'],
+    documentDriven: true,
+    highlight: {
+      theme: {
+        dark: 'one-dark-pro',
+        default: 'github-light',
+      },
+      preload: ['js', 'ts', 'html', 'css', 'vue', 'diff'],
     },
   },
 })
