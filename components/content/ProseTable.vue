@@ -14,10 +14,11 @@
 }
 
 table {
+  table-layout: auto;
   font-size: var(--prose-table-font-size);
   line-height: var(--prose-table-line-height);
-  table-layout: auto;
   text-align: var(--prose-table-text-align);
-  width: 100%
+  border-collapse: collapse;
+  /* width: 100% */
 }
 </style>

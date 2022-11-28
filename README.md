@@ -27,6 +27,9 @@ Admin 3
 
 
 ## 开发日志
+2022.11.29
+- 完成 `content` 中 `markdown` 的 `css` 渲染。参考 `@nuxt-themes/typography`，它用了一个 `pinceau` 的插件，可以在 `<style>` 中使用 `ts`，为了不让项目引入更多复杂的功能，我把它所有的 `components/content/Prose组件` 全部改写了一遍。
+
 2022.11.24
 - 删除所有 `commitlint` 相关内容，仅留下 `czg` 交互式提交，以最简单的方式实现项目提交规范化即可。
 
