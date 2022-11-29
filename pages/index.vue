@@ -22,8 +22,9 @@ const ui = [
 
 <template>
   <main class="w-1/2 ma py-20 px-10 text-center">
-    <h1 class="color-green-5 text-4xl">
-      Admin 3
+    <h1 class="flex items-center justify-center color-green-5 text-6xl gap-6">
+      <img src="/admin3-logo.png" alt="Admin3" height="100">
+      Admin3
     </h1>
     <p class="color-teal-6 text-xl">
       Another Vue3 admin template. A clean and ready-to-use template.
