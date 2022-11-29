@@ -20,106 +20,56 @@ defineProps({
     default: () => [],
   },
 })
-
-const hovered = ref(false)
 </script>
 
 <template>
-  <div :class="[`highlight-${language}`]" class="prose-code" @mouseenter="hovered = true" @mouseleave="hovered = false">
-    <span v-if="filename" class="filename">
-      {{ filename }}
+  <div :class="[`highlight-${language}`]" class="w-full text-gray-50">
+    <span v-if="filename || language"
+      class="absolute top-1 right-1 z-0 rounded-lg py-1 pr-2 font-mono text-xs leading-none tracking-tight text-gray-400 opacity-100">
+      {{ filename || language }}
     </span>
 
     <slot />
-
-    <ProseCodeCopyButton :show="hovered" :content="code" class="copy-button" />
   </div>
 </template>
 
-<style  scoped>
-.prose-code {
-  background-color: var(--prose-code-block-background-color-light);
-  border: 1px solid var(--prose-code-block-border-color-light);
-  border-radius: .5rem;
-  color: var(--prose-code-block-color-light);
-  font-size: var(--prose-code-block-font-size);
-  margin: var(--prose-code-block-margin);
-  overflow: hidden;
-  position: relative;
-  width: 100%
-}
+<style lang="postcss" scoped>
+div {
+  @apply relative my-4 overflow-hidden rounded-lg;
 
-html.dark .prose-code {
-  background-color: var(--prose-code-block-background-color-dark);
-  border-color: var(--prose-code-block-border-color-dark);
-  color: var(--prose-code-block-color-dark)
-}
+  &.highlight-zsh,
+  &.highlight-sh,
+  &.highlight-bash,
+  &.highlight-shell,
+  &.highlight-shellscript {
+    :deep(code) {
+      .line {
+        @apply relative pl-4;
+      }
 
-.prose-code.highlight-bash :deep(code) .line,
-.prose-code.highlight-sh :deep(code) .line,
-.prose-code.highlight-shell :deep(code) .line,
-.prose-code.highlight-shellscript :deep(code) .line,
-.prose-code.highlight-zsh :deep(code) .line {
-  padding-left: 1rem;
-  position: relative
-}
-
-.prose-code.highlight-bash :deep(code) .line:before,
-.prose-code.highlight-sh :deep(code) .line:before,
-.prose-code.highlight-shell :deep(code) .line:before,
-.prose-code.highlight-shellscript :deep(code) .line:before,
-.prose-code.highlight-zsh :deep(code) .line:before {
-  content: ">";
-  display: block;
-  font-weight: 700;
-  left: -.1rem;
-  position: absolute;
-  top: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none
-}
-
-.copy-button {
-  bottom: 0;
-  position: absolute;
-  right: 0
-}
-
-:deep(code) {
-  display: flex;
-  flex-direction: column
-}
-
-:deep(.line) {
-  display: inline-table;
-  min-height: 1rem
-}
-
-.filename {
-  border-radius: .75rem;
-  color: var(--prose-code-block-color-light);
-  font-size: .75rem;
-  line-height: 1.5;
-  position: absolute;
-  right: 1rem;
-  top: .5rem
-}
-
-html.dark .filename {
-  color: var(--prose-code-block-color-dark)
+      .line::before {
+        content: '>';
+        @apply text-primary-500 absolute top-0 -left-[0.1rem] block select-none font-mono font-bold;
+      }
+    }
+  }
 }
 
 :deep(pre) {
-  display: flex;
-  flex: 1;
-  line-height: 1.625;
-  margin: 0;
-  overflow-x: auto;
-  padding: var(--prose-code-block-pre-padding)
+  @apply my-0 flex flex-1 overflow-x-auto bg-gray-900 p-4 leading-relaxed;
+}
+
+:deep(code) {
+  @apply flex flex-col w-full;
+  background-color: transparent;
+  font-size: 0.9em;
+}
+
+:deep(.line) {
+  @apply inline-table min-h-[1rem];
 }
 
 :deep(.line.highlight) {
-  background-color: var(--prose-code-block-border-color-light)
+  background-color: #3f3f46;
 }
 </style>

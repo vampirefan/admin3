@@ -8,16 +8,13 @@ export default defineNuxtConfig({
   css: [
     'element-plus/dist/index.css',
     'element-plus/theme-chalk/dark/css-vars.css',
-    '@/assets/css/content.css',
+    '@/assets/css/main.css',
   ],
   content: {
     documentDriven: true,
     highlight: {
-      theme: {
-        dark: 'one-dark-pro',
-        default: 'github-light',
-      },
-      preload: ['js', 'ts', 'html', 'css', 'vue', 'diff'],
+      theme: 'one-dark-pro',
+      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
     },
   },
 })

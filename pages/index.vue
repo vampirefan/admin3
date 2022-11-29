@@ -6,6 +6,8 @@ const menuButton = [
 ]
 const framework = [
   { title: 'Nuxt', icon: 'i-logos-nuxt-icon' },
+  { title: 'Vue3', icon: 'i-logos-vue' },
+  { title: 'VueUse', icon: 'i-logos-vueuse' },
   { title: 'Typescript', icon: 'i-logos-typescript-icon' },
   { title: 'Eslint', icon: 'i-logos-eslint' },
   { title: 'Commitizen', icon: 'i-logos-commitizen' },
@@ -21,10 +23,10 @@ const ui = [
 <template>
   <main class="w-1/2 ma py-20 px-10 text-center">
     <h1 class="color-green-5 text-4xl">
-      ADMIN 3
+      Admin 3
     </h1>
     <p class="color-teal-6 text-xl">
-      Another Vue3 admin template. Just want to get a clean and ready-to-use template.
+      Another Vue3 admin template. A clean and ready-to-use template.
     </p>
 
     <el-button v-for="item in menuButton" :key="item.title" class="m-8 w-48 h-12 text-xl" size="large"

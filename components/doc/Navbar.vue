@@ -11,9 +11,7 @@ function isActive(link: any) {
 
 <template>
   <el-affix class="fixed top-0 left-0 z-40 w-full">
-    <el-menu
-      class="px-12 border-t border-transparent backdrop-blur-md bg-white/70 dark:bg-black/70 shadow shadow-gray-200 dark:shadow-gray-900"
-      mode="horizontal" :ellipsis="false">
+    <el-menu class=" navbar px-12" mode="horizontal" :ellipsis="false">
       <el-link class="mx-4 text-xl" :underline="false" type="success">
         Admin 3
       </el-link>
@@ -34,5 +32,16 @@ function isActive(link: any) {
 </template>
 
 <style scoped>
-
+.navbar {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--c-border);
+  background-color: var(--c-bg-navbar);
+  transition: background-color var(--t-color), border-color var(--t-color);
+}
 </style>

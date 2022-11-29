@@ -25,6 +25,6 @@ defineProps({
 
 <style  scoped>
 img {
-  margin: var(--prose-img-margin)
+  margin: 0.25rem
 }
 </style>
