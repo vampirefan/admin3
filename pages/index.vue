@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const router = useRouter()
 const menuButton = [
-  { title: '使用指南', icon: 'i-twemoji-blue-book', link: '/doc' },
+  { title: '使用指南', icon: 'i-twemoji-blue-book', link: '/doc/guide' },
   { title: '示例组件', icon: 'i-twemoji:toolbox', link: '' },
 ]
 const framework = [

@@ -7,7 +7,7 @@ Admin 3
 </pre>
 
 ## 简介
-一个基于 `Nuxt 3` 的后台管理模板，只想要一个干净且开箱即用的模板。参考自 `vitesse`。使用最新的`Nuxt 3`、`TypeScript`、`Vue 3`、`Pinia`、`Element-Plus`、`Unocss` 等主流技术。
+`admin3` 是一个基于 `Nuxt 3` 的后台管理模板，使用最新的`Nuxt 3`、`TypeScript`、`Vue 3`、`Pinia`、`Element-Plus`、`Unocss` 等主流技术。
 
 ### 环境框架
 - Nuxt 3， `Node.js` 版本要 `>16.1`, 集成 `Vue 3`  
