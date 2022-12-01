@@ -1,16 +1,4 @@
 <script setup lang="ts">
-// const contentQuery = queryContent('doc')
-// const { data: navigation } = await useAsyncData('navigation', () => {
-//   return fetchContentNavigation(contentQuery)
-// })
-// const route = useRoute()
-// const parentPath = route.path.substring(0, route.path.lastIndexOf('/'))
-// const links = computed(() => {
-//   const parent = useTreeFind(navigation.value, (item: any) => {
-//     return item._path === parentPath
-//   })
-//   return parent.children
-// })
 const { navigation } = useContent()
 const navTree = navigation.value.find((nav: any) => nav._path === '/doc').children
 const route = useRoute()
@@ -19,15 +7,15 @@ const route = useRoute()
 <template>
   <aside class="sidebar">
     <ul class="sidebar-items">
-      <li v-for="folder of navTree" :key="folder._path">
+      <li v-for="link of navTree" :key="link._path">
         <p class="sidebar-item sidebar-heading active">
-          {{ folder.title }}
+          {{ link.title }}
         </p>
         <ul class="sidebar-item-children">
-          <li v-for="file of folder.children" :key="file._path" class="block"
-            :class="[route.path === file._path ? 'router-link-active router-link-exact-active router-link-active sidebar-item active' : 'sidebar-item']">
-            <NuxtLink :to="file._path">
-              {{ file.title }}
+          <li v-for="sublink of link.children" :key="sublink._path" class="block"
+            :class="[route.path === sublink._path ? 'router-link-active router-link-exact-active router-link-active sidebar-item active' : 'sidebar-item']">
+            <NuxtLink :to="sublink._path">
+              {{ sublink.title }}
             </NuxtLink>
           </li>
         </ul>

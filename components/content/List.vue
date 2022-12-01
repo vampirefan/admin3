@@ -1,6 +1,7 @@
 <script lang="ts">
 const iconTypeMap: any = {
-  primary: 'i-carbon-checkbox-checked',
+  todo: 'i-carbon-checkbox',
+  done: 'i-carbon-checkbox-checked',
   info: 'i-carbon-information',
   success: 'i-carbon-checkmark-outline',
   warning: 'i-carbon-warning',
@@ -10,8 +11,7 @@ const iconTypeMap: any = {
 export default defineComponent({
   props: {
     /**
-     * Used to override the default <code>type</code> icon, check out the
-     *  <a href="https://github.com/nuxt/content/tree/dev/packages/theme-docs/src/components/global/icons">icons available</a>
+     * Used to override the default icon, use unocss-iconify
      */
     icon: {
       type: String,
@@ -22,8 +22,8 @@ export default defineComponent({
      */
     type: {
       type: String,
-      default: 'primary',
-      validator: (value: string) => ['primary', 'info', 'success', 'warning', 'danger'].includes(value),
+      default: 'done',
+      validator: (value: string) => ['todo', 'done', 'info', 'success', 'warning', 'danger'].includes(value),
     },
   },
   setup(props) {
@@ -53,8 +53,8 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-/* Primary */
-.list-primary {
+/* done */
+.list-done {
   @apply text-primary-500;
 }
 
