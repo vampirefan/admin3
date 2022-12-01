@@ -13,13 +13,13 @@ const props = defineProps({
   /**
    * @values top, middle, bottom
    */
-  vertical: {
-    type: String,
-    default: 'top',
-    validator(value: string) {
-      return ['top', 'middle', 'bottom'].includes(value)
-    },
-  },
+  // vertical: {
+  //   type: String,
+  //   default: 'top',
+  //   validator(value: string) {
+  //     return ['top', 'middle', 'bottom'].includes(value)
+  //   },
+  // },
   text: {
     type: String,
     default: '',
@@ -61,10 +61,6 @@ const props = defineProps({
 
 .badge.danger {
   background-color: var(--c-badge-danger)
-}
-
-.table-of-contents :deep(.badge) {
-  vertical-align: middle
 }
 
 .badge+.badge {

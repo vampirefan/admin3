@@ -25,6 +25,7 @@
     "unocss",
     "vitepress",
     "vitesse",
+    "vuepress",
     "vueuse"
   ]
 }

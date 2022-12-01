@@ -27,6 +27,9 @@ Admin 3
 
 
 ## 开发日志
+2022.12.01
+- 实现文档的 `toc` 和 `navigation` 功能。
+
 2022.11.30
 - 进一步优化 `content` 中 `markdown` 的 `css` 渲染。参考 `@nuxt-themes/docus`，结合`vuepress` 漂亮了不少，新增组件：`Alert.vue`(对应`vuepress`中的`'tip', 'warning', 'danger', 'details'`), `Badge.vue`，`List.vue`。
 
