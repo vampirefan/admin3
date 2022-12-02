@@ -10,6 +10,11 @@ import {
 
 export default defineConfig({
   shortcuts: [],
+  safelist: [
+    'i-twemoji-blue-book',
+    'i-twemoji-books',
+    'i-twemoji-rocket',
+  ],
   presets: [
     presetUno(),
     presetAttributify(),
