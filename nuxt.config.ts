@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@unocss/nuxt',
     '@vueuse/nuxt',
-    // ['@pinia/nuxt', { autoImports: ['defineStore'] }],
+    ['@pinia/nuxt', { autoImports: ['defineStore'] }],
   ],
   css: [
     'element-plus/dist/index.css',

@@ -1,4 +1,6 @@
 {
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
@@ -6,6 +8,7 @@
     "source.organizeImports": false
   },
   "editor.linkedEditing": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
   "[markdown]": {
     "files.trimTrailingWhitespace": false
   },
@@ -19,6 +22,7 @@
     "iconify",
     "nuxt",
     "nuxtjs",
+    "octocat",
     "Pinia",
     "Prefixs",
     "twemoji",

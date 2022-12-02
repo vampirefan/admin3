@@ -28,7 +28,9 @@ function routerToLink(menuItem: any) {
           {{ sublink.title }}
         </el-menu-item>
       </el-sub-menu>
-      <BaseHomeLink class="ml-4" />
+      <el-link class="ml-4" :underline="false" @click="routerToLink({ index: '/' })">
+        <i class="i-twemoji-house-with-garden" />
+      </el-link>
       <BaseDarkToggle class="ml-4" />
     </el-menu>
   </el-affix>

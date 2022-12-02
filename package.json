@@ -17,16 +17,17 @@
     "commit": "czg"
   },
   "dependencies": {
-    "element-plus": "^2.2.22"
+    "element-plus": "^2.2.26"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.31.0",
-    "@iconify-json/carbon": "^1.1.10",
+    "@antfu/eslint-config": "^0.33.1",
+    "@iconify-json/carbon": "^1.1.11",
     "@iconify-json/ep": "^1.1.8",
-    "@iconify-json/logos": "^1.1.18",
-    "@iconify-json/twemoji": "^1.1.5",
+    "@iconify-json/logos": "^1.1.19",
+    "@iconify-json/twemoji": "^1.1.7",
     "@nuxt/content": "^2.2.2",
-    "@unocss/nuxt": "^0.46.5",
+    "@pinia/nuxt": "^0.4.6",
+    "@unocss/nuxt": "^0.47.5",
     "@vueuse/nuxt": "^9.6.0",
     "czg": "^1.3.12",
     "eslint": "^8.28.0",

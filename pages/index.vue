@@ -41,8 +41,9 @@ const ui = [
     </h1>
     <p class="color-teal-6 text-xl">
       一个基于 `Nuxt 3` 的后台管理模板，查看
-      <NuxtLink to="/doc/guide" class="underline font-semibold px-0">
-        使用指南
+      <NuxtLink to="/doc/guide" class="underline font-semibold pl-2">
+        <i class="i-twemoji-open-book inline-block vertical-bottom" />
+        <span class="pl-1">使用指南</span>
       </NuxtLink>
     </p>
 
@@ -57,7 +58,6 @@ const ui = [
       </template>
     </el-input>
     <div class="text-2xl m-6 flex justify-center gap-4">
-      <BaseHomeLink />
       <a i-logos-github-octocat href="https://github.com/vampirefan/admin3" target="_blank" />
       <BaseDarkToggle />
     </div>
