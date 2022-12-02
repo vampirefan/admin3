@@ -2,19 +2,8 @@
 const router = useRouter()
 const username = ref('')
 const onLogin = async () => {
-
-  // useUserStoreHook()
-  //   .loginByUsername({ username: ruleForm.username, password: "admin123" })
-  //   .then(res => {
-  //     if (res.success) {
-  //       // 获取后端路由
-  //       initRouter().then(() => {
-  //         message.success("登录成功");
-  //         router.push("/");
-  //       });
-  //     }
-  //   });
-
+  const userStore = useUserStore()
+  userStore.loginByUsername({ username: username.value, password: '' })
 }
 
 const framework = [
