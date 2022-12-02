@@ -5,6 +5,9 @@
   "private": true,
   "license": "MIT",
   "repository": "https://github.com/vampirefan/admin3.git",
+  "engines": {
+    "node": ">=16.17.0"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",

@@ -1,9 +1,22 @@
 <script setup lang="ts">
 const router = useRouter()
-const menuButton = [
-  { title: '使用指南', icon: 'i-twemoji-blue-book', link: '/doc/guide' },
-  { title: '示例组件', icon: 'i-twemoji:toolbox', link: '' },
-]
+const username = ref('')
+const onLogin = async () => {
+
+  // useUserStoreHook()
+  //   .loginByUsername({ username: ruleForm.username, password: "admin123" })
+  //   .then(res => {
+  //     if (res.success) {
+  //       // 获取后端路由
+  //       initRouter().then(() => {
+  //         message.success("登录成功");
+  //         router.push("/");
+  //       });
+  //     }
+  //   });
+
+}
+
 const framework = [
   { title: 'Nuxt', icon: 'i-logos-nuxt-icon' },
   { title: 'Vue3', icon: 'i-logos-vue' },
@@ -27,13 +40,22 @@ const ui = [
       Admin3
     </h1>
     <p class="color-teal-6 text-xl">
-      Another Vue3 admin template. A clean and ready-to-use template.
+      一个基于 `Nuxt 3` 的后台管理模板，查看
+      <NuxtLink to="/doc/guide" class="underline font-semibold px-0">
+        使用指南
+      </NuxtLink>
     </p>
 
-    <el-button v-for="item in menuButton" :key="item.title" class="m-8 w-48 h-12 text-xl" size="large"
-      @click="router.push(item.link)">
-      <div :class="item.icon" /><span class="pl-4">{{ item.title }}</span>
-    </el-button>
+    <el-input v-model="username" class="m-8 w-1/2 h-12" placeholder="输入任意用户名">
+      <template #prepend>
+        <i class="i-twemoji-smiling-face-with-sunglasses" />
+      </template>
+      <template #append>
+        <el-button @click="onLogin()">
+          登录
+        </el-button>
+      </template>
+    </el-input>
     <div class="text-2xl m-6 flex justify-center gap-4">
       <BaseHomeLink />
       <a i-logos-github-octocat href="https://github.com/vampirefan/admin3" target="_blank" />

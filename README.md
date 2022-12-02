@@ -10,7 +10,7 @@ Admin 3
 `admin3` 是一个基于 `Nuxt 3` 的后台管理模板，使用最新的`Nuxt 3`、`TypeScript`、`Vue 3`、`Pinia`、`Element-Plus`、`Unocss` 等主流技术。
 
 ### 环境框架
-- Nuxt 3， `Node.js` 版本要 `>16.1`, 集成 `Vue 3`  
+- Nuxt 3， `Node.js` 版本要 `>16.11`, 集成 `Vue 3`  
 - TypeScript, 拥抱 `any`, 用起来再说。  
 - eslint, ["@antfu/eslint-config"]  
 - czg, 交互式提交(commitizen)
