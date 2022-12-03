@@ -15,6 +15,11 @@ export default defineNuxtConfig({
     'element-plus/theme-chalk/dark/css-vars.css',
     '@/assets/css/main.css',
   ],
+  postcss: {
+    plugins: {
+      'postcss-nesting': { /* plugin options */ },
+    },
+  },
   content: {
     documentDriven: true,
     highlight: {
