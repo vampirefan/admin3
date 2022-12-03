@@ -1,4 +1,4 @@
-name: Build and Deploy gh-pages
+name: Build and Deploy
 permissions:
   contents: write
 on:
@@ -9,9 +9,10 @@ jobs:
   deploy:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout 🛎️
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Setup node ⚗️
         uses: actions/setup-node@v2
