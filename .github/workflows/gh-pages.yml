@@ -29,5 +29,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .output
+          folder: .output/public
           clean: true
