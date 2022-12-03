@@ -1,22 +1,24 @@
-export interface UserResult {
-  success: boolean
-  data: {
-    /** 用户名 */
-    username: string
-    /** 当前登陆用户的角色 */
-    roles: Array<string>
-    /** `token` */
-    accessToken: string
-    /** 用于调用刷新`accessToken`的接口时所需的`token` */
-    refreshToken: string
-    /** `accessToken`的过期时间（格式'xxxx/xx/xx xx:xx:xx'） */
-    expires: Date
-  }
+/**
+ * /api/login 的后端返回：
+ */
+export interface loginResponse {
+  // 用户名
+  username: string
+  // 权限角色
+  roles: Array<string>
+  // 访问接口使用的 token
+  accessToken: string
+  // accessToken 的过期时长
+  maxAge: number
+  // 用于调用刷新 accessToken 的接口时所需的 token
+  refreshToken: string
 }
 
-const accessToken = 'mocked-access-token'
-/** 过期时间 单位：毫秒 默认 1分钟过期，方便演示 */
-const expiresIn = 60000
+/** TODO: for http result dto */
+// export interface httpResult<T> {
+//   success: boolean
+//   data: T
+// }
 
 /** 登录 */
 export default defineEventHandler(async (event) => {
@@ -25,13 +27,12 @@ export default defineEventHandler(async (event) => {
   return {
     success: true,
     data: {
-      username: body ? body.username as string : 'manager',
-      // 这里模拟角色，根据自己需求修改
-      roles: ['admin'],
-      accessToken,
-      // 这里模拟刷新token，根据自己需求修改
-      refreshToken: 'eyJhbGciOiJIUzUxMiJ9.adminRefresh',
-      expires: new Date(new Date(new Date()).getTime() + expiresIn),
+      username: body ? body.username as string : 'manager', // 模拟登录用户
+      roles: ['admin'], // 模拟角色
+      accessToken: 'mocked-access-token', // 模拟访问 token
+      maxAge: 60, // 过期时间, 单位: 秒, 默认 1 分钟过期，
+      refreshToken: 'mockedRefreshedToken.adminRefresh', // 模拟刷新 token
+
     },
   }
   // return http.request<UserResult>('post', '/login', { data })

@@ -1,9 +1,18 @@
 <script setup lang="ts">
-const router = useRouter()
-const username = ref('')
-const onLogin = async () => {
-  const userStore = useUserStore()
-  userStore.loginByUsername({ username: username.value, password: '' })
+// const router = useRouter()
+const userStore = useUserStore()
+const userInfo = ref(userStore.userInfo)
+const usernameInput = ref('')
+userStore.$subscribe((mutation, state) => {
+  userInfo.value = state.userInfo
+})
+
+const login = async () => {
+  if (usernameInput.value)
+    userStore.loginByUsername({ username: usernameInput.value, password: '' })
+}
+const logout = async () => {
+  userStore.logOut()
 }
 
 const framework = [
@@ -35,13 +44,25 @@ const ui = [
         <span class="pl-1">使用指南</span>
       </NuxtLink>
     </p>
-
-    <el-input v-model="username" class="m-8 w-1/2 h-12" placeholder="输入任意用户名">
+    <div v-if="userInfo && userInfo.username" class="mt-10 ">
+      <el-row class="flex justify-center mb-4">
+        <span>{{ userInfo.username }}，你好！</span>
+      </el-row>
+      <el-row class="flex justify-center">
+        <el-button type="success" plain>
+          <i class="i-carbon-carbon-for-ibm-dotcom pr-1" />前往后台
+        </el-button>
+        <el-button type="primary" plain @click="logout()">
+          <i class="i-carbon-logout pr-1" />登出
+        </el-button>
+      </el-row>
+    </div>
+    <el-input v-else v-model="usernameInput" class="m-4 w-1/2 h-12" placeholder="输入任意用户名">
       <template #prepend>
         <i class="i-twemoji-smiling-face-with-sunglasses" />
       </template>
       <template #append>
-        <el-button @click="onLogin()">
+        <el-button @click="login()">
           登录
         </el-button>
       </template>

@@ -1,18 +1,11 @@
-export interface RefreshTokenResult {
-  success: boolean
-  data: {
-    /** `token` */
-    accessToken: string
-    /** 用于调用刷新`accessToken`的接口时所需的`token` */
-    refreshToken: string
-    /** `accessToken`的过期时间（格式'xxxx/xx/xx xx:xx:xx'） */
-    expires: Date
-  }
+export interface refreshTokenResponse {
+  // 访问接口使用的 token
+  accessToken: string
+  // accessToken 的过期时长
+  maxAge: number
+  // 用于调用刷新 accessToken 的接口时所需的 token
+  refreshToken: string
 }
-
-const accessToken = 'mocked-access-token'
-/** 过期时间 单位：毫秒 默认 1分钟过期，方便演示 */
-const expiresIn = 60000
 
 /** 刷新token */
 export default defineEventHandler(async () => {
@@ -20,9 +13,9 @@ export default defineEventHandler(async () => {
   return {
     success: true,
     data: {
-      accessToken,
-      refreshToken: 'eyJhbGciOiJIUzUxMiJ9.adminRefresh',
-      expires: new Date(new Date(new Date()).getTime() + expiresIn),
+      accessToken: 'mocked-access-token', // 模拟访问 token
+      refreshToken: 'mockedRefreshedToken.adminRefresh', // 模拟刷新 token
+      maxAge: 60, // 过期时间, 单位: 秒, 默认 1 分钟过期，
     },
   }
   // return http.request<RefreshTokenResult>('post', '/refreshToken', { data })

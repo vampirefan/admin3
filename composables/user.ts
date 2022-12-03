@@ -1,54 +1,58 @@
-// import { acceptHMRUpdate } from 'pinia'
-import { removeToken, setToken } from '~~/utils/auth'
+import { acceptHMRUpdate } from 'pinia'
 // const router = useRouter()
 
-export interface userType {
-  // 用户名
-  username?: string
-  // 页面级别权限
-  roles?: Array<string>
-}
+/**
+ * 无感刷新 token
+ * refreshToken 的过期时间（比如30天）应大于 accessToken 的过期时间（比如2小时）
+ * 在 cookie（过期自动销毁）里存放: { auth-token: { accessToken , maxAge } }
+ * 在 sessionStorage（浏览器关闭自动销毁）里存放：{ user-info: { username, roles, refreshToken, maxAge } }
+ */
 
 export const useUserStore = defineStore('user', () => {
-  const user = useSessionStorage('user-info', { username: 'manager', roles: ['admin'] })
+  // state
+  const authToken = useCookie('auth-token', { maxAge: 0 })
+  const userInfo = useSessionStorage('user-info', { username: '', roles: [] as Array<string>, refreshToken: '', maxAge: 0 })
 
-  /** 存储用户名 */
-  function setUsername(username: string) {
-    user.value.username = username
+  // actions
+  function removeToken() {
+    authToken.value = null
+    userInfo.value = null
   }
-  /** 存储角色 */
-  function serRoles(roles: Array<string>) {
-    user.value.roles = roles
-  }
+
   /** 登入 */
   async function loginByUsername(data: any) {
-    const { data: result } = await $fetch('/api/login', { method: 'post', body: data })
-    if (result)
-      setToken(result)
-
-    // console.log(result)
-    return result
+    const { data: loginResponse } = await $fetch('/api/login', { method: 'post', body: data })
+    if (loginResponse) {
+      const { username, roles, accessToken, maxAge, refreshToken } = loginResponse
+      authToken.value = JSON.stringify({ accessToken, maxAge })
+      userInfo.value = { username, roles, refreshToken, maxAge }
+    }
+    return loginResponse
   }
 
   /** 前端登出（不调用接口） */
-  function logOut() {
-    user.value.username = ''
-    user.value.roles = []
+  async function logOut() {
+    userInfo.value.username = ''
+    userInfo.value.roles = []
     removeToken()
     // router.push('/login')
     // useMultiTagsStoreHook().handleTags('equal', [...routerArrays])
     // resetRouter()
   }
-  /** 刷新`token` */
+  /** 刷新 token  */
   async function handRefreshToken(data: any) {
-    const result = await $fetch('/api/refreshToken', { method: 'post', body: data })
-    if (result)
-      setToken(result.data)
+    const { data: refreshTokenResponse } = await $fetch('/api/refreshToken', { method: 'post', body: data })
+    if (refreshTokenResponse) {
+      const { accessToken, maxAge, refreshToken } = refreshTokenResponse
+      authToken.value = JSON.stringify({ accessToken, maxAge })
+      userInfo.value.refreshToken = refreshToken
+      userInfo.value.maxAge = maxAge
+    }
     // console.log(result)
-    return result
+    return refreshTokenResponse
   }
-  return { user, setUsername, serRoles, loginByUsername, logOut, handRefreshToken }
+  return { authToken, userInfo, loginByUsername, logOut, handRefreshToken }
 })
 
-// if (import.meta.hot)
-//   import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
+if (import.meta.hot)
+  import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
