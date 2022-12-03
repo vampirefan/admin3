@@ -15,7 +15,7 @@ function routerToLink(menuItem: any) {
   <el-affix class="fixed top-0 left-0 z-40 w-full">
     <el-menu class="navbar px-12" mode="horizontal" :ellipsis="false" :default-active="activeMenu">
       <el-link class="mx-4 text-xl" :underline="false" type="success">
-        <img src="/admin3-logo.png" alt="Admin3" height="30" class="mr-2">
+        <img src="@/admin3-logo.png" alt="Admin3" height="30" class="mr-2">
         Admin 3
       </el-link>
       <div class="flex-grow" />
