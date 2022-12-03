@@ -52,10 +52,10 @@ export default defineComponent({
 })
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 /* done */
 .list-done {
-  @apply text-primary-500;
+  @apply text-green-500 dark: text-green-400;
 }
 
 /* Info */

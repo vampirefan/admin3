@@ -1,0 +1,33 @@
+name: Build and Deploy gh-pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - name: Checkout 🛎️
+      - uses: actions/checkout@v3
+
+      - name: Setup node ⚗️
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          registry-url: https://registry.npmjs.com/
+
+      - name: Install dependencies 🔧
+        run: yarn install
+
+      - name: Generate 🎉
+        run: yarn generate
+
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output

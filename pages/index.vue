@@ -37,8 +37,9 @@ const ui = [
       <img src="/admin3-logo.png" alt="Admin3" height="100">
       Admin3
     </h1>
+    <el-alert title="正在开发中" type="warning" center show-icon :closable="false" />
     <p class="color-teal-6 text-xl">
-      一个基于 `Nuxt 3` 的后台管理模板，查看
+      一个基于 Nuxt 3 的后台管理模板，查看
       <NuxtLink to="/doc/guide" class="underline font-semibold pl-2">
         <i class="i-twemoji-open-book inline-block vertical-bottom" />
         <span class="pl-1">使用指南</span>

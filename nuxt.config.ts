@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false, // 使用 ssr 则删掉这一行
   modules: [
     '@nuxt/content',
     '@unocss/nuxt',
