@@ -8,6 +8,7 @@ Admin 3
 
 ## 简介
 `admin3` 是一个基于 `Nuxt 3` 的后台管理模板，使用最新的`Nuxt 3`、`TypeScript`、`Vue 3`、`Pinia`、`Element-Plus`、`Unocss` 等主流技术。
+演示地址：[https://admin3.netlify.app/](https://admin3.netlify.app/)
 
 ### 环境框架
 - Nuxt 3， `Node.js` 版本要 `>16.11`, 集成 `Vue 3`  
@@ -27,6 +28,17 @@ Admin 3
 
 
 ## 开发日志
+2022.12.04
+- 放弃 `gh-pages` 了，改用 `netlify` 零配置成功！！而且开启了 `ssr`。
+- 添加 `Dockerfile`
+
+2022.12.03
+- 调研了 `token` 无感刷新，参照别人代码把 `login`, `logout` 功能实现了，在 `pinia` 中使用 `useCookie` 和 `useSessionStorage`，感觉还是一知半解，后面发现问题再改吧。
+- 试了好久使用 `github actions` 来将代码演示跑在 `gh-pages` 分支，甚至改了项目的 `baseurl` 和 `ssr`，想让项目生成纯静态页面，感觉还是 `baseurl` 的问题，最后没成功。
+
+2022.12.02
+- 一直在排查 `npm` 包管理问题，安装 `pinia` 之后各种报错，按照网上的 `npm i pinia -f` 也不管用。最后放弃 `npm`，使用 `yarn` 后流畅无比，我以后是 `yarn` 粉了。
+
 2022.12.01
 - 实现文档的 `toc` 和 `navigation` 功能。
 
