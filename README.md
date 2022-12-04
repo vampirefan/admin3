@@ -7,8 +7,10 @@ Admin 3
 </pre>
 
 ## 简介
-`admin3` 是一个基于 `Nuxt 3` 的后台管理模板，使用最新的`Nuxt 3`、`TypeScript`、`Vue 3`、`Pinia`、`Element-Plus`、`Unocss` 等主流技术。
-演示地址：[https://admin3.netlify.app/](https://admin3.netlify.app/)
+`admin3` 是一个基于 `Nuxt 3` 的后台管理模板，使用最新的`Nuxt 3`、`TypeScript`、`Vue 3`、`Pinia`、`Element-Plus`、`Unocss` 等主流技术。  
+演示地址: [https://admin3.netlify.app/](https://admin3.netlify.app/)  
+Github: [https://github.com/vampirefan/admin3](https://github.com/vampirefan/admin3)  
+Gitee: [https://gitee.com/vampirefan/admin3](https://gitee.com/vampirefan/admin3)  
 
 ### 环境框架
 - Nuxt 3， `Node.js` 版本要 `>16.11`, 集成 `Vue 3`  
