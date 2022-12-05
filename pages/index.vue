@@ -1,5 +1,7 @@
 <script setup lang="ts">
-// const router = useRouter()
+import { ElMessage } from 'element-plus'
+
+const router = useRouter()
 const userStore = useUserStore()
 const userInfo = ref(userStore.userInfo)
 const usernameInput = ref('')
@@ -9,7 +11,9 @@ userStore.$subscribe((mutation, state) => {
 
 const login = async () => {
   if (usernameInput.value)
-    userStore.loginByUsername({ username: usernameInput.value, password: '' })
+    userStore.login({ username: usernameInput.value, password: '' })
+  else
+    ElMessage.error('请输入任意用户名！')
 }
 const logout = async () => {
   userStore.logOut()
@@ -40,34 +44,38 @@ const ui = [
     <el-alert title="正在开发中" type="warning" center show-icon :closable="false" />
     <p class="color-teal-6 text-xl">
       一个基于 Nuxt 3 的后台管理模板，查看
-      <NuxtLink to="/doc/guide" class="underline font-semibold pl-2">
+      <a class="underline font-semibold pl-2 cursor-pointer" @click="router.push('/doc/guide')">
         <i class="i-twemoji-open-book inline-block vertical-bottom" />
         <span class="pl-1">使用指南</span>
-      </NuxtLink>
+      </a>
     </p>
-    <div v-if="userInfo && userInfo.username" class="mt-10 ">
-      <el-row class="flex justify-center mb-4">
-        <span>{{ userInfo.username }}，你好！</span>
-      </el-row>
-      <el-row class="flex justify-center">
-        <el-button type="success" plain>
-          <i class="i-carbon-carbon-for-ibm-dotcom pr-1" />前往后台
-        </el-button>
-        <el-button type="primary" plain @click="logout()">
-          <i class="i-carbon-logout pr-1" />登出
-        </el-button>
-      </el-row>
-    </div>
-    <el-input v-else v-model="usernameInput" class="m-4 w-1/2 h-12" placeholder="输入任意用户名">
-      <template #prepend>
-        <i class="i-twemoji-smiling-face-with-sunglasses" />
-      </template>
-      <template #append>
-        <el-button @click="login()">
-          登录
-        </el-button>
-      </template>
-    </el-input>
+
+    <ClientOnly>
+      <div v-if="userInfo && userInfo.username" class="mt-10 ">
+        <el-row class="flex justify-center mb-4">
+          <span>{{ userInfo.username }}，你好！</span>
+        </el-row>
+        <el-row class="flex justify-center">
+          <el-button type="success" plain>
+            <i class="i-carbon-carbon-for-ibm-dotcom pr-1" />前往管理后台
+          </el-button>
+          <el-button type="primary" plain @click="logout()">
+            <i class="i-carbon-logout pr-1" />登出
+          </el-button>
+        </el-row>
+      </div>
+      <el-input v-else v-model="usernameInput" class="m-4 w-1/2 h-12" placeholder="输入任意用户名">
+        <template #prepend>
+          <i class="i-twemoji-smiling-face-with-sunglasses" />
+        </template>
+        <template #append>
+          <el-button @click="login()">
+            登录
+          </el-button>
+        </template>
+      </el-input>
+    </ClientOnly>
+
     <div class="text-2xl m-6 flex justify-center gap-4">
       <a i-logos-github-octocat href="https://github.com/vampirefan/admin3" target="_blank" />
       <BaseDarkToggle />

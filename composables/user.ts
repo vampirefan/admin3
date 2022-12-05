@@ -1,17 +1,17 @@
-import { acceptHMRUpdate } from 'pinia'
-// const router = useRouter()
+import { skipHydrate } from 'pinia'
+import { useStorage } from '@vueuse/core'
 
 /**
  * 无感刷新 token
  * refreshToken 的过期时间（比如30天）应大于 accessToken 的过期时间（比如2小时）
  * 在 cookie（过期自动销毁）里存放: { auth-token: { accessToken , maxAge } }
- * 在 sessionStorage（浏览器关闭自动销毁）里存放：{ user-info: { username, roles, refreshToken, maxAge } }
+ * 在 localStorage（浏览器关闭自动销毁）里存放：{ user-info: { username, roles, refreshToken, maxAge } }
  */
 
 export const useUserStore = defineStore('user', () => {
   // state
-  const authToken = useCookie('auth-token', { maxAge: 0 })
-  const userInfo = useSessionStorage('user-info', { username: '', roles: [] as Array<string>, refreshToken: '', maxAge: 0 })
+  const authToken = ref(useCookie('auth-token', { maxAge: 60 }))
+  const userInfo = ref(useStorage('user-info', { username: '', roles: [] as Array<string>, refreshToken: '', maxAge: 60 }))
 
   // actions
   function removeToken() {
@@ -20,7 +20,7 @@ export const useUserStore = defineStore('user', () => {
   }
 
   /** 登入 */
-  async function loginByUsername(data: any) {
+  async function login(data: any) {
     const { data: loginResponse } = await $fetch('/api/login', { method: 'post', body: data })
     if (loginResponse) {
       const { username, roles, accessToken, maxAge, refreshToken } = loginResponse
@@ -51,8 +51,10 @@ export const useUserStore = defineStore('user', () => {
     // console.log(result)
     return refreshTokenResponse
   }
-  return { authToken, userInfo, loginByUsername, logOut, handRefreshToken }
+  /**
+   * 为了让 userInfo 能先从客户端的 LocalStorage 中取值。使用 skipHydrate() 的辅助函数。
+   * 详见：https://pinia.vuejs.org/zh/cookbook/composables.html#ssr
+   */
+  return { authToken, userInfo: skipHydrate(userInfo), login, logOut, handRefreshToken }
 })
 
-if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
