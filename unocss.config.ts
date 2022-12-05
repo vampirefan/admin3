@@ -14,6 +14,7 @@ export default defineConfig({
     'i-twemoji-blue-book',
     'i-twemoji-books',
     'i-twemoji-rocket',
+    'i-logos-markdown',
   ],
   presets: [
     presetUno(),

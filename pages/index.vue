@@ -34,7 +34,7 @@ const ui = [
 <template>
   <main class="w-1/2 ma py-20 px-10 text-center">
     <h1 class="flex items-center justify-center color-green-5 text-6xl gap-6">
-      <img src="@/assets/image/admin3-logo.png" alt="Admin3" height="100">
+      <img src="/image/admin3-logo.png" alt="Admin3" height="100">
       Admin3
     </h1>
     <el-alert title="正在开发中" type="warning" center show-icon :closable="false" />
