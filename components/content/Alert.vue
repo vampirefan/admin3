@@ -69,45 +69,45 @@ const titleText = computed(() => {
 }
 
 .alert.tip {
-  border-color: var(--c-tip);
-  background-color: var(--c-tip-bg);
-  color: var(--c-tip-text)
+  border-color: var(--doc-tip);
+  background-color: var(--doc-tip-bg);
+  color: var(--doc-tip-text)
 }
 
 .alert.tip .alert-title {
-  color: var(--c-tip-title)
+  color: var(--doc-tip-title)
 }
 
 .alert.tip a {
-  color: var(--c-tip-text-accent)
+  color: var(--doc-tip-text-accent)
 }
 
 .alert.warning {
-  border-color: var(--c-warning);
-  background-color: var(--c-warning-bg);
-  color: var(--c-warning-text)
+  border-color: var(--doc-warning);
+  background-color: var(--doc-warning-bg);
+  color: var(--doc-warning-text)
 }
 
 .alert.warning .alert-title {
-  color: var(--c-warning-title)
+  color: var(--doc-warning-title)
 }
 
 .alert.warning a {
-  color: var(--c-warning-text-accent)
+  color: var(--doc-warning-text-accent)
 }
 
 .alert.danger {
-  border-color: var(--c-danger);
-  background-color: var(--c-danger-bg);
-  color: var(--c-danger-text)
+  border-color: var(--doc-danger);
+  background-color: var(--doc-danger-bg);
+  color: var(--doc-danger-text)
 }
 
 .alert.danger .alert-title {
-  color: var(--c-danger-title)
+  color: var(--doc-danger-title)
 }
 
 .alert.danger a {
-  color: var(--c-danger-text-accent)
+  color: var(--doc-danger-text-accent)
 }
 
 .alert.details {
@@ -116,7 +116,7 @@ const titleText = computed(() => {
   border-radius: 2px;
   margin: 1.6em 0;
   padding: 1.6em;
-  background-color: var(--c-details-bg)
+  background-color: var(--doc-details-bg)
 }
 
 .alert.details :deep(h4) {

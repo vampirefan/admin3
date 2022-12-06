@@ -37,7 +37,7 @@ const ui = [
 
 <template>
   <main class="w-1/2 ma py-20 px-10 text-center">
-    <h1 class="flex items-center justify-center color-green-5 text-6xl gap-6">
+    <h1 class="flex items-center justify-center color-green-5 text-5xl gap-6">
       <img src="/image/admin3-logo.png" alt="Admin3" height="100">
       Admin3
     </h1>
@@ -56,7 +56,7 @@ const ui = [
           <span>{{ userInfo.username }}，你好！</span>
         </el-row>
         <el-row class="flex justify-center">
-          <el-button type="success" plain>
+          <el-button type="success" plain @click="router.push('/admin/welcome')">
             <i class="i-carbon-carbon-for-ibm-dotcom pr-1" />前往管理后台
           </el-button>
           <el-button type="primary" plain @click="logout()">
@@ -78,7 +78,7 @@ const ui = [
 
     <div class="text-2xl m-6 flex justify-center gap-4">
       <a i-logos-github-octocat href="https://github.com/vampirefan/admin3" target="_blank" />
-      <BaseDarkToggle />
+      <CommonDarkToggle />
     </div>
 
     <el-divider />

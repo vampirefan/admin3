@@ -46,21 +46,21 @@ const props = defineProps({
   line-height: 18px;
   border-radius: 3px;
   padding: 1px 6px;
-  color: var(--c-bg);
+  color: var(--doc-bg);
   vertical-align: top;
   transition: color var(--t-color), background-color var(--t-color)
 }
 
 .badge.tip {
-  background-color: var(--c-badge-tip)
+  background-color: var(--doc-badge-tip)
 }
 
 .badge.warning {
-  background-color: var(--c-badge-warning)
+  background-color: var(--doc-badge-warning)
 }
 
 .badge.danger {
-  background-color: var(--c-badge-danger)
+  background-color: var(--doc-badge-danger)
 }
 
 .badge+.badge {

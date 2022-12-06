@@ -23,7 +23,7 @@ defineProps({
   <img v-bind="$attrs" :src="src" :alt="alt" :width="width" :height="height">
 </template>
 
-<style  scoped>
+<style scoped>
 img {
   margin: 0.25rem
 }

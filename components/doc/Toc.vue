@@ -39,11 +39,12 @@ const scrollToHeading = (id: string) => {
 
 <style scoped>
 .toc {
-  width: var(--sidebar-width);
+  width: var(--doc-sidebar-width);
 }
 
 ul {
   padding-left: 0.3rem;
+  line-height: 1.7;
 }
 </style>
 

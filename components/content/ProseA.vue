@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 defineProps({
   href: {
     type: String,
@@ -24,3 +24,6 @@ defineProps({
   </NuxtLink>
 </template>
 
+<style scoped>
+
+</style>

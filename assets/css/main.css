@@ -1,2 +1,14 @@
-@import "vars.css";
+@import "doc-vars.css";
+@import "admin-vars.css";
 @import "normalize.css";
+
+
+:root {
+  /* font vars */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-code: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* transition vars */
+  --t-color: 0.1s ease;
+  --t-transform: 0.1s ease;
+}

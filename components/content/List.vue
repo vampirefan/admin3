@@ -52,29 +52,29 @@ export default defineComponent({
 })
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 /* done */
 .list-done {
-  @apply text-green-500 dark: text-green-400;
+  color: rgba(34, 197, 94, 1);
 }
 
 /* Info */
 .list-info {
-  @apply text-blue-500 dark: text-blue-400;
+  color: rgba(59, 130, 246, 1);
 }
 
 /* Success */
 .list-success {
-  @apply text-green-500 dark: text-green-400;
+  color: rgba(34, 197, 94, 1);
 }
 
 /* Warning */
 .list-warning {
-  @apply text-yellow-500 dark: text-yellow-400;
+  color: rgba(234, 179, 8, 1);
 }
 
 /* Danger */
 .list-danger {
-  @apply text-red-500 dark: text-red-400;
+  color: rgba(239, 68, 68, 1);
 }
 </style>

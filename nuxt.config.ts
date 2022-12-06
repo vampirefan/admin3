@@ -3,7 +3,13 @@ export default defineNuxtConfig({
   // ssr: false, // 使用 ssr 则删掉这一行
   // app: {
   //   baseURL: '/admin3/',
-  // },
+  // }
+
+  /** full-Static mode payload extraction option:
+   *  see: https://github.com/nuxt/framework/discussions/7691?sort=new */
+  experimental: {
+    payloadExtraction: false,
+  },
   modules: [
     '@nuxt/content',
     '@unocss/nuxt',
@@ -15,11 +21,6 @@ export default defineNuxtConfig({
     'element-plus/theme-chalk/dark/css-vars.css',
     '@/assets/css/main.css',
   ],
-  postcss: {
-    plugins: {
-      'postcss-nesting': { /* plugin options */ },
-    },
-  },
   content: {
     documentDriven: true,
     highlight: {

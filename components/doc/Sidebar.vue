@@ -31,19 +31,19 @@ a {
 
 .sidebar {
   font-size: 16px;
-  width: var(--sidebar-width);
+  width: var(--doc-sidebar-width);
   position: fixed;
   z-index: 10;
   margin: 0;
-  top: var(--navbar-height);
+  top: var(--doc-navbar-height);
   left: 0;
   bottom: 0;
   box-sizing: border-box;
-  border-right: 1px solid var(--c-border);
+  border-right: 1px solid var(--doc-border);
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--c-brand) var(--c-border);
-  background-color: var(--c-bg-sidebar);
+  scrollbar-color: var(--doc-brand) var(--doc-border);
+  background-color: var(--doc-bg-sidebar);
   transition: transform var(--t-transform), background-color var(--t-color),
     border-color var(--t-color);
 }
@@ -53,21 +53,25 @@ a {
 }
 
 .sidebar::-webkit-scrollbar-track {
-  background-color: var(--c-border);
+  background-color: var(--doc-border);
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-  background-color: var(--c-brand);
+  background-color: var(--doc-brand);
 }
 
 .sidebar .sidebar-items {
-  padding: 1.5rem 0
+  padding: 1.2rem 0;
+}
+
+.sidebar ul {
+  padding-left: 1.2rem;
 }
 
 .sidebar-item {
   cursor: default;
   border-left: .25rem solid transparent;
-  color: var(--c-text)
+  color: var(--doc-text)
 }
 
 .sidebar-item:focus-visible {
@@ -77,8 +81,8 @@ a {
 
 .sidebar-item.active:not(p.sidebar-heading) {
   font-weight: 600;
-  color: var(--c-text-accent);
-  border-left-color: var(--c-text-accent)
+  color: var(--doc-text-accent);
+  border-left-color: var(--doc-text-accent)
 }
 
 .sidebar-item.sidebar-heading {
@@ -141,6 +145,6 @@ a.sidebar-item {
 }
 
 a.sidebar-item:hover {
-  color: var(--c-text-accent)
+  color: var(--doc-text-accent)
 }
 </style>

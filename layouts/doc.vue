@@ -3,18 +3,18 @@
     <DocNavbar />
     <DocSidebar />
     <DocToc />
-    <main class="content mx-10">
+    <section class="content mx-10">
       <slot />
-    </main>
+    </section>
     <!-- <Footer /> -->
   </div>
 </template>
 
 <style scoped>
 .content {
-  padding-top: var(--navbar-height);
-  padding-left: var(--sidebar-width);
-  padding-right: var(--sidebar-width);
+  padding-top: var(--doc-navbar-height);
+  padding-left: var(--doc-sidebar-width);
+  padding-right: var(--doc-sidebar-width);
   padding-bottom: 2rem;
   display: block;
 }
@@ -33,8 +33,8 @@
 .content :deep(h4),
 .content :deep(h5),
 .content :deep(h6) {
-  margin-top: calc(0.5rem - var(--navbar-height));
-  padding-top: calc(1rem + var(--navbar-height));
+  margin-top: calc(0.5rem - var(--doc-navbar-height));
+  padding-top: calc(1rem + var(--doc-navbar-height));
   margin-bottom: 0;
 }
 
