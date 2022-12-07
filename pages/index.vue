@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
-
 const router = useRouter()
 const userStore = useUserStore()
 const userInfo = ref(userStore.userInfo)
 const usernameInput = ref('')
 userStore.$subscribe((mutation, state) => {
   userInfo.value = state.userInfo
+})
+
+const isLoggedIn = computed(() => {
+  return userStore.authToken && userInfo.value && userInfo.value.username
 })
 
 const login = async () => {
@@ -51,7 +54,7 @@ const ui = [
     </div>
 
     <ClientOnly>
-      <div v-if="userInfo && userInfo.username" class="mt-10">
+      <div v-if="isLoggedIn" class="mt-4">
         <el-row class="flex justify-center mb-4">
           <span>{{ userInfo.username }}，你好！</span>
         </el-row>
@@ -79,8 +82,8 @@ const ui = [
     </ClientOnly>
 
     <div class="mt-16 flex justify-center gap-2">
-      <CommonDarkToggle class="pb-2" />
-      <el-link class="text-xl" :underline="false" href="https://github.com/vampirefan/admin3" target="_blank">
+      <CommonDarkToggle class="pb-2 text-xl" />
+      <el-link class="text-2xl" :underline="false" href="https://github.com/vampirefan/admin3" target="_blank">
         <Icon name="i-logos-github-octocat" />
       </el-link>
     </div>

@@ -30,8 +30,10 @@ if (props.name.startsWith('svg-')) {
 </script>
 
 <template>
-  <div v-if="name.startsWith('i-')" class="inline-block" :class="name" />
-  <span v-else class="svg-icon" :class="{ 'svg-icon--fill': !filled }" v-html="svgIcon" />
+  <el-icon>
+    <div v-if="name.startsWith('i-')" class="inline-block" :class="name" />
+    <span v-else class="svg-icon" :class="{ 'svg-icon--fill': !filled }" v-html="svgIcon" />
+  </el-icon>
 </template>
 
 <style>

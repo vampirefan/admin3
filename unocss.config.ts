@@ -15,6 +15,8 @@ export default defineConfig({
     'i-twemoji-books',
     'i-twemoji-rocket',
     'i-logos-markdown',
+    'i-ep-menu',
+    'i-carbon-tool-box',
   ],
   presets: [
     presetUno(),

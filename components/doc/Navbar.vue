@@ -21,17 +21,17 @@ function routerToLink(menuItem: any) {
       <div class="flex-grow" />
       <el-sub-menu v-for="link of navTree" :key="link._path" :index="link._path">
         <template #title>
-          <Icon :name="link.icon" class="pr" />{{ link.title }}
+          <Icon :name="link.icon" />{{ link.title }}
         </template>
         <el-menu-item v-for="sublink of link.children" :key="sublink._path" :index="sublink._path"
           @click="routerToLink">
           {{ sublink.title }}
         </el-menu-item>
       </el-sub-menu>
-      <el-link class="ml-4" :underline="false" @click="routerToLink({ index: '/' })">
+      <el-link class="ml-4 text-xl" :underline="false" @click="routerToLink({ index: '/' })">
         <Icon name="i-twemoji-house-with-garden" />
       </el-link>
-      <CommonDarkToggle class="ml-4" />
+      <CommonDarkToggle class="ml-4 text-xl" />
     </el-menu>
   </ClientOnly>
 </template>
