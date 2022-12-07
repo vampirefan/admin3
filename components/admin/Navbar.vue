@@ -13,7 +13,7 @@ const router = useRouter()
       </el-link>
       <div class="flex-grow" />
       <el-link class="ml-4" :underline="false" @click="router.push('/')">
-        <i class="i-twemoji-house-with-garden" />
+        <Icon name="i-twemoji-house-with-garden" />
       </el-link>
       <CommonDarkToggle class="mx-4" />
       <span>你好！{{ userInfo.username }}</span>

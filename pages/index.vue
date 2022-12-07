@@ -42,31 +42,33 @@ const ui = [
       Admin3
     </h1>
     <el-alert title="正在开发中" type="warning" center show-icon :closable="false" />
-    <p class="color-teal-6 text-xl">
-      一个基于 Nuxt 3 的后台管理模板，查看
-      <a class="underline font-semibold pl-2 cursor-pointer" @click="router.push('/doc/guide')">
-        <i class="i-twemoji-open-book inline-block vertical-bottom" />
+    <div class="color-teal-6 text-xl py-4">
+      <span class="pr-2">一个基于 Nuxt 3 的后台管理模板，查看</span>
+      <Icon name="i-twemoji-open-book" class="vertical-bottom" />
+      <a class="underline font-semibold cursor-pointer" @click="router.push('/doc/guide')">
         <span class="pl-1">使用指南</span>
       </a>
-    </p>
+    </div>
 
     <ClientOnly>
-      <div v-if="userInfo && userInfo.username" class="mt-10 ">
+      <div v-if="userInfo && userInfo.username" class="mt-10">
         <el-row class="flex justify-center mb-4">
           <span>{{ userInfo.username }}，你好！</span>
         </el-row>
         <el-row class="flex justify-center">
           <el-button type="success" plain @click="router.push('/admin/welcome')">
-            <i class="i-carbon-carbon-for-ibm-dotcom pr-1" />前往管理后台
+            <Icon name="i-carbon-carbon-for-ibm-dotcom" class="pr-1" />
+            前往管理后台
           </el-button>
           <el-button type="primary" plain @click="logout()">
-            <i class="i-carbon-logout pr-1" />登出
+            <Icon name="i-carbon-logout" class="pr-1" />
+            登出
           </el-button>
         </el-row>
       </div>
       <el-input v-else v-model="usernameInput" class="m-4 w-1/2 h-12" placeholder="输入任意用户名">
         <template #prepend>
-          <i class="i-twemoji-smiling-face-with-sunglasses" />
+          <Icon name="i-twemoji-smiling-face-with-sunglasses" />
         </template>
         <template #append>
           <el-button @click="login()">
@@ -76,9 +78,11 @@ const ui = [
       </el-input>
     </ClientOnly>
 
-    <div class="text-2xl m-6 flex justify-center gap-4">
-      <a i-logos-github-octocat href="https://github.com/vampirefan/admin3" target="_blank" />
-      <CommonDarkToggle />
+    <div class="mt-16 flex justify-center gap-2">
+      <CommonDarkToggle class="pb-2" />
+      <el-link class="text-xl" :underline="false" href="https://github.com/vampirefan/admin3" target="_blank">
+        <Icon name="i-logos-github-octocat" />
+      </el-link>
     </div>
 
     <el-divider />

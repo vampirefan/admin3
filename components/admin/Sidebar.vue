@@ -45,7 +45,7 @@ const isCollapse = ref(false)
             Navigator Three
           </template>
         </el-menu-item>
-        <el-menu-item v-for="index in 15" :key="index" :index="index">
+        <el-menu-item v-for="index in 15" :key="index" :index="index.toString()">
           <el-icon>
             <i class="i-ep-setting" />
           </el-icon>

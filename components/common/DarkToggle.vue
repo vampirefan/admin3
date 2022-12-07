@@ -7,6 +7,7 @@ const toggleDark = useToggle(isDark)
 
 <template>
   <el-link :underline="false" @click="toggleDark()">
-    <i class="dark:i-twemoji-last-quarter-moon-face i-twemoji-sun" />
+    <Icon v-if="isDark" name="i-twemoji-last-quarter-moon-face" />
+    <Icon v-else name="i-twemoji-sun" />
   </el-link>
 </template>
