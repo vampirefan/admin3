@@ -42,7 +42,7 @@ export default defineComponent({
         'ul',
         items.map(item =>
           h('li', { class: 'mb-3 flex items-center' }, [
-            h('i', { class: `list-${props.type} ${iconName.value} h-5 w-5 mt-2px mr-2 flex-shrink-0` }),
+            h('i', { class: `list-${props.type} ${iconName.value} w-5 mr-2 flex-shrink-0` }),
             h('span', h(resolveComponent('ContentSlot'), { use: () => item })),
           ]),
         ),

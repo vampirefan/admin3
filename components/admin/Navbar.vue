@@ -7,10 +7,11 @@ const router = useRouter()
 <template>
   <ClientOnly>
     <el-menu class="navbar pr-8" mode="horizontal" :ellipsis="false">
-      <el-link class="mx-4 text-xl" :underline="false" type="success">
+      <el-link class="logo text-lg" :underline="false" type="success" @click="router.push('/admin')">
         <el-image class="w-8" src="/image/admin3-logo.png" fit="cover" />
         <span>Admin3 管理后台</span>
       </el-link>
+      <AdminNavBreadcrumb class="pl-4" />
       <div class="flex-grow" />
       <el-link class="ml-4" :underline="false" @click="router.push('/')">
         <Icon name="i-twemoji-house-with-garden" />
@@ -33,5 +34,9 @@ const router = useRouter()
   border-bottom: 1px solid var(--el-menu-border-color);
   display: flex;
   align-items: center;
+}
+
+.logo {
+  width: var(--admin-sidebar-width)
 }
 </style>

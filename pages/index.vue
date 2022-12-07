@@ -59,7 +59,7 @@ const ui = [
           <span>{{ userInfo.username }}，你好！</span>
         </el-row>
         <el-row class="flex justify-center">
-          <el-button type="success" plain @click="router.push('/admin/welcome')">
+          <el-button type="success" plain @click="router.push('/admin')">
             <Icon name="i-carbon-carbon-for-ibm-dotcom" class="pr-1" />
             前往管理后台
           </el-button>
@@ -82,10 +82,10 @@ const ui = [
     </ClientOnly>
 
     <div class="mt-16 flex justify-center gap-2">
-      <CommonDarkToggle class="pb-2 text-xl" />
       <el-link class="text-2xl" :underline="false" href="https://github.com/vampirefan/admin3" target="_blank">
         <Icon name="i-logos-github-octocat" />
       </el-link>
+      <CommonDarkToggle class="pb-2 text-xl" />
     </div>
 
     <el-divider />

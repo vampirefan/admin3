@@ -1,5 +1,12 @@
+<script setup lang="ts">
+definePageMeta({
+  title: '图标',
+  layout: 'admin',
+})
+</script>
+
 <template>
-  <NuxtLayout name="admin">
+  <NuxtLayout>
     icon demo
   </NuxtLayout>
 </template>
