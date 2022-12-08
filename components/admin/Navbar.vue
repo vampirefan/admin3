@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { ElMessage } from 'element-plus'
 const userStore = useUserStore()
 const userInfo = ref(userStore.userInfo)
 const router = useRouter()
@@ -10,6 +11,9 @@ const router = useRouter()
       <el-link class="logo text-lg" :underline="false" type="success" @click="router.push('/admin')">
         <el-image class="w-8" src="/image/admin3-logo.png" fit="cover" />
         <span>Admin3 管理后台</span>
+      </el-link>
+      <el-link :underline="false" @click="ElMessage('呀，被发现了！菜单折叠还没做...')">
+        <Icon name="i-ep-fold" class="pl-4 text-lg" />
       </el-link>
       <AdminNavBreadcrumb class="pl-4" />
       <div class="flex-grow" />

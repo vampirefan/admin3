@@ -54,7 +54,7 @@ queryContent('doc').where({ title: '开发日志' }).findOne().then((data) => {
 
 <template>
   <NuxtLayout>
-    <div class="m-8">
+    <AdminContainer type="ghost">
       <el-row :gutter="20">
         <el-col :span="12">
           <el-card>
@@ -88,6 +88,6 @@ queryContent('doc').where({ title: '开发日志' }).findOne().then((data) => {
           </el-card>
         </el-col>
       </el-row>
-    </div>
+    </AdminContainer>
   </NuxtLayout>
 </template>

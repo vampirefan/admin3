@@ -13,12 +13,13 @@
 <style scoped>
 .main-container {
   overflow: hidden;
+  overflow-y: auto;
   width: calc(100vw - var(--admin-sidebar-width));
-  position: fixed;
+  position: absolute;
   z-index: 1001;
   top: var(--admin-navbar-height);
   left: var(--admin-sidebar-width);
   bottom: 0;
-  overflow-y: auto;
+
 }
 </style>
