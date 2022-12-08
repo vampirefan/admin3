@@ -23,19 +23,23 @@ const logout = async () => {
 }
 
 const framework = [
-  { title: 'Nuxt', icon: 'i-logos-nuxt-icon' },
-  { title: 'Vue3', icon: 'i-logos-vue' },
-  { title: 'VueUse', icon: 'i-logos-vueuse' },
-  { title: 'Typescript', icon: 'i-logos-typescript-icon' },
-  { title: 'Eslint', icon: 'i-logos-eslint' },
-  { title: 'Commitizen', icon: 'i-logos-commitizen' },
+  { title: 'Nuxt3', icon: 'i-logos-nuxt-icon', url: 'https://nuxt.com/docs/getting-started/introduction' },
+  { title: 'Vue3', icon: 'i-logos-vue', url: 'https://cn.vuejs.org/guide/introduction.html' },
+  { title: 'VueUse', icon: 'i-logos-vueuse', url: 'https://vueuse.org/guide/' },
+  { title: 'Typescript', icon: 'i-logos-typescript-icon', url: 'https://ts.xcatliu.com/' },
+  { title: 'Eslint', icon: 'i-logos-eslint', url: 'https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint' },
+  { title: 'Commitizen', icon: 'i-logos-commitizen', url: 'https://cz-git.qbb.sh/zh/guide/introduction' },
 ]
 const ui = [
-  { title: 'Element-Plus', icon: 'i-logos-element' },
-  { title: 'Unocss', icon: 'i-logos-unocss' },
-  { title: 'TailwindCSS', icon: 'i-logos-tailwindcss-icon' },
-  { title: 'Iconify', icon: 'i-carbon-face-satisfied' },
+  { title: 'Element-Plus', icon: 'i-logos-element', url: 'https://element-plus.org/zh-CN/' },
+  { title: 'Unocss', icon: 'i-logos-unocss', url: 'https://antfu.me/posts/reimagine-atomic-css-zh' },
+  { title: 'TailwindCSS', icon: 'i-logos-tailwindcss-icon', url: 'https://tailwindcss.com/' },
+  { title: 'Iconify', icon: 'i-carbon-face-satisfied', url: 'https://iconify.design/' },
 ]
+
+function toOfficial(url: string) {
+  window.open(url, '_blank')
+}
 </script>
 
 <template>
@@ -90,22 +94,22 @@ const ui = [
 
     <el-divider />
 
-    <h3 class="color-green-4 text-left ml-8">
+    <h3 class="color-green-5 text-left ml-8">
       Frameworks
     </h3>
     <el-row :gutter="12">
       <el-col v-for="item in framework" :key="item.title" :span="6">
-        <el-card shadow="hover" class="mb">
+        <el-card shadow="hover" class="mb cursor-pointer" @click="toOfficial(item.url)">
           <div :class="`${item.icon} inline-block`" /><span class="pl">{{ item.title }}</span>
         </el-card>
       </el-col>
     </el-row>
-    <h3 class="color-green-4 text-left ml-8">
+    <h3 class="color-green-5 text-left ml-8">
       UIs
     </h3>
     <el-row :gutter="12">
       <el-col v-for="item in ui" :key="item.title" :span="6">
-        <el-card shadow="hover" class="mb">
+        <el-card shadow="hover" class="mb cursor-pointer" @click="toOfficial(item.url)">
           <div :class="`${item.icon} inline-block`" /><span class="pl">{{ item.title }}</span>
         </el-card>
       </el-col>

@@ -2,6 +2,7 @@
 definePageMeta({
   layout: 'admin',
 })
+const router = useRouter()
 const done = [
   '使用 content 模块渲染 markdown 文档。',
   '暗黑主题',
@@ -38,6 +39,17 @@ const todo = [
   '在线表格',
   '文档',
 ]
+const devNoteContent = ref<any>({
+  _source: 'content',
+  _type: 'markdown',
+  body: {
+    type: 'root',
+    children: [],
+  },
+})
+queryContent('doc').where({ title: '开发日志' }).findOne().then((data) => {
+  devNoteContent.value = data
+})
 </script>
 
 <template>
@@ -66,6 +78,13 @@ const todo = [
                 <Icon name="i-carbon-information" class="w-5 mr-2 flex-shrink-0 color-blue-500" />{{ item }}
               </li>
             </ul>
+          </el-card>
+        </el-col>
+      </el-row>
+      <el-row class="mt-8">
+        <el-col :span="24">
+          <el-card class="p-24">
+            <ContentRendererMarkdown :value="devNoteContent" />
           </el-card>
         </el-col>
       </el-row>
