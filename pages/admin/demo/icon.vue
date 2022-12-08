@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
-import { getIconSet, getIcons } from '@/utils/iconSet'
+// import { getIconSet, getIcons } from '@/utils/iconSet'
+import { icons as ep } from '@iconify-json/ep'
+import { icons as carbon } from '@iconify-json/carbon'
+import { icons as logos } from '@iconify-json/logos'
+import { icons as twemoji } from '@iconify-json/twemoji'
+
 definePageMeta({
   title: '图标',
   layout: 'admin',
 })
+
 const { copy } = useClipboard()
-const iconSetOptions = ref<string[]>([])
-const iconSet = ref('')
+const iconSetOptions = ref<string[]>(['ep', 'carbon', 'logos', 'twemoji'])
+const iconSetData: any = { ep: ep.icons, carbon: carbon.icons, logos: logos.icons, twemoji: twemoji.icons }
+const iconSet = ref('ep')
 const iconList = ref<string[]>([])
 const totalNum = ref(100)
 const pageNum = ref(1)
@@ -15,16 +22,9 @@ const pageSize = ref(100)
 const loading = ref(false)
 
 async function getIconList() {
-  loading.value = true
-  if (!iconSet.value) {
-    iconSetOptions.value = await getIconSet()
-    iconSet.value = iconSetOptions.value[0]
-  }
-  getIcons(iconSet.value, pageNum.value, pageSize.value).then((res: any) => {
-    totalNum.value = res.total
-    iconList.value = res.data
-    loading.value = false
-  })
+  const list = Object.keys(iconSetData[iconSet.value]).map((name: string) => `${iconSet.value}:${name}`)
+  totalNum.value = list.length
+  iconList.value = list.slice((pageNum.value - 1) * pageSize.value, pageNum.value * pageSize.value)
 }
 function copyIconName(iconName: string) {
   copy(iconName).then(() => {
@@ -33,22 +33,20 @@ function copyIconName(iconName: string) {
 }
 
 getIconList()
-
-// const pageSize = ref(100)
-// console.log(Object.keys(epIcons.icons))
 </script>
 
 <template>
   <NuxtLayout>
     <AdminContainer>
       <template #header>
-        图标集：<el-select v-model="iconSet" placeholder="选择图标集" @change="getIconList">
+        Iconify 在线图标集：<el-select v-model="iconSet" placeholder="选择图标集" @change="getIconList">
           <el-option v-for="item in iconSetOptions" :key="item" :label="item" :value="item" />
         </el-select>
       </template>
       <el-button-group v-loading="loading">
         <el-button v-for="iconName of iconList" :key="iconName" class="text-4xl p-8" @click="copyIconName(iconName)">
-          <Icon :name="iconName" />
+          <!-- <Icon :name="iconName" /> -->
+          <IconifyOnline :name="iconName" />
         </el-button>
       </el-button-group>
       <template #footer>
