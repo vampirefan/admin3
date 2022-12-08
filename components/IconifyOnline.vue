@@ -9,5 +9,5 @@ const props = defineProps({
 </script>
 
 <template>
-  <IconifyIcon :icon="name" />
+  <IconifyIcon :icon="props.name" />
 </template>

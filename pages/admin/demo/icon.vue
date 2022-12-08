@@ -1,51 +1,62 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
-// import { getIconSet, getIcons } from '@/utils/iconSet'
-import { icons as ep } from '@iconify-json/ep'
-import { icons as carbon } from '@iconify-json/carbon'
-import { icons as logos } from '@iconify-json/logos'
-import { icons as twemoji } from '@iconify-json/twemoji'
-
 definePageMeta({
   title: '图标',
   layout: 'admin',
 })
-
 const { copy } = useClipboard()
-const iconSetOptions = ref<string[]>(['ep', 'carbon', 'logos', 'twemoji'])
-const iconSetData: any = { ep: ep.icons, carbon: carbon.icons, logos: logos.icons, twemoji: twemoji.icons }
-const iconSet = ref('ep')
+const iconCollections = ref<{ name: string; prefix: string }[]>([])
+const iconCollectionSelected = ref('ep')
 const iconList = ref<string[]>([])
 const totalNum = ref(100)
 const pageNum = ref(1)
 const pageSize = ref(100)
 const loading = ref(false)
 
-async function getIconList() {
-  const list = Object.keys(iconSetData[iconSet.value]).map((name: string) => `${iconSet.value}:${name}`)
-  totalNum.value = list.length
-  iconList.value = list.slice((pageNum.value - 1) * pageSize.value, pageNum.value * pageSize.value)
+async function getIconCollections() {
+  const collections = await $fetch('https://api.iconify.design/collections', { method: 'get' })
+  if (collections)
+    iconCollections.value = Object.entries(collections).map((item) => { return { name: item[1].name, prefix: item[0] } })
 }
+async function getIconList() {
+  loading.value = true
+  const list: any = await $fetch(`https://api.iconify.design/collection?prefix=${iconCollectionSelected.value}`, { method: 'get' })
+  if (list) {
+    let allIcons: any[] = []
+    if (list.uncategorized)
+      allIcons = allIcons.concat(list.uncategorized)
+    if (list.categories)
+      allIcons = allIcons.concat(...Object.values(list.categories))
+    totalNum.value = allIcons.length
+    iconList.value = allIcons
+      .map((name: string) => `${iconCollectionSelected.value}:${name}`)
+      .slice((pageNum.value - 1) * pageSize.value, pageNum.value * pageSize.value)
+  }
+  loading.value = false
+}
+
 function copyIconName(iconName: string) {
   copy(iconName).then(() => {
     ElMessage.success(`已复制：${iconName}`)
   })
 }
-
-getIconList()
+await getIconCollections()
+await getIconList()
 </script>
 
 <template>
   <NuxtLayout>
     <AdminContainer>
       <template #header>
-        Iconify 在线图标集：<el-select v-model="iconSet" placeholder="选择图标集" @change="getIconList">
-          <el-option v-for="item in iconSetOptions" :key="item" :label="item" :value="item" />
-        </el-select>
+        <el-row class="py-2 items-center font-500">
+          Iconify 在线图标集：
+          <el-select v-model="iconCollectionSelected" placeholder="选择图标集" filterable @change="getIconList">
+            <el-option v-for="item in iconCollections" :key="item.prefix" :label="item.name" :value="item.prefix" />
+          </el-select>
+        </el-row>
       </template>
       <el-button-group v-loading="loading">
         <el-button v-for="iconName of iconList" :key="iconName" class="text-4xl p-8" @click="copyIconName(iconName)">
-          <!-- <Icon :name="iconName" /> -->
           <IconifyOnline :name="iconName" />
         </el-button>
       </el-button-group>
