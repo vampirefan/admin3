@@ -53,7 +53,7 @@ queryContent('doc').where({ title: '开发日志' }).findOne().then((data) => {
 
 <template>
   <NuxtLayout>
-    <AdminContainer type="ghost">
+    <AdminContainer>
       <el-row :gutter="20">
         <el-col :span="12">
           <el-card>

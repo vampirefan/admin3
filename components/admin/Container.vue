@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps({
-  // 容器样式
+  /* 容器样式: full(default), card */
   type: {
     type: String,
     required: false,
@@ -16,11 +16,7 @@ const props = defineProps({
     </div>
     <el-scrollbar class="overflow-hidden flex-1">
       <!-- type='card'  -->
-      <div v-if="type === 'card'" class="p-6 card">
-        <slot />
-      </div>
-      <!-- type='ghost'  -->
-      <div v-else-if="type === 'ghost'" class="p-6">
+      <div v-if="type === 'card'" class="card p-6">
         <slot />
       </div>
       <!-- type='full'  -->

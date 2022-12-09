@@ -14,7 +14,7 @@ const demoData = reactive({
 
 <template>
   <NuxtLayout>
-    <AdminContainer type="ghost">
+    <AdminContainer>
       <el-row :gutter="20">
         <el-col :span="12">
           <el-card class="pb-6">
