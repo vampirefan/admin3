@@ -2,7 +2,6 @@
 definePageMeta({
   layout: 'admin',
 })
-const router = useRouter()
 const done = [
   '使用 content 模块渲染 markdown 文档。',
   '暗黑主题',

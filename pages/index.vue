@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
-const router = useRouter()
 const userStore = useUserStore()
 const userInfo = ref(userStore.userInfo)
 const usernameInput = ref('')
@@ -52,7 +51,7 @@ function toOfficial(url: string) {
     <div class="color-teal-6 text-xl py-4">
       <span class="pr-2">一个基于 Nuxt 3 的后台管理模板，查看</span>
       <Icon name="i-twemoji-open-book" class="vertical-bottom" />
-      <a class="underline font-semibold cursor-pointer" @click="router.push('/doc/guide')">
+      <a class="underline font-semibold cursor-pointer" @click="navigateTo('/doc/guide')">
         <span class="pl-1">使用指南</span>
       </a>
     </div>
@@ -63,7 +62,7 @@ function toOfficial(url: string) {
           <span>{{ userInfo.username }}，你好！</span>
         </el-row>
         <el-row class="flex justify-center">
-          <el-button type="success" plain @click="router.push('/admin')">
+          <el-button type="success" plain @click="navigateTo('/admin')">
             <Icon name="i-carbon-carbon-for-ibm-dotcom" class="pr-1" />
             前往管理后台
           </el-button>

@@ -2,13 +2,12 @@
 import { ElMessage } from 'element-plus'
 const userStore = useUserStore()
 const userInfo = ref(userStore.userInfo)
-const router = useRouter()
 </script>
 
 <template>
   <ClientOnly>
     <el-menu class="navbar pr-8" mode="horizontal" :ellipsis="false">
-      <el-link class="logo text-lg" :underline="false" type="success" @click="router.push('/admin')">
+      <el-link class="logo text-lg" :underline="false" type="success" @click="navigateTo('/admin')">
         <el-image class="w-8" src="/image/admin3-logo.png" fit="cover" />
         <span>Admin3 管理后台</span>
       </el-link>
@@ -17,7 +16,7 @@ const router = useRouter()
       </el-link>
       <AdminNavBreadcrumb class="pl-4" />
       <div class="flex-grow" />
-      <el-link class="ml-4" :underline="false" @click="router.push('/')">
+      <el-link class="ml-4" :underline="false" @click="navigateTo('/')">
         <Icon name="i-twemoji-house-with-garden" />
       </el-link>
       <CommonDarkToggle class="mx-4" />

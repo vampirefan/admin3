@@ -1,5 +1,6 @@
 <script setup lang="ts">
-await navigateTo('/admin/welcome')
+/** 使用 replace 实现 redirect */
+await navigateTo('/admin/welcome', { replace: true })
 </script>
 
 <template>

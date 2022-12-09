@@ -15,6 +15,7 @@ export default defineNuxtRouteMiddleware((to) => {
     if (permissionStore.routes.length === 0)
       permissionStore.generateRoutes()
   }
+
   /** 路径不在白名单内，重定向至登陆页面 */
   else if (!whiteList.some(path => pathToRegExp(path).test(to.path))) {
     return navigateTo('/')

@@ -31,7 +31,7 @@ getBreadcrumb()
   <el-breadcrumb separator="/">
     <transition-group appear name="breadcrumb">
       <el-breadcrumb-item v-for="item in levelList" :key="item.path">
-        <el-link v-if="routerExists(item.path)" :underline="false" @click.prevent="router.push(item.path)">
+        <el-link v-if="routerExists(item.path)" :underline="false" @click.prevent="navigateTo(item.path)">
           {{ item.meta.title }}
         </el-link>
         <span v-else class="vertical-mid">

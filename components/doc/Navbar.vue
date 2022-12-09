@@ -6,9 +6,6 @@ const navTree = navigation.value.find((nav: any) => nav._path === '/doc').childr
 const activeMenu = computed(() => {
   return route.path
 })
-function routerToLink(menuItem: any) {
-  router.push(menuItem.index)
-}
 </script>
 
 <template>
@@ -24,11 +21,11 @@ function routerToLink(menuItem: any) {
           <Icon :name="link.icon" />{{ link.title }}
         </template>
         <el-menu-item v-for="sublink of link.children" :key="sublink._path" :index="sublink._path"
-          @click="routerToLink">
+          @click="navigateTo(sublink.index)">
           {{ sublink.title }}
         </el-menu-item>
       </el-sub-menu>
-      <el-link class="ml-4 text-xl" :underline="false" @click="routerToLink({ index: '/' })">
+      <el-link class="ml-4 text-xl" :underline="false" @click="navigateTo('/')">
         <Icon name="i-twemoji-house-with-garden" />
       </el-link>
       <CommonDarkToggle class="ml-4 text-xl" />
