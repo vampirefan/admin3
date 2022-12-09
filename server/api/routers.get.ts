@@ -7,11 +7,19 @@ const routers = [
       title: '演示demo', /** 菜单标题 */
     },
     children: [{
+      name: 'demo-elementplus',
+      path: '/admin/demo/elementplus',
+      meta: {
+        icon: 'i-ep-element-plus',
+        title: 'Element 组件',
+        showParent: true,
+      },
+    }, {
       name: 'demo-icon',
       path: '/admin/demo/icon',
       meta: {
         icon: 'i-carbon-face-satisfied',
-        title: '图标',
+        title: 'Iconify 在线图标',
         showParent: true,
       },
     }],

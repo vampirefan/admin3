@@ -6,16 +6,16 @@ const menus = permissionStore.routes
 </script>
 
 <template>
-  <ClientOnly>
-    <div class="sidebar">
-      <el-scrollbar>
-        <el-menu router unique-opened mode="vertical" :collapse="isCollapse" :default-active="route.path">
-          <AdminSidebarItem v-for="(route, index) in menus" :key="route.path + index" :item="route"
-            :base-path="route.path" />
-        </el-menu>
-      </el-scrollbar>
-    </div>
-  </ClientOnly>
+  <!-- <ClientOnly> -->
+  <div class="sidebar">
+    <el-scrollbar>
+      <el-menu router unique-opened mode="vertical" :collapse="isCollapse" :default-active="route.path">
+        <AdminSidebarItem v-for="(route, index) in menus" :key="route.path + index" :item="route"
+          :base-path="route.path" />
+      </el-menu>
+    </el-scrollbar>
+  </div>
+  <!-- </ClientOnly> -->
 </template>
 
 <style scoped>

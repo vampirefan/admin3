@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
 definePageMeta({
-  title: '图标',
   layout: 'admin',
 })
 const { copy } = useClipboard()
