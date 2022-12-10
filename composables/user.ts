@@ -35,7 +35,7 @@ export const useUserStore = defineStore('user', () => {
     userInfo.value.username = ''
     userInfo.value.roles = []
     removeToken()
-    // router.push('/login')
+    navigateTo('/')
     // useMultiTagsStoreHook().handleTags('equal', [...routerArrays])
     // resetRouter()
   }
