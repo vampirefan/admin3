@@ -2,7 +2,12 @@
 import { useDark, useToggle } from '@vueuse/core'
 
 const isDark = useDark()
-const toggleDark = useToggle(isDark)
+
+// const toggleDark = useToggle(isDark)
+function toggleDark() {
+  useToggle(isDark).call(isDark)
+  useConfigStore().setSidebarDark(isDark.value)
+}
 </script>
 
 <template>

@@ -1,12 +1,9 @@
 <script setup lang="ts">
-// change primary color to vue-green
-// import { useCssVar } from '@vueuse/core'
-// const el = ref(null)
-// useCssVar('--el-color-primary', el).value = '#42b883'
-// useCssVar('--el-color-primary-light-9', el).value = '#f0f9eb'
+const configStore = useConfigStore()
 useHead({
-  title: 'Admin3 后台管理模板',
+  title: configStore.config.title,
 })
+configStore.initConfig()
 </script>
 
 <template>
@@ -15,7 +12,3 @@ useHead({
     <NuxtPage />
   </div>
 </template>
-
-<style>
-
-</style>

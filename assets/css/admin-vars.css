@@ -2,4 +2,10 @@
   /* layout vars */
   --admin-navbar-height: 3rem;
   --admin-sidebar-width: 13.5rem;
+
+  /* sidebar dark as default */
+  --admin-sidebar-bg-color: #22272e; 
+  --admin-sidebar-hover-bg-color: #18222c; 
+  --admin-sidebar-text-color: #e5eaf3; 
+
 }

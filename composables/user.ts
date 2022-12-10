@@ -1,5 +1,4 @@
 import { skipHydrate } from 'pinia'
-import { useStorage } from '@vueuse/core'
 
 /**
  * 无感刷新 token
@@ -11,7 +10,7 @@ import { useStorage } from '@vueuse/core'
 export const useUserStore = defineStore('user', () => {
   /** state */
   const authToken = ref(useCookie('auth-token', { maxAge: 2 * 60 * 60 })) // 2小时过期
-  const userInfo = ref(useStorage('user-info', { username: '', roles: [] as Array<string>, refreshToken: '', maxAge: 60 }))
+  const userInfo = ref(useLocalStorage('user-info', { username: '', roles: [] as Array<string>, refreshToken: '', maxAge: 60 }))
 
   /** actions */
   function removeToken() {

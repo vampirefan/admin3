@@ -56,19 +56,18 @@ function hasOneShowingChild(
       && (!onlyOneChild.children || onlyOneChild.noShowingChildren)
     ">
       <el-menu-item v-if="onlyOneChild.meta" :index="onlyOneChild.path">
+        <Icon :name="onlyOneChild.meta.icon" />
         <template #title>
-          <Icon :name="onlyOneChild.meta.icon" />
-          {{ onlyOneChild.meta.title }}
+          <span>{{ onlyOneChild.meta.title }}</span>
         </template>
       </el-menu-item>
     </template>
 
-    <el-sub-menu v-else ref="subMenu" :index="item.path" popper-append-to-body>
+    <el-sub-menu v-else ref="subMenu" :index="item.path">
       <template v-if="item.meta" #title>
         <Icon :name="item.meta.icon" />
-        {{ item.meta.title }}
+        <span>{{ item.meta.title }}</span>
       </template>
-
       <AdminSidebarItem v-for="child in item.children" :key="child.path" :is-nest="true" :item="child"
         :base-path="child.path" />
     </el-sub-menu>
