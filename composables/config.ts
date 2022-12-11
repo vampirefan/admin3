@@ -9,6 +9,7 @@ export const useConfigStore = defineStore('config', () => {
     setSidebarDark(config.value.sidebarDark || appConfig.sidebarDark)
     setSidebarWidth(config.value.sidebarWidth || appConfig.sidebarWidth)
     setSidebarCollapse(config.value.sidebarCollapse || appConfig.sidebarCollapse)
+    setNavBreadcrumb(config.value.navBreadcrumb || appConfig.navBreadcrumb)
   }
   function resetConfig() {
     config.value = { ...appConfig }
@@ -47,6 +48,10 @@ export const useConfigStore = defineStore('config', () => {
       useCssVar('--admin-sidebar-width').value = `${config.value.sidebarWidth}px`
   }
 
+  function setNavBreadcrumb(navBreadcrumb: boolean) {
+    config.value.navBreadcrumb = navBreadcrumb
+  }
+
   return {
     config: skipHydrate(config),
     initConfig,
@@ -55,5 +60,6 @@ export const useConfigStore = defineStore('config', () => {
     setSidebarDark,
     setSidebarWidth,
     setSidebarCollapse,
+    setNavBreadcrumb,
   }
 })

@@ -19,7 +19,7 @@ function toggleSidebarCollapse() {
         <Icon v-if="config.sidebarCollapse" name="i-ep-expand" />
         <Icon v-else name="i-ep-fold" />
       </el-link>
-      <AdminNavBreadcrumb class="mx-2" />
+      <AdminNavBreadcrumb v-if="config.navBreadcrumb" class="mx-2" />
       <div class="flex-grow" />
       <AdminConfig class="mx-2" />
       <el-link class="mx-2" :underline="false" @click="navigateTo('/')">

@@ -11,21 +11,25 @@ const { config } = storeToRefs(configStore)
     <el-link :underline="false" @click="drawerShow = true">
       <Icon name="i-twemoji-hammer-and-wrench" />
     </el-link>
-    <el-drawer v-model="drawerShow" :append-to-body="true" title="布局配置" direction="rtl" size="320">
-      <el-form @submit.prevent>
-        <el-divider class="mt-0">
-          全局主题
-        </el-divider>
+    <el-drawer v-model="drawerShow" class="config-drawer" :append-to-body="true" direction="rtl" size="320">
+      <template #header>
+        <span>布局配置</span>
+      </template>
+      <el-form label-width="120" label-position="left" @submit.prevent>
         <el-form-item label="全局主题">
           <CommonDarkToggle />
         </el-form-item>
-        <el-form-item label="菜单主题">
-          <el-switch v-model="config.sidebarDark" active-text="深色" inactive-text="浅色" inline-prompt class="mr-2"
+        <el-form-item label="边栏主题">
+          <el-switch v-model="config.sidebarDark" active-text="深色" inactive-text="浅色" inline-prompt
             @change="configStore.setSidebarDark" />
         </el-form-item>
-        <el-form-item label="菜单宽度">
+        <el-form-item label="边栏宽度">
           <el-input-number v-model="config.sidebarWidth" :min="0" :max="660" controls-position="right"
             @change="configStore.setSidebarWidth" />
+        </el-form-item>
+        <el-form-item label="顶栏面包屑导航">
+          <el-switch v-model="config.navBreadcrumb" active-text="显示" inactive-text="隐藏" inline-prompt
+            @change="configStore.setNavBreadcrumb" />
         </el-form-item>
       </el-form>
       <el-divider />
@@ -38,3 +42,14 @@ const { config } = storeToRefs(configStore)
     </el-drawer>
   </div>
 </template>
+
+<style>
+.config-drawer .el-drawer__header {
+  margin-bottom: unset;
+  padding-bottom: var(--el-drawer-padding-primary);
+}
+
+.config-drawer .el-drawer__body {
+  border-top: 1px solid var(--el-border-color);
+}
+</style>

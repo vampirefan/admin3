@@ -4,5 +4,6 @@ export default defineAppConfig({
   sidebarDark: true,
   sidebarWidth: 220,
   sidebarCollapse: false,
+  navBreadcrumb: true,
 })
 

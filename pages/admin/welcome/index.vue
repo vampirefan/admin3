@@ -14,13 +14,15 @@ const done = [
   'sidebar, navbar',
   '路由',
   '顶栏面包屑',
+  '布局组件: 固定 header、footer, content auto scroll',
+  '侧边栏折叠',
+  'iconify 在线图标演示、elementplus 演示',
 ]
 
 const todo = [
   '页面缓存, tagsView',
   '各种演示demo: icon、表单、树状选择、系统管理',
   '布局切换',
-  '布局组件: 固定 header、footer, content auto scroll',
   '页面切换动画',
   '权限管理',
   '主题、颜色切换',

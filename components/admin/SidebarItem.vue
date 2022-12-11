@@ -23,14 +23,14 @@ interface childrenType {
   showTooltip?: boolean
 }
 
-const onlyOneChild = ref<childrenType>({})
+const onlyChild = ref<childrenType>({})
 
 function hasOneShowingChild(
   children: childrenType[] = [],
   parent: childrenType,
 ) {
   const showingChildren = children.filter((item: any) => {
-    onlyOneChild.value = item
+    onlyChild.value = item
     return true
   })
   if (showingChildren[0]?.meta?.showParent)
@@ -38,7 +38,7 @@ function hasOneShowingChild(
   if (showingChildren.length === 1)
     return true
   if (showingChildren.length === 0) {
-    onlyOneChild.value = { ...parent, noShowingChildren: true }
+    onlyChild.value = { ...parent, noShowingChildren: true }
     return true
   }
   return false
@@ -48,15 +48,15 @@ function hasOneShowingChild(
 <template>
   <el-menu-item v-if="
   hasOneShowingChild(props.item.children, props.item)
-  && (!onlyOneChild.children || onlyOneChild.noShowingChildren) && onlyOneChild.meta" :index="onlyOneChild.path">
-    <Icon :name="onlyOneChild.meta.icon" />
+  && (!onlyChild.children || onlyChild.noShowingChildren) && onlyChild.meta" :index="onlyChild.path">
+    <Icon v-if="onlyChild.meta.icon" :name="onlyChild.meta.icon" />
     <template #title>
-      <span>{{ onlyOneChild.meta.title }}</span>
+      <span>{{ onlyChild.meta.title }}</span>
     </template>
   </el-menu-item>
   <el-sub-menu v-else :index="item.path">
     <template v-if="item.meta" #title>
-      <Icon :name="item.meta.icon" />
+      <Icon v-if="item.meta.icon" :name="item.meta.icon" />
       <span>{{ item.meta.title }}</span>
     </template>
     <AdminSidebarItem v-for="child in item.children" :key="child.path" :is-nest="true" :item="child" />
