@@ -6,18 +6,15 @@ import { skipHydrate } from 'pinia'
  * 在 cookie（过期自动销毁）里存放: { auth-token: accessToken }
  * 在 localStorage（浏览器关闭自动销毁）里存放：{ user-info: { username, roles, refreshToken, maxAge } }
  */
+const authTokenOption = { maxAge: 2 * 60 * 60 }
+const userInfoInit = { username: '', roles: [] as Array<string>, refreshToken: '', maxAge: 60 }
 
 export const useUserStore = defineStore('user', () => {
   /* state */
-  const authToken = ref(useCookie('auth-token', { maxAge: 2 * 60 * 60 })) // 2小时过期
-  const userInfo = ref(useLocalStorage('user-info', { username: '', roles: [] as Array<string>, refreshToken: '', maxAge: 60 }))
+  const authToken = ref(useCookie('auth-token', authTokenOption)) // 2小时过期
+  const userInfo = ref(useLocalStorage('user-info', userInfoInit))
 
   /* actions */
-  function removeToken() {
-    authToken.value = null
-    userInfo.value = null
-  }
-
   /* 登入 */
   async function login(data: any) {
     const { data: loginResponse } = await $fetch('/api/login', { method: 'post', body: data })
@@ -31,9 +28,8 @@ export const useUserStore = defineStore('user', () => {
 
   /* 前端登出（不调用接口） */
   async function logOut() {
-    userInfo.value.username = ''
-    userInfo.value.roles = []
-    removeToken()
+    authToken.value = null
+    userInfo.value = { ...userInfoInit }
     navigateTo('/')
     // useMultiTagsStoreHook().handleTags('equal', [...routerArrays])
     // resetRouter()

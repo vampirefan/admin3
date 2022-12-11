@@ -1,25 +1,32 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-
 const route = useRoute()
 const permissionStore = usePermissionStore()
 const configStore = useConfigStore()
 const { config } = storeToRefs(configStore)
 const { routes } = storeToRefs(permissionStore)
+const defaultActive = ref(route.path)
+/* keep-alive hack: 重新刷新以选中菜单 */
+onActivated(() => {
+  defaultActive.value = route.path
+})
+onDeactivated(() => {
+  defaultActive.value = ''
+})
 </script>
 
 <template>
-  <!-- <ClientOnly> -->
-  <AdminNavLogo />
-  <div class="sidebar">
-    <el-scrollbar>
-      <el-menu class="sidebar-menu" router unique-opened mode="vertical" :collapse="config.sidebarCollapse"
-        :collapse-transition="false" :default-active="route.path">
-        <AdminSidebarItem v-for="(route, index) in routes" :key="route.path + index" :item="route" />
-      </el-menu>
-    </el-scrollbar>
-  </div>
-  <!-- </ClientOnly> -->
+  <ClientOnly>
+    <AdminNavLogo />
+    <div class="sidebar">
+      <el-scrollbar>
+        <el-menu :key="route.fullPath" class="sidebar-menu" router unique-opened mode="vertical"
+          :collapse="config.sidebarCollapse" :collapse-transition="false" :default-active="defaultActive">
+          <AdminSidebarItem v-for="(item, index) in routes" :key="item.path + index" :item="item" />
+        </el-menu>
+      </el-scrollbar>
+    </div>
+  </ClientOnly>
 </template>
 
 <style>

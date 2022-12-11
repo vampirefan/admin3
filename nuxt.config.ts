@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // ssr: false, // 使用 ssr 则删掉这一行
-  // app: {
-  //   baseURL: '/admin3/',
-  // }
+  app: {
+    keepalive: true,
+  },
 
   /** full-Static mode payload extraction option:
    *  see: https://github.com/nuxt/framework/discussions/7691?sort=new */

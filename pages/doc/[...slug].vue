@@ -2,6 +2,7 @@
 <template>
   <NuxtLayout name="doc">
     <ContentDoc />
+    <el-backtop />
   </NuxtLayout>
 </template>
 

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
-definePageMeta({
-  layout: 'admin',
-})
+definePageMeta({ layout: 'admin' })
 const { copy } = useClipboard()
 const iconCollections = ref<{ name: string; prefix: string }[]>([])
 const iconCollectionSelected = ref('ep')

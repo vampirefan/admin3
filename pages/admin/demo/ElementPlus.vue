@@ -1,7 +1,5 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: 'admin',
-})
+definePageMeta({ layout: 'admin' })
 const demoData = reactive({
   input: '',
   radioGroup: '',
