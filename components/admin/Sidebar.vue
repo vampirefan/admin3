@@ -22,7 +22,7 @@ const { routes } = storeToRefs(permissionStore)
   <!-- </ClientOnly> -->
 </template>
 
-<style scoped>
+<style>
 .sidebar {
   overflow: hidden;
   width: var(--admin-sidebar-width);
@@ -39,25 +39,26 @@ const { routes } = storeToRefs(permissionStore)
   background-color: var(--admin-sidebar-bg-color);
 }
 
-.sidebar-menu :deep(.el-menu),
-.sidebar-menu :deep(.el-sub-menu__title) {
+.sidebar .el-menu.sidebar-menu,
+.sidebar .el-menu.el-menu--inline,
+.el-menu--vertical.el-menu--popup-container .el-menu {
   background-color: var(--admin-sidebar-bg-color);
 }
 
-.sidebar-menu :deep(.el-sub-menu).is-active>.el-sub-menu__title {
+.sidebar .el-menu-item:not(.is-active),
+.sidebar .el-sub-menu__title:not(.is-active),
+.el-menu--vertical.el-menu--popup-container .el-menu-item:not(.is-active) {
+  color: var(--admin-sidebar-text-color)
+}
+
+.sidebar .el-sub-menu.is-active>.el-sub-menu__title {
   color: var(--el-menu-active-color)
 }
 
-.sidebar-menu :deep(.el-menu-item).is-active {
-  background-color: var(--admin-sidebar-hover-bg-color);
-}
-
-.sidebar-menu :deep(.el-menu-item):not(.is-active),
-.sidebar-menu :deep(.el-sub-menu__title):not(.is-active) {
-  color: var(--admin-sidebar-text-color);
-}
-
-.sidebar-menu :deep(.el-menu-item):hover {
+.sidebar .el-menu-item.is-active,
+.el-menu--vertical.el-menu--popup-container .el-menu-item:hover,
+.sidebar .el-menu-item:hover,
+.sidebar .el-sub-menu__title:hover {
   background-color: var(--admin-sidebar-hover-bg-color);
 }
 </style>
