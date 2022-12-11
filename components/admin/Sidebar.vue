@@ -42,6 +42,10 @@ const menus = permissionStore.routes
   background-color: var(--admin-sidebar-bg-color);
 }
 
+.sidebar-menu :deep(.el-menu-item).is-active {
+  background-color: var(--admin-sidebar-hover-bg-color);
+}
+
 .sidebar-menu :deep(.el-menu-item):not(.is-active),
 .sidebar-menu :deep(.el-sub-menu__title):not(.is-active) {
   color: var(--admin-sidebar-text-color);

@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { useDark, useToggle } from '@vueuse/core'
+import { useToggle } from '@vueuse/core'
 
-const isDark = useDark()
+const configStore = useConfigStore()
+const isDark = ref(configStore.config.themeDark)
+configStore.$subscribe((mutation, state) => {
+  isDark.value = state.config.themeDark
+})
 
-// const toggleDark = useToggle(isDark)
 function toggleDark() {
-  useToggle(isDark).call(isDark)
-  useConfigStore().setSidebarDark(isDark.value)
+  useToggle(isDark).call(isDark) // 不知道 Function.call() 这样用对不对
+  configStore.setThemeDark(isDark.value)
+  configStore.setSidebarDark(isDark.value) // 设定主题色的同时设定菜单主题色
 }
 </script>
 
