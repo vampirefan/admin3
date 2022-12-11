@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
+import { storeToRefs } from 'pinia'
+
 const userStore = useUserStore()
-const userInfo = ref(userStore.userInfo)
+const { userInfo } = storeToRefs(userStore)
+
 const usernameInput = ref('')
-userStore.$subscribe((mutation, state) => {
-  userInfo.value = state.userInfo
-})
 
 const isLoggedIn = computed(() => {
   return userStore.authToken && userInfo.value && userInfo.value.username

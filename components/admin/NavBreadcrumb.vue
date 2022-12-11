@@ -1,30 +1,24 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
+
 const route = useRoute()
 const router = useRouter()
-const levelList = ref<any[]>([])
 
 const permissionStore = usePermissionStore()
-const routes = ref<any[]>(permissionStore.routes)
-permissionStore.$subscribe((mutation, state) => {
-  routes.value = state.routes
-  getBreadcrumb()
-})
-
-function getBreadcrumb() {
+const { routes } = storeToRefs(permissionStore)
+const levelList = computed(() => {
   const matched = useTreeFindPath(routes.value, (item: any) => item.path === route.path)
-  const dashboardRoute = [{ path: '/admin', meta: { title: '首页' } }]
-  // 判断是否为首页
-  if (route.path === '/admin/welcome')
-    levelList.value = dashboardRoute
+  const indexRoute = { path: '/admin/welcome', meta: { title: '首页' } }
+  /* 判断是否为首页 */
+  if (route.path === indexRoute.path)
+    return [indexRoute]
   else
-    levelList.value = dashboardRoute.concat(matched)
-}
+    return [indexRoute].concat(matched)
+})
 
 function routerExists(path: string) {
   return router.options.routes.find(item => item.path === path)
 }
-
-getBreadcrumb()
 </script>
 
 <template>

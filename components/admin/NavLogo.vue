@@ -1,5 +1,5 @@
 <template>
-  <el-link class="logo text-lg" :underline="false" type="success" @click="navigateTo('/admin')">
+  <el-link class="logo text-lg cursor-text" :underline="false" type="success">
     <el-image class="w-8" src="/image/admin3-logo.png" fit="cover" />
     <span>Admin3 管理后台</span>
   </el-link>

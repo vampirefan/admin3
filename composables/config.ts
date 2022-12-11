@@ -8,6 +8,7 @@ export const useConfigStore = defineStore('config', () => {
     setThemeDark(config.value.themeDark || appConfig.themeDark)
     setSidebarDark(config.value.sidebarDark || appConfig.sidebarDark)
     setSidebarWidth(config.value.sidebarWidth || appConfig.sidebarWidth)
+    setSidebarCollapse(config.value.sidebarCollapse || appConfig.sidebarCollapse)
   }
   function resetConfig() {
     config.value = { ...appConfig }
@@ -38,5 +39,17 @@ export const useConfigStore = defineStore('config', () => {
     useCssVar('--admin-sidebar-width').value = `${width}px`
   }
 
-  return { config: skipHydrate(config), initConfig, resetConfig, setThemeDark, setSidebarDark, setSidebarWidth }
+  function setSidebarCollapse(collapse: boolean) {
+    config.value.sidebarCollapse = collapse
+  }
+
+  return {
+    config: skipHydrate(config),
+    initConfig,
+    resetConfig,
+    setThemeDark,
+    setSidebarDark,
+    setSidebarWidth,
+    setSidebarCollapse,
+  }
 })

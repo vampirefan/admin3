@@ -8,17 +8,17 @@ import { skipHydrate } from 'pinia'
  */
 
 export const useUserStore = defineStore('user', () => {
-  /** state */
+  /* state */
   const authToken = ref(useCookie('auth-token', { maxAge: 2 * 60 * 60 })) // 2小时过期
   const userInfo = ref(useLocalStorage('user-info', { username: '', roles: [] as Array<string>, refreshToken: '', maxAge: 60 }))
 
-  /** actions */
+  /* actions */
   function removeToken() {
     authToken.value = null
     userInfo.value = null
   }
 
-  /** 登入 */
+  /* 登入 */
   async function login(data: any) {
     const { data: loginResponse } = await $fetch('/api/login', { method: 'post', body: data })
     if (loginResponse) {
@@ -29,7 +29,7 @@ export const useUserStore = defineStore('user', () => {
     return loginResponse
   }
 
-  /** 前端登出（不调用接口） */
+  /* 前端登出（不调用接口） */
   async function logOut() {
     userInfo.value.username = ''
     userInfo.value.roles = []
@@ -38,7 +38,7 @@ export const useUserStore = defineStore('user', () => {
     // useMultiTagsStoreHook().handleTags('equal', [...routerArrays])
     // resetRouter()
   }
-  /** 刷新 token  */
+  /* 刷新 token  */
   async function handRefreshToken(data: any) {
     const { data: refreshTokenResponse } = await $fetch('/api/refreshToken', { method: 'post', body: data })
     if (refreshTokenResponse) {

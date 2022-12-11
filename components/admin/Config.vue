@@ -1,12 +1,9 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
+
 const drawerShow = ref(false)
 const configStore = useConfigStore()
-const sidebarDark = ref(configStore.config.sidebarDark)
-const sidebarWidth = ref(configStore.config.sidebarWidth)
-configStore.$subscribe((mutation, state) => {
-  sidebarDark.value = state.config.sidebarDark
-  sidebarWidth.value = state.config.sidebarWidth
-})
+const { config } = storeToRefs(configStore)
 </script>
 
 <template>
@@ -23,11 +20,11 @@ configStore.$subscribe((mutation, state) => {
           <CommonDarkToggle />
         </el-form-item>
         <el-form-item label="菜单主题">
-          <el-switch v-model="sidebarDark" active-text="深色" inactive-text="浅色" inline-prompt class="mr-2"
+          <el-switch v-model="config.sidebarDark" active-text="深色" inactive-text="浅色" inline-prompt class="mr-2"
             @change="configStore.setSidebarDark" />
         </el-form-item>
         <el-form-item label="菜单宽度">
-          <el-input-number v-model="sidebarWidth" :min="0" :max="660" controls-position="right"
+          <el-input-number v-model="config.sidebarWidth" :min="0" :max="660" controls-position="right"
             @change="configStore.setSidebarWidth" />
         </el-form-item>
       </el-form>

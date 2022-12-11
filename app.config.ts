@@ -3,5 +3,6 @@ export default defineAppConfig({
   themeDark: false,
   sidebarDark: true,
   sidebarWidth: 220,
+  sidebarCollapse: false,
 })
 
