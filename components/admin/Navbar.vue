@@ -1,14 +1,23 @@
 <script lang="ts" setup>
-import { ElMessage } from 'element-plus'
+import { storeToRefs } from 'pinia'
+
 const userStore = useUserStore()
-const userInfo = ref(userStore.userInfo)
+const configStore = useConfigStore()
+const { userInfo } = storeToRefs(userStore)
+const { config } = storeToRefs(configStore)
+
+function toggleSidebarCollapse() {
+  const collapse = config.value.sidebarCollapse
+  configStore.setSidebarCollapse(!collapse)
+}
 </script>
 
 <template>
   <ClientOnly>
     <el-menu class="navbar pr-4" mode="horizontal" :ellipsis="false">
-      <el-link :underline="false" @click="ElMessage('呀，被发现了！折叠菜单还没做...')">
-        <Icon name="i-ep-fold" class="mx-2 text-lg" />
+      <el-link class="mx-2 text-lg" :underline="false" @click="toggleSidebarCollapse()">
+        <Icon v-if="config.sidebarCollapse" name="i-ep-expand" />
+        <Icon v-else name="i-ep-fold" />
       </el-link>
       <AdminNavBreadcrumb class="mx-2" />
       <div class="flex-grow" />

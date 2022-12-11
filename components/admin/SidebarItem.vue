@@ -9,10 +9,6 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  basePath: {
-    type: String,
-    default: '',
-  },
 })
 
 interface childrenType {
@@ -50,26 +46,19 @@ function hasOneShowingChild(
 </script>
 
 <template>
-  <div v-if="!item.hidden">
-    <template v-if="
-      hasOneShowingChild(props.item.children, props.item)
-      && (!onlyOneChild.children || onlyOneChild.noShowingChildren)
-    ">
-      <el-menu-item v-if="onlyOneChild.meta" :index="onlyOneChild.path">
-        <Icon :name="onlyOneChild.meta.icon" />
-        <template #title>
-          <span>{{ onlyOneChild.meta.title }}</span>
-        </template>
-      </el-menu-item>
+  <el-menu-item v-if="
+  hasOneShowingChild(props.item.children, props.item)
+  && (!onlyOneChild.children || onlyOneChild.noShowingChildren) && onlyOneChild.meta" :index="onlyOneChild.path">
+    <Icon :name="onlyOneChild.meta.icon" />
+    <template #title>
+      <span>{{ onlyOneChild.meta.title }}</span>
     </template>
-
-    <el-sub-menu v-else ref="subMenu" :index="item.path">
-      <template v-if="item.meta" #title>
-        <Icon :name="item.meta.icon" />
-        <span>{{ item.meta.title }}</span>
-      </template>
-      <AdminSidebarItem v-for="child in item.children" :key="child.path" :is-nest="true" :item="child"
-        :base-path="child.path" />
-    </el-sub-menu>
-  </div>
+  </el-menu-item>
+  <el-sub-menu v-else :index="item.path">
+    <template v-if="item.meta" #title>
+      <Icon :name="item.meta.icon" />
+      <span>{{ item.meta.title }}</span>
+    </template>
+    <AdminSidebarItem v-for="child in item.children" :key="child.path" :is-nest="true" :item="child" />
+  </el-sub-menu>
 </template>

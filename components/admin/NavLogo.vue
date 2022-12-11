@@ -1,7 +1,13 @@
+<script setup lang="ts">
+import { storeToRefs } from 'pinia'
+const configStore = useConfigStore()
+const { config } = storeToRefs(configStore)
+</script>
+
 <template>
   <el-link class="logo text-lg cursor-text" :underline="false" type="success">
     <el-image class="w-8" src="/image/admin3-logo.png" fit="cover" />
-    <span>Admin3 管理后台</span>
+    <span v-if="!config.sidebarCollapse">Admin3 管理后台</span>
   </el-link>
 </template>
 

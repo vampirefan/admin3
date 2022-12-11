@@ -41,6 +41,10 @@ export const useConfigStore = defineStore('config', () => {
 
   function setSidebarCollapse(collapse: boolean) {
     config.value.sidebarCollapse = collapse
+    if (collapse)
+      useCssVar('--admin-sidebar-width').value = '64px'
+    else
+      useCssVar('--admin-sidebar-width').value = `${config.value.sidebarWidth}px`
   }
 
   return {
