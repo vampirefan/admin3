@@ -1,6 +1,5 @@
 <script setup lang="ts">
-/** 使用 replace 实现 redirect */
-await navigateTo('/admin/welcome', { replace: true })
+definePageMeta({ redirect: '/admin/welcome' })
 </script>
 
 <template>

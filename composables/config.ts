@@ -29,7 +29,7 @@ export const useConfigStore = defineStore('config', () => {
       useCssVar('--admin-sidebar-text-color').value = '#e5eaf3'
     }
     else {
-      useCssVar('--admin-sidebar-bg-color').value = 'transparent'
+      useCssVar('--admin-sidebar-bg-color').value = '#ffffff'
       useCssVar('--admin-sidebar-hover-bg-color').value = '#ecf5ff'
       useCssVar('--admin-sidebar-text-color').value = '#2c3e50'
     }

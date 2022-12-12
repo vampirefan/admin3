@@ -6,7 +6,7 @@ const configStore = useConfigStore()
 const { config } = storeToRefs(configStore)
 const { routes } = storeToRefs(permissionStore)
 const defaultActive = ref(route.path)
-/* keep-alive hack: 重新刷新以选中菜单 */
+/* Hack for KeepAlive: 重新刷新以选中菜单 */
 onActivated(() => {
   defaultActive.value = route.path
 })

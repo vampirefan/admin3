@@ -21,7 +21,7 @@ const activeMenu = computed(() => {
           <Icon :name="link.icon" />{{ link.title }}
         </template>
         <el-menu-item v-for="sublink of link.children" :key="sublink._path" :index="sublink._path"
-          @click="navigateTo(sublink.index)">
+          @click="navigateTo(sublink._path)">
           {{ sublink.title }}
         </el-menu-item>
       </el-sub-menu>

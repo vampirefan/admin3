@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
 import { storeToRefs } from 'pinia'
-definePageMeta({ keepalive: false })
+
 const userStore = useUserStore()
 const { userInfo } = storeToRefs(userStore)
-
 const usernameInput = ref('')
 
 const isLoggedIn = computed(() => {
