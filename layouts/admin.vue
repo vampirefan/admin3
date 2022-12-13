@@ -1,8 +1,9 @@
 <template>
-  <div class="app-container">
+  <div>
     <AdminNavbar />
     <AdminSidebar />
-    <section class="main-container">
+    <AdminTagbar />
+    <section class="main">
       <el-scrollbar>
         <slot />
       </el-scrollbar>
@@ -11,15 +12,14 @@
 </template>
 
 <style scoped>
-.main-container {
+.main {
   overflow: hidden;
   overflow-y: auto;
   width: calc(100vw - var(--admin-sidebar-width));
   position: absolute;
   z-index: 1001;
-  top: var(--admin-navbar-height);
+  top: calc(var(--admin-navbar-height) + var(--admin-tagbar-height));
   left: var(--admin-sidebar-width);
   bottom: 0;
-
 }
 </style>

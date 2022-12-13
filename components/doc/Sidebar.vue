@@ -33,7 +33,7 @@ a {
   font-size: 16px;
   width: var(--doc-sidebar-width);
   position: fixed;
-  z-index: 10;
+  z-index: 20;
   margin: 0;
   top: var(--doc-navbar-height);
   left: 0;

@@ -5,9 +5,9 @@ const route = useRoute()
 const router = useRouter()
 
 const permissionStore = usePermissionStore()
-const { routes } = storeToRefs(permissionStore)
+const { menus } = storeToRefs(permissionStore)
 const levelList = computed(() => {
-  const matched = useTreeFindPath(routes.value, (item: any) => item.path === route.path)
+  const matched = useTreeFindPath(menus.value, (item: any) => item.path === route.path)
   const indexRoute = { path: '/admin/welcome', meta: { title: '首页' } }
   /* 判断是否为首页 */
   if (route.path === indexRoute.path)
@@ -16,7 +16,7 @@ const levelList = computed(() => {
     return [indexRoute].concat(matched)
 })
 
-function routerExists(path: string) {
+function routeExists(path: string) {
   return router.options.routes.find(item => item.path === path)
 }
 </script>
@@ -25,7 +25,7 @@ function routerExists(path: string) {
   <el-breadcrumb separator="/">
     <transition-group appear name="breadcrumb">
       <el-breadcrumb-item v-for="item in levelList" :key="item.path">
-        <el-link v-if="routerExists(item.path)" :underline="false" @click.prevent="navigateTo(item.path)">
+        <el-link v-if="routeExists(item.path)" :underline="false" @click.prevent="navigateTo(item.path)">
           {{ item.meta.title }}
         </el-link>
         <span v-else class="vertical-mid">

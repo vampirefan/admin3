@@ -5,11 +5,12 @@ export const useConfigStore = defineStore('config', () => {
   const config = ref(useLocalStorage('app-config', appConfig))
 
   function initConfig() {
-    setThemeDark(config.value.themeDark || appConfig.themeDark)
-    setSidebarDark(config.value.sidebarDark || appConfig.sidebarDark)
-    setSidebarWidth(config.value.sidebarWidth || appConfig.sidebarWidth)
-    setSidebarCollapse(config.value.sidebarCollapse || appConfig.sidebarCollapse)
-    setNavBreadcrumb(config.value.navBreadcrumb || appConfig.navBreadcrumb)
+    setThemeDark(config.value.themeDark ?? appConfig.themeDark)
+    setSidebarDark(config.value.sidebarDark ?? appConfig.sidebarDark)
+    setSidebarWidth(config.value.sidebarWidth ?? appConfig.sidebarWidth)
+    setSidebarCollapse(config.value.sidebarCollapse ?? appConfig.sidebarCollapse)
+    setNavBreadcrumb(config.value.navBreadcrumb ?? appConfig.navBreadcrumb)
+    setTagbar(config.value.tagbar ?? appConfig.tagbar)
   }
   function resetConfig() {
     config.value = { ...appConfig }
@@ -43,13 +44,21 @@ export const useConfigStore = defineStore('config', () => {
   function setSidebarCollapse(collapse: boolean) {
     config.value.sidebarCollapse = collapse
     if (collapse)
-      useCssVar('--admin-sidebar-width').value = '64px'
+      useCssVar('--admin-sidebar-width').value = useCssVar('--admin-sidebar-collapse-width').value
     else
       useCssVar('--admin-sidebar-width').value = `${config.value.sidebarWidth}px`
   }
 
   function setNavBreadcrumb(navBreadcrumb: boolean) {
     config.value.navBreadcrumb = navBreadcrumb
+  }
+
+  function setTagbar(tagbar: boolean) {
+    config.value.tagbar = tagbar
+    if (tagbar)
+      useCssVar('--admin-tagbar-height').value = '2.5rem'
+    else
+      useCssVar('--admin-tagbar-height').value = '0rem'
   }
 
   return {
@@ -61,5 +70,6 @@ export const useConfigStore = defineStore('config', () => {
     setSidebarWidth,
     setSidebarCollapse,
     setNavBreadcrumb,
+    setTagbar,
   }
 })

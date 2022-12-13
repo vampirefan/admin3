@@ -13,7 +13,7 @@ const { config } = storeToRefs(configStore)
 
 <style scoped>
 .logo {
-  z-index: 1002;
+  z-index: 22;
   width: var(--admin-sidebar-width);
   height: var(--admin-navbar-height);
   background-color: var(--admin-sidebar-bg-color);

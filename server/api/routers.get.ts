@@ -13,7 +13,6 @@ const routers = [
         title: 'Element 组件',
         icon: 'i-ep-element-plus',
         showParent: true,
-        noCache: true,
       },
     }, {
       name: 'demo-icon',
@@ -22,7 +21,7 @@ const routers = [
         title: 'Iconify 在线图标',
         icon: 'i-carbon-face-satisfied',
         showParent: true,
-        noCache: true,
+        // noCache: true,
       },
     }],
   },

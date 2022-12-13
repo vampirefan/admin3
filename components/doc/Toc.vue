@@ -1,9 +1,8 @@
 <script setup lang="ts">
 const { toc, page } = useContent()
 const route = useRoute()
-const router = useRouter()
 const scrollToHeading = (id: string) => {
-  router.push(`#${id}`)
+  navigateTo(`#${id}`)
 }
 </script>
 

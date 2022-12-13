@@ -10,7 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="container-main flex flex-col">
+  <div class="container flex flex-col">
     <div v-if="$slots.header" class="container-header px-6 py-2">
       <slot name="header" />
     </div>
@@ -32,8 +32,8 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.container-main {
-  height: calc(100vh - var(--admin-navbar-height));
+.container {
+  height: calc(100vh - var(--admin-navbar-height) - var(--admin-tagbar-height));
 }
 
 .card {

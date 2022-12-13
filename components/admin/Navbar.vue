@@ -37,13 +37,14 @@ function toggleSidebarCollapse() {
 <style scoped>
 .navbar {
   position: fixed;
-  z-index: 20;
+  z-index: 2001;
   top: 0;
   left: var(--admin-sidebar-width);
   right: 0;
   height: var(--admin-navbar-height);
   box-sizing: border-box;
   border-bottom: 1px solid var(--el-menu-border-color);
+  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
   display: flex;
   align-items: center;
 }

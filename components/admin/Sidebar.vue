@@ -4,7 +4,7 @@ const route = useRoute()
 const permissionStore = usePermissionStore()
 const configStore = useConfigStore()
 const { config } = storeToRefs(configStore)
-const { routes } = storeToRefs(permissionStore)
+const { menus } = storeToRefs(permissionStore)
 const defaultActive = ref(route.path)
 /* Hack for KeepAlive: 重新刷新以选中菜单 */
 onActivated(() => {
@@ -22,7 +22,7 @@ onDeactivated(() => {
       <el-scrollbar>
         <el-menu :key="route.fullPath" class="sidebar-menu" router unique-opened mode="vertical"
           :collapse="config.sidebarCollapse" :collapse-transition="false" :default-active="defaultActive">
-          <AdminSidebarItem v-for="(item, index) in routes" :key="item.path + index" :item="item" />
+          <AdminSidebarItem v-for="(item, index) in menus" :key="item.path + index" :item="item" />
         </el-menu>
       </el-scrollbar>
     </div>
@@ -34,7 +34,7 @@ onDeactivated(() => {
   overflow: hidden;
   width: var(--admin-sidebar-width);
   position: fixed;
-  z-index: 1001;
+  z-index: 21;
   top: var(--admin-navbar-height);
   left: 0;
   bottom: 0;

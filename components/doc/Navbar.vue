@@ -1,16 +1,12 @@
 <script setup lang="ts">
 const route = useRoute()
-const router = useRouter()
 const { navigation } = useContent()
 const navTree = navigation.value.find((nav: any) => nav._path === '/doc').children
-const activeMenu = computed(() => {
-  return route.path
-})
 </script>
 
 <template>
   <ClientOnly>
-    <el-menu class="navbar px-12" mode="horizontal" :ellipsis="false" :default-active="activeMenu">
+    <el-menu class="navbar px-12" mode="horizontal" :ellipsis="false" :default-active="route.path">
       <el-link class="mx-4 text-xl" :underline="false" type="success">
         <img src="/image/admin3-logo.png" alt="Admin3" height="30" class="mr-2">
         Admin 3

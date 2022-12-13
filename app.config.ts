@@ -5,5 +5,6 @@ export default defineAppConfig({
   sidebarWidth: 220,
   sidebarCollapse: false,
   navBreadcrumb: true,
+  tagbar: true,
 })
 
