@@ -23,6 +23,7 @@ export interface loginResponse {
 /** 登录 */
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
+  await useStorage().setItem('db:test', body)
   // mock login api response
   return {
     success: true,
@@ -32,7 +33,6 @@ export default defineEventHandler(async (event) => {
       accessToken: 'mocked-access-token', // 模拟访问 token
       maxAge: 60, // 过期时间, 单位: 秒, 默认 1 分钟过期，
       refreshToken: 'mockedRefreshedToken.adminRefresh', // 模拟刷新 token
-
     },
   }
   // return http.request<UserResult>('post', '/login', { data })

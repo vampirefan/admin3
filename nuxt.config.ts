@@ -1,8 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // ssr: false, // 使用 ssr 则删掉这一行
+  // ssr: false,
   app: {
     keepalive: true,
+  },
+
+  nitro: {
+    storage: {
+      db: {
+        driver: 'fs',
+        base: 'server/db',
+      },
+    },
   },
 
   /** full-Static mode payload extraction option:
@@ -10,6 +19,7 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false,
   },
+
   modules: [
     '@nuxt/content',
     '@unocss/nuxt',
