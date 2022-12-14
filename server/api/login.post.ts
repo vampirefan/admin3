@@ -23,17 +23,13 @@ export interface loginResponse {
 /** 登录 */
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
-  await useStorage().setItem('db:test', body)
+  const storage = useStorage()
+  const user = (await storage.getItem('db:users')).find((user: any) => user.username === 'mock')
+  user.username = body?.username
   // mock login api response
   return {
     success: true,
-    data: {
-      username: body ? body.username as string : 'manager', // 模拟登录用户
-      roles: ['admin'], // 模拟角色
-      accessToken: 'mocked-access-token', // 模拟访问 token
-      maxAge: 60, // 过期时间, 单位: 秒, 默认 1 分钟过期，
-      refreshToken: 'mockedRefreshedToken.adminRefresh', // 模拟刷新 token
-    },
+    data: user,
   }
   // return http.request<UserResult>('post', '/login', { data })
 })

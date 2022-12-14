@@ -1,0 +1,1 @@
+[{"name":"demo","path":"/admin/demo","meta":{"title":"演示demo","icon":"i-carbon-tool-box"},"children":[{"name":"demo-element-plus","path":"/admin/demo/element-plus","meta":{"title":"Element 组件","icon":"i-ep-element-plus","showParent":true}},{"name":"demo-icon","path":"/admin/demo/icon","meta":{"title":"Iconify 在线图标","icon":"i-carbon-face-satisfied","showParent":true}}]}]
