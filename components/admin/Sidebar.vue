@@ -39,6 +39,7 @@ onDeactivated(() => {
   left: 0;
   bottom: 0;
   overflow-y: auto;
+  transition: all var(--t-transform);
 }
 
 .sidebar-menu {

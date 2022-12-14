@@ -11,6 +11,7 @@ export const useConfigStore = defineStore('config', () => {
     setSidebarCollapse(config.value.sidebarCollapse ?? appConfig.sidebarCollapse)
     setNavBreadcrumb(config.value.navBreadcrumb ?? appConfig.navBreadcrumb)
     setTagbar(config.value.tagbar ?? appConfig.tagbar)
+    setTransitionType(config.value.transitionType ?? appConfig.transitionType)
   }
   function resetConfig() {
     config.value = { ...appConfig }
@@ -18,12 +19,11 @@ export const useConfigStore = defineStore('config', () => {
   }
 
   function setThemeDark(dark: boolean) {
-    config.value.themeDark = dark
     useDark().value = dark
+    config.value.themeDark = dark
   }
 
   function setSidebarDark(dark: boolean) {
-    config.value.sidebarDark = dark
     if (dark) {
       useCssVar('--admin-sidebar-bg-color').value = '#22272e'
       useCssVar('--admin-sidebar-hover-bg-color').value = '#343435'
@@ -34,19 +34,20 @@ export const useConfigStore = defineStore('config', () => {
       useCssVar('--admin-sidebar-hover-bg-color').value = '#ecf5ff'
       useCssVar('--admin-sidebar-text-color').value = '#2c3e50'
     }
+    config.value.sidebarDark = dark
   }
 
   function setSidebarWidth(width: number) {
-    config.value.sidebarWidth = width
     useCssVar('--admin-sidebar-width').value = `${width}px`
+    config.value.sidebarWidth = width
   }
 
   function setSidebarCollapse(collapse: boolean) {
-    config.value.sidebarCollapse = collapse
     if (collapse)
       useCssVar('--admin-sidebar-width').value = useCssVar('--admin-sidebar-collapse-width').value
     else
       useCssVar('--admin-sidebar-width').value = `${config.value.sidebarWidth}px`
+    config.value.sidebarCollapse = collapse
   }
 
   function setNavBreadcrumb(navBreadcrumb: boolean) {
@@ -54,11 +55,15 @@ export const useConfigStore = defineStore('config', () => {
   }
 
   function setTagbar(tagbar: boolean) {
-    config.value.tagbar = tagbar
     if (tagbar)
       useCssVar('--admin-tagbar-height').value = '2.5rem'
     else
       useCssVar('--admin-tagbar-height').value = '0rem'
+    config.value.tagbar = tagbar
+  }
+
+  function setTransitionType(transitionType: string) {
+    config.value.transitionType = transitionType
   }
 
   return {
@@ -71,5 +76,6 @@ export const useConfigStore = defineStore('config', () => {
     setSidebarCollapse,
     setNavBreadcrumb,
     setTagbar,
+    setTransitionType,
   }
 })

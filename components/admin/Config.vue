@@ -4,6 +4,11 @@ import { storeToRefs } from 'pinia'
 const drawerShow = ref(false)
 const configStore = useConfigStore()
 const { config } = storeToRefs(configStore)
+const transitionTypes = [
+  { title: '滑行', label: 'slide' },
+  { title: '淡入', label: 'fade' },
+  { title: '模糊', label: 'blur' },
+  { title: '缩放', label: 'scale' }]
 </script>
 
 <template>
@@ -15,7 +20,7 @@ const { config } = storeToRefs(configStore)
       <template #header>
         <span>布局配置</span>
       </template>
-      <el-form label-width="120" label-position="left" @submit.prevent>
+      <el-form label-width="100" label-position="left" @submit.prevent>
         <el-form-item label="全局主题">
           <CommonDarkToggle />
         </el-form-item>
@@ -27,13 +32,20 @@ const { config } = storeToRefs(configStore)
           <el-input-number v-model="config.sidebarWidth" :min="0" :max="660" controls-position="right"
             @change="configStore.setSidebarWidth" />
         </el-form-item>
-        <el-form-item label="顶栏面包屑导航">
+        <el-form-item label="顶栏面包屑">
           <el-switch v-model="config.navBreadcrumb" active-text="显示" inactive-text="隐藏" inline-prompt
             @change="configStore.setNavBreadcrumb" />
         </el-form-item>
         <el-form-item label="TagsView">
           <el-switch v-model="config.tagbar" active-text="显示" inactive-text="隐藏" inline-prompt
             @change="configStore.setTagbar" />
+        </el-form-item>
+        <el-form-item label="路由动画">
+          <el-radio-group v-model="config.transitionType">
+            <el-radio v-for="item in transitionTypes" :key="item.label" :label="item.label">
+              {{ item.title }}
+            </el-radio>
+          </el-radio-group>
         </el-form-item>
       </el-form>
       <el-divider />

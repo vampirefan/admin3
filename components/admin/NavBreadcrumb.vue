@@ -2,8 +2,6 @@
 import { storeToRefs } from 'pinia'
 
 const route = useRoute()
-const router = useRouter()
-
 const permissionStore = usePermissionStore()
 const { menus } = storeToRefs(permissionStore)
 const levelList = computed(() => {
@@ -17,7 +15,7 @@ const levelList = computed(() => {
 })
 
 function routeExists(path: string) {
-  return router.options.routes.find(item => item.path === path)
+  return useRouter().options.routes.find(item => item.path === path)
 }
 </script>
 

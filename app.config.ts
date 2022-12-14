@@ -6,5 +6,6 @@ export default defineAppConfig({
   sidebarCollapse: false,
   navBreadcrumb: true,
   tagbar: true,
+  transitionType: 'slide',
 })
 

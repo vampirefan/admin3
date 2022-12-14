@@ -7,8 +7,8 @@ const routers = [
       icon: 'i-carbon-tool-box', /** 菜单图标（iconify 使用 'i-'，svg 使用 'svg-'） */
     },
     children: [{
-      name: 'demo-elementplus',
-      path: '/admin/demo/elementplus',
+      name: 'demo-element-plus',
+      path: '/admin/demo/element-plus',
       meta: {
         title: 'Element 组件',
         icon: 'i-ep-element-plus',

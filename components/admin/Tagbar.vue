@@ -51,6 +51,7 @@ function closeAll() {
   align-items: center;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%), 0 0 3px 0 rgb(0 0 0 / 4%);
   border-bottom: 1px solid var(--el-menu-border-color);
+  /* transition: all var(--t-transform); */
 }
 
 .tagscroll {
