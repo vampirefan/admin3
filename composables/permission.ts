@@ -40,6 +40,7 @@ export const usePermissionStore = defineStore('permission', () => {
   function addMenuTag(menuTag: any) {
     taggedMenus.value.push(menuTag)
   }
+
   function removeMenuTag(menuTag: any) {
     const menuIndex = taggedMenus.value.findIndex(menu => menu.path === menuTag.path)
     /* 首页不能删除 */
@@ -48,9 +49,12 @@ export const usePermissionStore = defineStore('permission', () => {
     /* 返回前一个 MenuTag */
     return taggedMenus.value[menuIndex - 1]
   }
+
   function removeAllTaggedMenus() {
-    taggedMenus.value.splice(1, taggedMenus.value.length - 1)
+    if (taggedMenus.value.length > 1)
+      taggedMenus.value.splice(1, taggedMenus.value.length - 1)
     return taggedMenus.value[0]
   }
+
   return { menus, taggedMenus, generateMenus, addMenuTag, removeMenuTag, removeAllTaggedMenus }
 })

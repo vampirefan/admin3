@@ -36,7 +36,7 @@ const transitionTypes = [
           <el-switch v-model="config.navBreadcrumb" active-text="显示" inactive-text="隐藏" inline-prompt
             @change="configStore.setNavBreadcrumb" />
         </el-form-item>
-        <el-form-item label="TagsView">
+        <el-form-item label="标签导航">
           <el-switch v-model="config.tagbar" active-text="显示" inactive-text="隐藏" inline-prompt
             @change="configStore.setTagbar" />
         </el-form-item>

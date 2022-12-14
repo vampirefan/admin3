@@ -15,15 +15,14 @@ const done = [
   '布局组件: 固定 header、footer, content auto scroll',
   '侧边栏折叠',
   'iconify 在线图标演示、elementplus 演示',
+  '页面缓存, tagsView',
+  '页面切换动画',
 ]
 
 const todo = [
-  '页面缓存, tagsView',
   '各种演示demo: icon、表单、树状选择、系统管理',
   '布局切换',
-  '页面切换动画',
   '权限管理',
-  '主题、颜色切换',
   '全局搜索',
   '后端mock',
   '集成 E-chart',
