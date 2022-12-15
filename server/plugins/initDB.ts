@@ -5,5 +5,5 @@ export default defineNitroPlugin(async () => {
     await storage.setItem(`db:${data[0]}`, data[1])
 
   // eslint-disable-next-line no-console
-  console.log('database ready')
+  console.log('Database is ready.')
 })
