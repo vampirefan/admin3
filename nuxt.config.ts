@@ -24,7 +24,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@unocss/nuxt',
     '@vueuse/nuxt',
-    '@vueuse/motion/nuxt',
     ['@pinia/nuxt', { autoImports: ['defineStore'] }],
   ],
   css: [

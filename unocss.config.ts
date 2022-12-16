@@ -17,6 +17,7 @@ export default defineConfig({
     'i-logos-markdown',
     'i-ep-menu',
     'i-carbon-tool-box',
+    'i-carbon-character-whole-number',
   ],
   presets: [
     presetUno(),

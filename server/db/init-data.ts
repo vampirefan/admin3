@@ -16,6 +16,14 @@ export const initData = {
           showParent: true,
         },
       }, {
+        name: 'demo-count-up',
+        path: '/admin/demo/count-up',
+        meta: {
+          title: '数字动画',
+          icon: 'i-carbon-character-whole-number',
+          showParent: true,
+        },
+      }, {
         name: 'demo-icon',
         path: '/admin/demo/icon',
         meta: {
