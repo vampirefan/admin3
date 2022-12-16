@@ -8,6 +8,11 @@ function pathToRegExp(path: string) {
 }
 
 export default defineNuxtRouteMiddleware((to) => {
+  /* Hack: 关闭对非 /doc 的页面中 content 模块因为 documentDriven 而发起的 query 请求 */
+  if (to.path.startsWith('/doc'))
+    to.meta.documentDriven = true
+  else to.meta.documentDriven = false
+
   const userStore = useUserStore()
   const authToken = userStore.authToken
   if (authToken) {

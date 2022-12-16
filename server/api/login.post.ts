@@ -33,4 +33,3 @@ export default defineEventHandler(async (event) => {
   }
   // return http.request<UserResult>('post', '/login', { data })
 })
-

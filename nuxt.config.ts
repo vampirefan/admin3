@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@unocss/nuxt',
     '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
     ['@pinia/nuxt', { autoImports: ['defineStore'] }],
   ],
   css: [
@@ -32,7 +33,9 @@ export default defineNuxtConfig({
     '@/assets/css/main.css',
   ],
   content: {
-    documentDriven: true,
+    documentDriven: {
+      injectPage: false,
+    },
     highlight: {
       theme: 'one-dark-pro',
       preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],

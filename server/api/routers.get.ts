@@ -8,4 +8,3 @@ export default defineEventHandler(async () => {
   }
   // return http.request<UserResult>('get', '/routers', { data })
 })
-
