@@ -30,12 +30,14 @@
     "Prefixs",
     "tada",
     "tiktok",
+    "todos",
     "twemoji",
     "uncategorized",
     "unocss",
     "vitepress",
     "vitesse",
     "vuepress",
-    "vueuse"
+    "vueuse",
+    "Vuex"
   ]
 }

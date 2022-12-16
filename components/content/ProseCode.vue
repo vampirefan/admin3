@@ -49,7 +49,7 @@ defineProps({
   flex-direction: column;
   width: 100%;
   background-color: transparent;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 :deep(line) {

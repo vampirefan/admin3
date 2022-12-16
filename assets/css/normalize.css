@@ -31,7 +31,6 @@ a {
 
 p a code {
   font-weight: 400;
-  font-family: var(--font-family-code);
   color: var(--doc-text-accent);
 }
 
@@ -40,7 +39,7 @@ code {
   font-family: var(--font-family-code);
   margin: 0;
   padding: 0.25rem 0.5rem;
-  font-size: 0.8em;
+  font-size: 0.9em;
   background-color: var(--doc-bg-light);
   border-radius: 3px;
   overflow-wrap: break-word;
