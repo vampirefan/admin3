@@ -49,6 +49,18 @@ const scrollToHeading = (id: string) => {
     border-color var(--t-color);
 }
 
+.toc::-webkit-scrollbar {
+  width: 7px;
+}
+
+.toc::-webkit-scrollbar-track {
+  background-color: var(--doc-border);
+}
+
+.toc::-webkit-scrollbar-thumb {
+  background-color: var(--doc-brand);
+}
+
 ul {
   padding-left: 0.3rem;
   line-height: 1.7;
