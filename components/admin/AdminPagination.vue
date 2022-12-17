@@ -13,7 +13,7 @@ const props = defineProps({
     default: 20,
   },
   pageSizes: {
-    type: Array,
+    type: Array<number>,
     default() {
       return [10, 50, 100, 200]
     },
@@ -27,10 +27,6 @@ const props = defineProps({
     default: 'total, sizes, prev, pager, next, jumper',
   },
   background: {
-    type: Boolean,
-    default: true,
-  },
-  autoScroll: {
     type: Boolean,
     default: true,
   },
@@ -60,15 +56,10 @@ const pageSize = computed({
 function handleSizeChange(val: number) {
   if (currentPage.value * val > props.total)
     currentPage.value = 1
-
   emit('pagination', { page: currentPage.value, limit: val })
-  if (props.autoScroll)
-    scrollTo(0, 800)
 }
 function handleCurrentChange(val: number) {
   emit('pagination', { page: val, limit: pageSize.value })
-  if (props.autoScroll)
-    scrollTo(0, 800)
 }
 </script>
 
