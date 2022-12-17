@@ -37,7 +37,6 @@ useTimeoutFn(() => {
           <div class="sled" :style="{ left: `${progress}%` }" />
         </div>
       </div>
-      <el-slider v-model="progress" class="w-2/3" />
     </AdminContainer>
   </NuxtLayout>
 </template>

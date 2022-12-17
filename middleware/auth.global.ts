@@ -17,15 +17,14 @@ export default defineNuxtRouteMiddleware((to) => {
   const authToken = userStore.authToken
   if (authToken) {
     const permissionStore = usePermissionStore()
-    const { menus, taggedMenus } = storeToRefs(permissionStore)
     if (permissionStore.menus.length === 0)
       permissionStore.generateMenus()
+
+    const { menus, taggedMenus } = storeToRefs(permissionStore)
     const tagged = taggedMenus.value.find(menu => menu.path === to.path)
-    if (!tagged) {
-      const menuItem = useTreeFind(menus.value, (menu: any) => menu.path === to.path)
-      if (menuItem)
-        permissionStore.addMenuTag(menuItem)
-    }
+    const menuItem = useTreeFind(menus.value, (menu: any) => menu.path === to.path)
+    if (!tagged && menuItem)
+      permissionStore.addMenuTag(menuItem)
   }
 
   /** 路径不在白名单内，重定向至登陆页面 */

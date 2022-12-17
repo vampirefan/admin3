@@ -49,7 +49,7 @@ function toOfficial(url: string) {
     <el-alert title="正在开发中" type="warning" center show-icon :closable="false" />
     <div class="color-teal-6 text-xl py-4">
       <span class="pr-2">一个基于 Nuxt 3 的后台管理模板，查看</span>
-      <Icon name="i-twemoji-open-book" class="vertical-bottom" />
+      <AdminIcon name="i-twemoji-open-book" class="vertical-bottom" />
       <a class="underline font-semibold cursor-pointer" @click="navigateTo('/doc/guide')">
         <span class="pl-1">使用指南</span>
       </a>
@@ -62,18 +62,18 @@ function toOfficial(url: string) {
         </el-row>
         <el-row class="flex justify-center">
           <el-button type="success" plain @click="navigateTo('/admin')">
-            <Icon name="i-carbon-carbon-for-ibm-dotcom" class="pr-1" />
+            <AdminIcon name="i-carbon-carbon-for-ibm-dotcom" class="pr-1" />
             前往管理后台
           </el-button>
           <el-button type="primary" plain @click="logout()">
-            <Icon name="i-carbon-logout" class="pr-1" />
+            <AdminIcon name="i-carbon-logout" class="pr-1" />
             登出
           </el-button>
         </el-row>
       </div>
       <el-input v-else v-model="usernameInput" class="m-4 w-1/2 h-12" placeholder="输入任意用户名">
         <template #prepend>
-          <Icon name="i-twemoji-smiling-face-with-sunglasses" />
+          <AdminIcon name="i-twemoji-smiling-face-with-sunglasses" />
         </template>
         <template #append>
           <el-button @click="login()">
@@ -85,9 +85,9 @@ function toOfficial(url: string) {
 
     <div class="mt-16 flex justify-center gap-2">
       <el-link class="text-2xl" :underline="false" href="https://github.com/vampirefan/admin3" target="_blank">
-        <Icon name="i-logos-github-octocat" />
+        <AdminIcon name="i-logos-github-octocat" />
       </el-link>
-      <CommonDarkToggle class="pb-2 text-xl" />
+      <AdminDarkToggle class="pb-2 text-xl" />
     </div>
 
     <el-divider />

@@ -49,16 +49,16 @@ function hasOneShowingChild(
   <el-menu-item v-if="
   hasOneShowingChild(props.item.children, props.item)
   && (!onlyChild.children || onlyChild.noShowingChildren) && onlyChild.meta" :index="onlyChild.path">
-    <Icon v-if="onlyChild.meta.icon" :name="onlyChild.meta.icon" />
+    <AdminIcon v-if="onlyChild.meta.icon" :name="onlyChild.meta.icon" />
     <template #title>
       <span>{{ onlyChild.meta.title }}</span>
     </template>
   </el-menu-item>
   <el-sub-menu v-else :index="item.path">
     <template v-if="item.meta" #title>
-      <Icon v-if="item.meta.icon" :name="item.meta.icon" />
+      <AdminIcon v-if="item.meta.icon" :name="item.meta.icon" />
       <span>{{ item.meta.title }}</span>
     </template>
-    <AdminSidebarItem v-for="child in item.children" :key="child.path" :is-nest="true" :item="child" />
+    <SidebarItem v-for="child in item.children" :key="child.path" :is-nest="true" :item="child" />
   </el-sub-menu>
 </template>

@@ -1,8 +1,14 @@
+<script setup lang="ts">
+import Navbar from './doc/Navbar.vue'
+import Sidebar from './doc/Sidebar.vue'
+import Toc from './doc/Toc.vue'
+</script>
+
 <template>
   <div class="flex flex-col min-h-screen">
-    <DocNavbar />
-    <DocSidebar />
-    <DocToc />
+    <Navbar />
+    <Sidebar />
+    <Toc />
     <section class="content mx-10">
       <slot />
     </section>

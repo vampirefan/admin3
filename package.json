@@ -17,7 +17,7 @@
     "commit": "czg"
   },
   "dependencies": {
-    "element-plus": "^2.2.26"
+    "element-plus": "^2.2.27"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.0",
@@ -29,11 +29,12 @@
     "@nuxt/content": "^2.3.0",
     "@pinia/nuxt": "^0.4.6",
     "@unocss/nuxt": "^0.47.6",
-    "@vueuse/core": "^9.6.0",
-    "@vueuse/nuxt": "^9.6.0",
+    "@vueuse/core": "^9.7.0",
+    "@vueuse/nuxt": "^9.7.0",
     "czg": "^1.4.1",
-    "eslint": "^8.29.0",
+    "eslint": "^8.30.0",
     "nuxt": "3.0.0",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "unplugin-element-plus": "^0.4.1"
   }
 }

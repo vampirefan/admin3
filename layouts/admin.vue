@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
+import Navbar from './admin/Navbar.vue'
+import Sidebar from './admin/Sidebar.vue'
+import Tagbar from './admin/Tagbar.vue'
 
 const { config } = storeToRefs(useConfigStore())
 const route = useRoute()
@@ -14,9 +17,9 @@ onDeactivated(() => {
 
 <template>
   <div>
-    <AdminNavbar />
-    <AdminSidebar />
-    <AdminTagbar />
+    <Navbar />
+    <Sidebar />
+    <Tagbar />
 
     <section class="main">
       <el-scrollbar>

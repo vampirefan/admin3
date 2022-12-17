@@ -14,7 +14,7 @@ const navTree = navigation.value.find((nav: any) => nav._path === '/doc').childr
       <div class="flex-grow" />
       <el-sub-menu v-for="link of navTree" :key="link._path" :index="link._path">
         <template #title>
-          <Icon :name="link.icon" />{{ link.title }}
+          <AdminIcon :name="link.icon" />{{ link.title }}
         </template>
         <el-menu-item v-for="sublink of link.children" :key="sublink._path" :index="sublink._path"
           @click="navigateTo(sublink._path)">
@@ -22,9 +22,9 @@ const navTree = navigation.value.find((nav: any) => nav._path === '/doc').childr
         </el-menu-item>
       </el-sub-menu>
       <el-link class="ml-4 text-xl" :underline="false" @click="navigateTo('/')">
-        <Icon name="i-twemoji-house-with-garden" />
+        <AdminIcon name="i-twemoji-house-with-garden" />
       </el-link>
-      <CommonDarkToggle class="ml-4 text-xl" />
+      <AdminDarkToggle class="ml-4 text-xl" />
     </el-menu>
   </ClientOnly>
 </template>

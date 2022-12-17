@@ -9,11 +9,11 @@ const scrollToHeading = (id: string) => {
 <template>
   <el-card class="toc">
     <p class="m-2">
-      {{ page.title }}
+      {{ page?.title }}
     </p>
     <el-divider class="m-0" />
     <ul class="list-none">
-      <li v-for="link in toc.links" :key="link.text" class="min-w-0">
+      <li v-for="link in toc?.links" :key="link.text" class="min-w-0">
         <a :href="`#${link.id}`" class="text-sm truncate lg:pr-3"
           :class="[route.hash.includes(link.id) ? 'underline font-semibold' : 'font-light']"
           @click.prevent="scrollToHeading(link.id)">
@@ -54,4 +54,3 @@ ul {
   line-height: 1.7;
 }
 </style>
-

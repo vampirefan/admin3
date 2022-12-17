@@ -79,4 +79,3 @@ function handleCurrentChange(val: number) {
       @current-change="handleCurrentChange" />
   </div>
 </template>
-

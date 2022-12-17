@@ -28,12 +28,12 @@ function closeAll() {
     <el-scrollbar ref="tagScrollRef" class="tagscroll" @wheel.prevent="handleScroll">
       <div v-for="tag in taggedMenus" :key="tag.path" :class="`tagitem ${isActive(tag.path) ? 'is-active' : ''}`">
         <span @click="navigateTo(tag.path)">{{ tag.meta?.title }}</span>
-        <Icon v-if="!tag.meta?.affix" class="tagclose-icon" name="i-ep-close" @click="closeMenuTag(tag)" />
+        <AdminIcon v-if="!tag.meta?.affix" class="tagclose-icon" name="i-ep-close" @click="closeMenuTag(tag)" />
       </div>
     </el-scrollbar>
     <el-tooltip content="关闭所有页面">
       <el-button plain class="w-10" @click="closeAll()">
-        <Icon name="i-ep-close-bold" />
+        <AdminIcon name="i-ep-close-bold" />
       </el-button>
     </el-tooltip>
   </div>

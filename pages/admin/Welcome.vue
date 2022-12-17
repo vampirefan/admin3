@@ -61,7 +61,8 @@ queryContent('doc').where({ title: '开发日志' }).findOne().then((data) => {
             </template>
             <ul>
               <li v-for="item in done" :key="item" class="mb-3 flex items-center">
-                <Icon name="i-carbon-checkmark-outline" class="w-5 mr-2 flex-shrink-0 color-green-500" />{{ item }}
+                <AdminIcon name="i-carbon-checkmark-outline" class="w-5 mr-2 flex-shrink-0 color-green-500" />{{ item
+                }}
               </li>
             </ul>
           </el-card>
@@ -73,7 +74,7 @@ queryContent('doc').where({ title: '开发日志' }).findOne().then((data) => {
             </template>
             <ul>
               <li v-for="item in todo" :key="item" class="mb-3 flex items-center">
-                <Icon name="i-carbon-information" class="w-5 mr-2 flex-shrink-0 color-blue-500" />{{ item }}
+                <AdminIcon name="i-carbon-information" class="w-5 mr-2 flex-shrink-0 color-blue-500" />{{ item }}
               </li>
             </ul>
           </el-card>

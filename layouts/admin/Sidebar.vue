@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
+import Logo from './Logo.vue'
+import SidebarItem from './SidebarItem.vue'
 const route = useRoute()
 const permissionStore = usePermissionStore()
 const configStore = useConfigStore()
@@ -17,12 +19,12 @@ onDeactivated(() => {
 
 <template>
   <ClientOnly>
-    <AdminNavLogo />
+    <Logo />
     <div class="sidebar">
       <el-scrollbar>
         <el-menu :key="route.fullPath" class="sidebar-menu" router unique-opened mode="vertical"
           :collapse="config.sidebarCollapse" :collapse-transition="false" :default-active="defaultActive">
-          <AdminSidebarItem v-for="(item, index) in menus" :key="item.path + index" :item="item" />
+          <SidebarItem v-for="(item, index) in menus" :key="item.path + index" :item="item" />
         </el-menu>
       </el-scrollbar>
     </div>

@@ -14,7 +14,7 @@ const transitionTypes = [
 <template>
   <div>
     <el-link :underline="false" @click="drawerShow = true">
-      <Icon name="i-twemoji-hammer-and-wrench" />
+      <AdminIcon name="i-twemoji-hammer-and-wrench" />
     </el-link>
     <el-drawer v-model="drawerShow" class="config-drawer" :append-to-body="true" direction="rtl" size="320">
       <template #header>
@@ -22,7 +22,7 @@ const transitionTypes = [
       </template>
       <el-form label-width="100" label-position="left" @submit.prevent>
         <el-form-item label="全局主题">
-          <CommonDarkToggle />
+          <admin-dark-toggle />
         </el-form-item>
         <el-form-item label="边栏主题">
           <el-switch v-model="config.sidebarDark" active-text="深色" inactive-text="浅色" inline-prompt
@@ -51,7 +51,7 @@ const transitionTypes = [
       <el-divider />
       <div class="w-full flex justify-center">
         <el-button type="danger" @click="configStore.resetConfig()">
-          <Icon name="i-ep-delete" class="pr-2" />
+          <AdminIcon name="i-ep-delete" class="pr-2" />
           清空缓存并重置
         </el-button>
       </div>

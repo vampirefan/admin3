@@ -78,11 +78,11 @@ await getIconList()
       <el-button-group v-loading="loading">
         <el-button v-for="iconName of iconListShow" :key="iconName" class="text-4xl h-20 p-8"
           @click="copyIconName(iconName)">
-          <IconifyOnline :name="iconName" />
+          <AdminIconOnline :name="iconName" />
         </el-button>
       </el-button-group>
       <template #footer>
-        <CommonPagination v-show="totalNum > 0" v-model:page="pageNum" v-model:limit="pageSize" class="float-right"
+        <AdminPagination v-show="totalNum > 0" v-model:page="pageNum" v-model:limit="pageSize" class="float-right"
           :total="totalNum" @pagination="getIconList" />
       </template>
     </AdminContainer>

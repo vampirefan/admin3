@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
+import NavBreadcrumb from './NavBreadcrumb.vue'
+import Config from './Config.vue'
 
 const userStore = useUserStore()
 const configStore = useConfigStore()
@@ -16,19 +18,19 @@ function toggleSidebarCollapse() {
   <ClientOnly>
     <el-menu class="navbar pr-4" mode="horizontal" :ellipsis="false">
       <el-link class="mx-2 text-lg" :underline="false" @click="toggleSidebarCollapse()">
-        <Icon v-if="config.sidebarCollapse" name="i-ep-expand" />
-        <Icon v-else name="i-ep-fold" />
+        <AdminIcon v-if="config.sidebarCollapse" name="i-ep-expand" />
+        <AdminIcon v-else name="i-ep-fold" />
       </el-link>
-      <AdminNavBreadcrumb v-if="config.navBreadcrumb" class="mx-2" />
+      <NavBreadcrumb v-if="config.navBreadcrumb" class="mx-2" />
       <div class="flex-grow" />
-      <AdminConfig class="mx-2" />
+      <Config class="mx-2" />
       <el-link class="mx-2" :underline="false" @click="navigateTo('/')">
-        <Icon name="i-twemoji-house-with-garden" />
+        <AdminIcon name="i-twemoji-house-with-garden" />
       </el-link>
-      <CommonDarkToggle class="mx-2" />
+      <admin-dark-toggle class="mx-2" />
       <span class="mx-2">你好！{{ userInfo.username }}</span>
       <el-link class="mx-2" :underline="false" @click="userStore.logOut()">
-        <Icon name="i-carbon-logout" />
+        <AdminIcon name="i-carbon-logout" />
       </el-link>
     </el-menu>
   </ClientOnly>

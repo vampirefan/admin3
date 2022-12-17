@@ -82,22 +82,22 @@ const demoData = reactive({
 
             <el-row>
               <el-button circle>
-                <Icon name="i-ep-search" />
+                <AdminIcon name="i-ep-search" />
               </el-button>
               <el-button type="primary" circle>
-                <Icon name="i-ep-edit" />
+                <AdminIcon name="i-ep-edit" />
               </el-button>
               <el-button type="success" circle>
-                <Icon name="i-ep-check" />
+                <AdminIcon name="i-ep-check" />
               </el-button>
               <el-button type="info" circle>
-                <Icon name="i-ep-message" />
+                <AdminIcon name="i-ep-message" />
               </el-button>
               <el-button type="warning" circle>
-                <Icon name="i-ep-star" />
+                <AdminIcon name="i-ep-star" />
               </el-button>
               <el-button type="danger" circle>
-                <Icon name="i-ep-delete" />
+                <AdminIcon name="i-ep-delete" />
               </el-button>
             </el-row>
           </el-card>
