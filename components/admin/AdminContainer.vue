@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex flex-col">
+  <div class="admin-container flex flex-col">
     <div v-if="$slots.header" class="container-header px-6 py-2">
       <slot name="header" />
     </div>
@@ -17,7 +17,7 @@
 </template>
 
 <style scoped>
-.container {
+.admin-container {
   height: calc(100vh - var(--admin-navbar-height) - var(--admin-tagbar-height));
 }
 
