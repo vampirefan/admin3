@@ -27,3 +27,12 @@ export function useTreeFindPath(tree: any[], func: any, path = [] as any[]): any
   }
   return []
 }
+
+export function useTreeMap(tree: any[], func: any) {
+  return tree.map((data: any) => {
+    const result = func(data)
+    if (data.children)
+      result.children = useTreeMap(data.children, func)
+    return result
+  })
+}

@@ -18,6 +18,7 @@ export default defineConfig({
     'i-ep-menu',
     'i-carbon-tool-box',
     'i-carbon-character-whole-number',
+    'i-carbon-map',
   ],
   presets: [
     presetUno(),

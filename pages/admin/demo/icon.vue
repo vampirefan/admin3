@@ -6,7 +6,6 @@ const iconCollections = ref<{ name: string; prefix: string }[]>([])
 const iconCollectionSelected = ref('ep')
 const iconSearch = ref('')
 const iconList = ref<string[]>([])
-const iconListShow = ref<string[]>([])
 const totalNum = ref(0)
 const pageNum = ref(1)
 const pageSize = ref(100)
@@ -18,20 +17,15 @@ function copyIconName(iconName: string) {
   })
 }
 
-function calcIconShow() {
+const iconListShow = computed(() => {
   let result = []
   if (iconSearch.value)
     result = iconList.value.filter(item => item.includes(iconSearch.value))
   else result = iconList.value
   totalNum.value = result.length
-  iconListShow.value = result.map((name: string) => `${iconCollectionSelected.value}:${name}`)
+  return result.map((name: string) => `${iconCollectionSelected.value}:${name}`)
     .slice((pageNum.value - 1) * pageSize.value, pageNum.value * pageSize.value)
-}
-
-function handelSearchIcon() {
-  pageNum.value = 1
-  calcIconShow()
-}
+})
 
 async function getIconCollections() {
   loading.value = true
@@ -50,8 +44,8 @@ async function getIconList() {
     if (list.categories)
       allIcons = allIcons.concat(...Object.values(list.categories))
     totalNum.value = allIcons.length
+    pageNum.value = 1
     iconList.value = allIcons
-    calcIconShow()
   }
   loading.value = false
 }
@@ -71,7 +65,7 @@ await getIconList()
               <el-option v-for="item in iconCollections" :key="item.prefix" :label="item.name" :value="item.prefix" />
             </el-select>
             <span class="pl-8">搜索图标：</span>
-            <el-input v-model="iconSearch" class="inline" @input="handelSearchIcon()" />
+            <el-input v-model="iconSearch" class="inline" @input="pageNum = 1" />
           </el-row>
         </div>
       </template>
@@ -82,8 +76,8 @@ await getIconList()
         </el-button>
       </el-button-group>
       <template #footer>
-        <AdminPagination v-show="totalNum > 0" v-model:page="pageNum" v-model:limit="pageSize" class="float-right"
-          :total="totalNum" @pagination="getIconList" />
+        <el-pagination v-show="totalNum > 0" v-model:page-size="pageSize" v-model:current-page="pageNum"
+          :total="totalNum" class="float-right" />
       </template>
     </AdminContainer>
   </NuxtLayout>

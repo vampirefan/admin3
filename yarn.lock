@@ -743,6 +743,18 @@
   resolved "https://registry.yarnpkg.com/@sxzz/popperjs-es/-/popperjs-es-2.11.7.tgz#a7f69e3665d3da9b115f9e71671dae1b97e13671"
   integrity sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==
 
+"@province-city-china/level@^8.5.6":
+  version "8.5.6"
+  resolved "https://registry.yarnpkg.com/@province-city-china/level/-/level-8.5.6.tgz#db693e7b1d2a05768811c58a3a4988a5f66fcfaa"
+  integrity sha512-RRfh6UCwa1A4efhxVskpcbU2tD5m90i76nNNw5DmXwzi3f88XTEWv928mBaGrFiDhVSWUa3XUN34nfhZbbBD5A==
+  dependencies:
+    "@province-city-china/types" "8.5.6"
+
+"@province-city-china/types@8.5.6":
+  version "8.5.6"
+  resolved "https://registry.yarnpkg.com/@province-city-china/types/-/types-8.5.6.tgz#a2ba9162767147fd2ed9ba678f73592f8ef40057"
+  integrity sha512-Ii2p24i7z66Fe98sZb1u1FIAN9eZoyaF6+HAcpgZCHVf0PuTVS72E3u0ibSqaLb8ZuMzSNFCtcuilnfMFfAlFQ==
+
 "@rollup/plugin-alias@^4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-alias/-/plugin-alias-4.0.2.tgz#fec6c6aff8dd6fce580ae6bc5345084cd702bb62"

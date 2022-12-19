@@ -16,12 +16,21 @@ export const initData = {
           showParent: true,
         },
       }, {
+        name: 'demo-china-area-cascader',
+        path: '/admin/demo/china-area-cascader',
+        meta: {
+          title: '省市区选择器',
+          icon: 'i-carbon-map',
+          showParent: true,
+        },
+      }, {
         name: 'demo-count-up',
         path: '/admin/demo/count-up',
         meta: {
           title: '数字动画',
           icon: 'i-carbon-character-whole-number',
           showParent: true,
+          // noCache: true,
         },
       }, {
         name: 'demo-icon',
@@ -30,7 +39,6 @@ export const initData = {
           title: 'Iconify 在线图标',
           icon: 'i-carbon-face-satisfied',
           showParent: true,
-          // noCache: true,
         },
       }],
     },

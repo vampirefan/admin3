@@ -17,6 +17,7 @@
     "commit": "czg"
   },
   "dependencies": {
+    "@province-city-china/level": "^8.5.6",
     "element-plus": "^2.2.27"
   },
   "devDependencies": {

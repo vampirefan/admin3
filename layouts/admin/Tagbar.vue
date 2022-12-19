@@ -25,7 +25,7 @@ function closeAll() {
 
 <template>
   <div v-if="config.tagbar" class="tagbar">
-    <el-scrollbar ref="tagScrollRef" class="tagscroll" @wheel.prevent="handleScroll">
+    <el-scrollbar ref="tagScrollRef" class="tagscroll" @wheel.passive="handleScroll">
       <div v-for="tag in taggedMenus" :key="tag.path" :class="`tagitem ${isActive(tag.path) ? 'is-active' : ''}`">
         <span @click="navigateTo(tag.path)">{{ tag.meta?.title }}</span>
         <AdminIcon v-if="!tag.meta?.affix" class="tagclose-icon" name="i-ep-close" @click="closeMenuTag(tag)" />
