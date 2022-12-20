@@ -1,19 +1,67 @@
 <script setup lang="ts">
-import level from '@province-city-china/level'
 definePageMeta({ layout: 'admin' })
-const options = useTreeMap(level, (data: any) => {
-  return {
-    value: data.code,
-    label: data.name,
-  }
-})
-const value = ref()
+
+const valueBasic = ref()
+const valueClearable = ref()
+const valueOnlyShowLast = ref()
+const valueCheckStrictly = ref()
+const valueFilterable = ref()
+const valueFromLabel = ref()
 </script>
 
 <template>
   <NuxtLayout>
     <AdminContainer>
-      <el-cascader v-model="value" class="w-1/4" :options="options" />
+      <el-alert type="info" show-icon :closable="false" class="mb-5">
+        <p class="text-4">
+          <span v-text="`<AdminChinaAreaCascader />`" />
+          组件使用 element-plus 组件中的级联选择器 (Cascader) 进行封装，保留了除插槽外的所有属性、事件，选项数据取自
+          "@province-city-china/level"，以下是一些用法示例：
+        </p>
+      </el-alert>
+      <div class="demo-wrapper flex flex-wrap gap-15">
+        <el-card>
+          <h3>基础用法</h3>
+          <AdminChinaAreaCascader v-model="valueBasic" />
+          <p>{{ valueBasic }}</p>
+        </el-card>
+        <el-card>
+          <h3>使用 label 作为值</h3>
+          <AdminChinaAreaCascader v-model="valueFromLabel" :props="{ value: 'label' }" />
+          <p>{{ valueFromLabel }}</p>
+        </el-card>
+        <el-card>
+          <h3>可清空</h3>
+          <AdminChinaAreaCascader v-model="valueClearable" clearable />
+          <p>{{ valueClearable }}</p>
+        </el-card>
+        <el-card>
+          <h3>仅显示最后一级</h3>
+          <AdminChinaAreaCascader v-model="valueOnlyShowLast" :show-all-levels="false" />
+          <p>{{ valueOnlyShowLast }}</p>
+        </el-card>
+        <el-card>
+          <h3>选择任意一级选项</h3>
+          <AdminChinaAreaCascader v-model="valueCheckStrictly" :props="{ checkStrictly: true }" />
+          <p>{{ valueCheckStrictly }}</p>
+        </el-card>
+        <el-card>
+          <h3>可搜索</h3>
+          <AdminChinaAreaCascader v-model="valueFilterable" filterable />
+          <p>{{ valueFilterable }}</p>
+        </el-card>
+      </div>
     </AdminContainer>
   </NuxtLayout>
 </template>
+
+<style scoped>
+.demo-wrapper .el-card {
+  width: 420px;
+  height: 200px;
+}
+
+:deep(.el-cascader) {
+  width: 85%;
+}
+</style>

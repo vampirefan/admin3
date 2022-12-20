@@ -58,6 +58,10 @@ await getIconList()
   <NuxtLayout>
     <AdminContainer>
       <template #header>
+        <el-alert type="info" show-icon :closable="false">
+          <span class="text-4">这里的在线图标是通过使用 Iconify 官方提供的 API ( https://api.iconify.design ) 获取图标集和名称后，利用 "@iconify/vue"
+            组件实现的。只有连接了互联网才能用哦！</span>
+        </el-alert>
         <div class="my-1">
           <el-row class="items-center font-500 inline">
             <span>Iconify 在线图标集：</span>

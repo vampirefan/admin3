@@ -25,6 +25,11 @@ useTimeoutFn(() => {
 <template>
   <NuxtLayout>
     <AdminContainer>
+      <el-alert type="info" show-icon :closable="false" class="mb-5 w-2/3">
+        <p class="text-4">
+          数字动画主要使用的是 VueUse 中的 useTransition() 方法，具体更多的示例可以参考官方文档。
+        </p>
+      </el-alert>
       <el-button type="success" plain class="inline mr-8" @click="handleToggle()">
         Toggle
       </el-button>
