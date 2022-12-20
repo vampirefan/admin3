@@ -64,11 +64,11 @@ await getIconList()
         </el-alert>
         <div class="my-1">
           <el-row class="items-center font-500 inline">
-            <span>Iconify 在线图标集：</span>
+            <span>选择 Iconify 在线图标集：</span>
             <el-select v-model="iconCollectionSelected" placeholder="选择图标集" filterable @change="getIconList">
               <el-option v-for="item in iconCollections" :key="item.prefix" :label="item.name" :value="item.prefix" />
             </el-select>
-            <span class="pl-8">搜索图标：</span>
+            <span class="pl-12">搜索图标：</span>
             <el-input v-model="iconSearch" class="inline" @input="pageNum = 1" />
           </el-row>
         </div>
@@ -81,7 +81,8 @@ await getIconList()
       </el-button-group>
       <template #footer>
         <el-pagination v-show="totalNum > 0" v-model:page-size="pageSize" v-model:current-page="pageNum"
-          :total="totalNum" class="float-right" />
+          :total="totalNum" layout="total, sizes, prev, pager, next, jumper" :page-sizes="[20, 50, 100, 200]"
+          class="float-right" />
       </template>
     </AdminContainer>
   </NuxtLayout>

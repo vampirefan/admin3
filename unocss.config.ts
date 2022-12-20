@@ -19,6 +19,7 @@ export default defineConfig({
     'i-carbon-tool-box',
     'i-carbon-character-whole-number',
     'i-carbon-map',
+    'i-carbon-document-pdf',
   ],
   presets: [
     presetUno(),

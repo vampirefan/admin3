@@ -95,22 +95,20 @@ function toOfficial(url: string) {
     <h3 class="color-green-5 text-left ml-8">
       Frameworks
     </h3>
-    <el-row :gutter="12">
-      <el-col v-for="item in framework" :key="item.title" :span="6">
-        <el-card shadow="hover" class="mb cursor-pointer" @click="toOfficial(item.url)">
-          <div :class="`${item.icon} inline-block`" /><span class="pl">{{ item.title }}</span>
-        </el-card>
-      </el-col>
-    </el-row>
+    <div class="flex flex-wrap gap-4 mx">
+      <el-card v-for="item in framework" :key="item.title" shadow="hover" class="mb cursor-pointer w[215px]"
+        @click="toOfficial(item.url)">
+        <div :class="`${item.icon} inline-block`" /><span class="pl">{{ item.title }}</span>
+      </el-card>
+    </div>
     <h3 class="color-green-5 text-left ml-8">
       UIs
     </h3>
-    <el-row :gutter="12">
-      <el-col v-for="item in ui" :key="item.title" :span="6">
-        <el-card shadow="hover" class="mb cursor-pointer" @click="toOfficial(item.url)">
-          <div :class="`${item.icon} inline-block`" /><span class="pl">{{ item.title }}</span>
-        </el-card>
-      </el-col>
-    </el-row>
+    <div class="flex flex-wrap gap-4 mx">
+      <el-card v-for="item in ui" :key="item.title" shadow="hover" class="mb cursor-pointer w[215px]"
+        @click="toOfficial(item.url)">
+        <div :class="`${item.icon} inline-block`" /><span class="pl">{{ item.title }}</span>
+      </el-card>
+    </div>
   </main>
 </template>

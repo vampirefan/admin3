@@ -33,6 +33,14 @@ export const initData = {
           // noCache: true,
         },
       }, {
+        name: 'demo-pdf',
+        path: '/admin/demo/pdf',
+        meta: {
+          title: 'PDF 预览',
+          icon: 'i-carbon-document-pdf',
+          showParent: true,
+        },
+      }, {
         name: 'demo-icon',
         path: '/admin/demo/icon',
         meta: {

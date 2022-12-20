@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "@province-city-china/level": "^8.5.6",
-    "element-plus": "^2.2.27"
+    "element-plus": "^2.2.27",
+    "pdfobject": "^2.2.8"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.0",
@@ -29,13 +30,13 @@
     "@iconify/vue": "^4.0.2",
     "@nuxt/content": "^2.3.0",
     "@pinia/nuxt": "^0.4.6",
+    "@types/pdfobject": "^2.2.3",
     "@unocss/nuxt": "^0.47.6",
     "@vueuse/core": "^9.7.0",
     "@vueuse/nuxt": "^9.7.0",
     "czg": "^1.4.1",
     "eslint": "^8.30.0",
     "nuxt": "3.0.0",
-    "typescript": "^4.9.4",
-    "unplugin-element-plus": "^0.4.1"
+    "typescript": "^4.9.4"
   }
 }
