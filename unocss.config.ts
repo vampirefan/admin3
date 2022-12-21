@@ -21,6 +21,8 @@ export default defineConfig({
     'i-carbon-map',
     'i-carbon-document-pdf',
     'i-carbon-language',
+    'i-carbon-cross-tab',
+    'i-carbon-move',
   ],
   presets: [
     presetUno(),

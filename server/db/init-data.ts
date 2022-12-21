@@ -8,6 +8,25 @@ export const initData = {
         icon: 'i-carbon-tool-box', /** 菜单图标（iconify 使用 'i-'，svg 使用 'svg-'） */
       },
       children: [{
+        name: 'demo-table',
+        path: '/admin/demo/table',
+        meta: {
+          title: '表格组件',
+          icon: 'i-carbon-cross-tab',
+          showParent: true,
+        },
+        children: [{
+          name: 'demo-table-draggable',
+          path: '/admin/demo/table/draggable',
+          meta: {
+            title: '可拖拽表格',
+            icon: 'i-carbon-move',
+            showParent: true,
+          },
+        },
+
+        ],
+      }, {
         name: 'demo-element-plus',
         path: '/admin/demo/element-plus',
         meta: {

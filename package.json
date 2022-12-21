@@ -20,7 +20,8 @@
     "@province-city-china/level": "^8.5.6",
     "@tinymce/tinymce-vue": "^5.0.0",
     "element-plus": "^2.2.27",
-    "pdfobject": "^2.2.8"
+    "pdfobject": "^2.2.8",
+    "sortablejs": "^1.15.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.0",
@@ -32,6 +33,7 @@
     "@nuxt/content": "^2.3.0",
     "@pinia/nuxt": "^0.4.6",
     "@types/pdfobject": "^2.2.3",
+    "@types/sortablejs": "^1.15.0",
     "@unocss/nuxt": "^0.47.6",
     "@vueuse/core": "^9.7.0",
     "@vueuse/nuxt": "^9.7.0",
