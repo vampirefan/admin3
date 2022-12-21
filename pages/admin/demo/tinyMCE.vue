@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { inline } from '@floating-ui/core'
 import Editor from '@tinymce/tinymce-vue'
 definePageMeta({ layout: 'admin' })
+const initOptions = {
+  language: 'zh-Hans',
+  promotion: false,
+  plugins: 'preview importcss searchreplace autolink autosave save directionality visualblocks visualchars fullscreen image link media table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap emoticons', // quickbars
+}
 const contentValue = ref()
 </script>
 
@@ -16,11 +20,7 @@ const contentValue = ref()
       </template>
 
       <ClientOnly>
-        <Editor v-model="contentValue" tinymce-script-src="/js/tinymce/tinymce.min.js" :init="{
-          language: 'zh-Hans',
-          promotion: false,
-          plugins: 'preview importcss searchreplace autolink autosave save directionality visualblocks visualchars fullscreen image link media table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
-        }" />
+        <Editor v-model="contentValue" tinymce-script-src="/js/tinymce/tinymce.min.js" :init="initOptions" />
       </ClientOnly>
       <el-card class="mt-2">
         <h3>ModelValue: </h3>

@@ -21,14 +21,15 @@ Admin 3
 - eslint, ["@antfu/eslint-config"], 不必再配置 `prettier`
 - czg, 交互式提交(commitizen)
 
-### UI 框架
-- Element-Plus
-- unocss, ["@unocss/nuxt"]
-  - tailwind preset
-  - iconify
-    - "@iconify-json/ep", element-plus icon
-    - "@iconify-json/carbon",
-    - "@iconify-json/logos", 
-    - "@iconify-json/twemoji"
+### UI 框架  
+- Element-Plus  
+- unocss, ["@unocss/nuxt"]  
+  - tailwind preset  
+  - iconify  
+
+### 使用方法  
+1. clone  
+2. yarn install  
+3. yarn dev  
 
 
