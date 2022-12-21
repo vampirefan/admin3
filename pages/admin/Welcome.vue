@@ -17,6 +17,8 @@ const done = [
   'iconify 在线图标演示、elementplus 演示',
   '页面缓存, tagsView',
   '页面切换动画',
+  '富文本编辑',
+  'pdf在线预览',
 ]
 
 const todo = [
@@ -27,9 +29,7 @@ const todo = [
   '后端mock',
   '集成 E-chart',
   '优化和封装 table',
-  '富文本编辑',
   '文件上传',
-  'pdf在线预览',
   '水印',
   '二维码、条形码',
   '虚拟列表',

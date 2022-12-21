@@ -16,6 +16,13 @@ const login = async () => {
   else
     ElMessage.error('请输入任意用户名！')
 }
+
+const { enter } = useMagicKeys()
+watch(enter, (v) => {
+  if (v)
+    login()
+})
+
 const logout = async () => {
   userStore.logOut()
 }
@@ -71,7 +78,7 @@ function toOfficial(url: string) {
           </el-button>
         </el-row>
       </div>
-      <el-input v-else v-model="usernameInput" class="m-4 w-1/2 h-12" placeholder="输入任意用户名">
+      <el-input v-else v-model="usernameInput" autofocus class="m-4 w-1/2 h-12" placeholder="输入任意用户名">
         <template #prepend>
           <AdminIcon name="i-twemoji-smiling-face-with-sunglasses" />
         </template>
