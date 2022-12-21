@@ -20,6 +20,7 @@ export default defineConfig({
     'i-carbon-character-whole-number',
     'i-carbon-map',
     'i-carbon-document-pdf',
+    'i-carbon-language',
   ],
   presets: [
     presetUno(),

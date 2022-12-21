@@ -41,6 +41,14 @@ export const initData = {
           showParent: true,
         },
       }, {
+        name: 'demo-tinyMCE',
+        path: '/admin/demo/tinyMCE',
+        meta: {
+          title: '富文本编辑器',
+          icon: 'i-carbon-language',
+          showParent: true,
+        },
+      }, {
         name: 'demo-icon',
         path: '/admin/demo/icon',
         meta: {
