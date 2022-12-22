@@ -23,6 +23,8 @@ export default defineConfig({
     'i-carbon-language',
     'i-carbon-cross-tab',
     'i-carbon-move',
+    'i-ep-edit-pen',
+    'i-carbon-row-insert',
   ],
   presets: [
     presetUno(),

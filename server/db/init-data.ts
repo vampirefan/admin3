@@ -11,7 +11,7 @@ export const initData = {
         name: 'demo-table',
         path: '/admin/demo/table',
         meta: {
-          title: '表格组件',
+          title: '表格用法',
           icon: 'i-carbon-cross-tab',
           showParent: true,
         },
@@ -23,9 +23,23 @@ export const initData = {
             icon: 'i-carbon-move',
             showParent: true,
           },
-        },
-
-        ],
+        }, {
+          name: 'demo-table-inline-edit',
+          path: '/admin/demo/table/inline-edit',
+          meta: {
+            title: '行内编辑',
+            icon: 'i-ep-edit-pen',
+            showParent: true,
+          },
+        }, {
+          name: 'demo-table-dynamic-row',
+          path: '/admin/demo/table/dynamic-row',
+          meta: {
+            title: '动态增减行',
+            icon: 'i-carbon-row-insert',
+            showParent: true,
+          },
+        }],
       }, {
         name: 'demo-element-plus',
         path: '/admin/demo/element-plus',
