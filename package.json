@@ -21,6 +21,7 @@
     "@tinymce/tinymce-vue": "^5.0.0",
     "element-plus": "^2.2.27",
     "pdfobject": "^2.2.8",
+    "pinyin-pro": "^3.13.0",
     "sortablejs": "^1.15.0"
   },
   "devDependencies": {
@@ -34,7 +35,7 @@
     "@pinia/nuxt": "^0.4.6",
     "@types/pdfobject": "^2.2.3",
     "@types/sortablejs": "^1.15.0",
-    "@unocss/nuxt": "^0.47.6",
+    "@unocss/nuxt": "^0.48.0",
     "@vueuse/core": "^9.8.2",
     "@vueuse/nuxt": "^9.8.2",
     "czg": "^1.4.1",

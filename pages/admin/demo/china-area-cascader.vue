@@ -1,12 +1,21 @@
 <script setup lang="ts">
+import { match } from 'pinyin-pro'
 definePageMeta({ layout: 'admin' })
 
 const valueBasic = ref()
+const valueFromLabel = ref()
 const valueClearable = ref()
 const valueOnlyShowLast = ref()
 const valueCheckStrictly = ref()
 const valueFilterable = ref()
-const valueFromLabel = ref()
+const valuePinyinFilterable = ref()
+
+const handleFilter = (node: any, keyword: string) => {
+  const matched = match(node.text, keyword)
+  if (matched === null)
+    return false
+  else return true
+}
 </script>
 
 <template>
@@ -48,6 +57,11 @@ const valueFromLabel = ref()
         <el-card>
           <h3>可搜索</h3>
           <AdminChinaAreaCascader v-model="valueFilterable" filterable />
+          <p>{{ valueFilterable }}</p>
+        </el-card>
+        <el-card>
+          <h3>拼音模糊搜索(使用了 'pinyin-pro' 库)</h3>
+          <AdminChinaAreaCascader v-model="valuePinyinFilterable" filterable :filter-method="handleFilter" />
           <p>{{ valueFilterable }}</p>
         </el-card>
       </div>

@@ -24,10 +24,10 @@ const { pause, resume } = useIntervalFn(() => {
         通过 el-carousel(走马灯)实现的垂直滚动效果
       </el-divider>
       <el-carousel class="notice-wrapper" direction="vertical" :interval="2500" indicator-position="none">
-        <el-carousel-item v-for="item in 4" :key="item" class="">
-          <h3 class="vertical-scroll">
-            我是第{{ item }}条比较重要的消息
-          </h3>
+        <el-carousel-item v-for="item in 4" :key="item">
+          <span class="vertical-scroll text-xl">
+            我是第 {{ item }} 条比较重要的消息
+          </span>
         </el-carousel-item>
       </el-carousel>
       <el-divider class="mt-12">
@@ -55,8 +55,9 @@ const { pause, resume } = useIntervalFn(() => {
 
 .vertical-scroll {
   color: var(--el-color-error);
+  display: block;
+  text-align: center;
   line-height: 3rem;
   margin: 0;
-  text-align: center;
 }
 </style>
