@@ -25,6 +25,7 @@ export default defineConfig({
     'i-carbon-move',
     'i-ep-edit-pen',
     'i-carbon-row-insert',
+    'i-carbon-star-review',
   ],
   presets: [
     presetUno(),

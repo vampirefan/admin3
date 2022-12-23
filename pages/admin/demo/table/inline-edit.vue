@@ -1,5 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'admin' })
+const tableRef = ref()
 const tableData = ref([
   {
     id: '1',
@@ -36,10 +37,16 @@ const columnData = ref([
 ])
 const editRow = ref()
 const editColumn = ref()
-function handleCellClick(row: any, column: any) {
+function handleCellClick(row: any, column: any, cell: any) {
   editRow.value = row
   editColumn.value = column.property
 }
+onMounted(() => {
+  onClickOutside(tableRef, () => {
+    editRow.value = null
+    editColumn.value = null
+  })
+})
 </script>
 
 <template>
@@ -56,8 +63,8 @@ function handleCellClick(row: any, column: any) {
           <code>
             <pre class="w-[400px]"> {{ tableData }}</pre>
           </code>
-          <el-table :data="tableData" :row-style="{ height: `${40}px` }" :cell-style="{ padding: `${0}px` }"
-            @cell-click="handleCellClick">
+          <el-table ref="tableRef" :data="tableData" :row-style="{ height: `${40}px` }"
+            :cell-style="{ padding: `${0}px` }" @cell-click="handleCellClick">
             <el-table-column v-for="(column, index) in columnData" :key="`col_${index}`" :label="column.label"
               :prop="column.prop">
               <template #default="scope">

@@ -2,17 +2,22 @@
 Admin 3
 </h1>
 
-<pre align="center">
-⚗️ Working in Progress
-</pre>
+**English** | [中文](./README.md)
 
-Another Vue3 admin template. Just want to get a clean and ready-to-use template. Inspired by vitesse.
+## Introduce  
+A Vue3 admin template, powered by `Nuxt 3`, `TypeScript`, `Vue 3`, `Pinia`, `Element-Plus`, `Unocss`.  
+**demo:** [https://admin3.netlify.app/](https://admin3.netlify.app/)  
+**docs:** [https://admin3.netlify.app/doc/guide](https://admin3.netlify.app/doc/guide)  
+**Github：** [https://github.com/vampirefan/admin3](https://github.com/vampirefan/admin3)  
+**Gitee：** [https://gitee.com/vampirefan/admin3](https://gitee.com/vampirefan/admin3)  
 
 ## Frameworks  
-- Nuxt 3  
-- TypeScript  
-- eslint, ["@antfu/eslint-config"]  
-- czg，a commitizen alternative  
+- Nuxt 3，needs `Node.js > 16.11`, contains `Vue 3`  
+- TypeScript, use `any`, don't be shy  
+- pinia, state management
+- vueuse, collection of Essential Vue Composition Utilities
+- eslint, ["@antfu/eslint-config"], no more `prettier` 
+- czg, a cool commitizen tool
 
 ## UIs
 - Element-Plus
@@ -20,3 +25,9 @@ Another Vue3 admin template. Just want to get a clean and ready-to-use template.
   - tailwind preset
   - iconify, ["@iconify-json/carbon", "@iconify-json/ep", "@iconify-json/logos", "@iconify-json/twemoji"]
 
+## Useage  
+```
+clone
+yarn install
+yarn dev
+```

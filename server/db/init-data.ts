@@ -1,11 +1,11 @@
 export const initData = {
   routers: [
     {
-      name: 'demo', /** 路由名称（唯一） */
-      path: '/admin/demo', /** 路由地址（必填） */
+      name: 'demo', /* 路由名称（唯一） */
+      path: '/admin/demo', /* 路由地址（必填） */
       meta: {
-        title: '演示demo', /** 菜单标题 */
-        icon: 'i-carbon-tool-box', /** 菜单图标（iconify 使用 'i-'，svg 使用 'svg-'） */
+        title: '演示demo', /* 菜单标题 */
+        icon: 'i-carbon-tool-box', /* 菜单图标（iconify 使用 'i-'，svg 使用 'svg-'） */
       },
       children: [{
         name: 'demo-table',
@@ -64,6 +64,14 @@ export const initData = {
           icon: 'i-carbon-character-whole-number',
           showParent: true,
           // noCache: true,
+        },
+      }, {
+        name: 'demo-scroll-notice',
+        path: '/admin/demo/scroll-notice',
+        meta: {
+          title: '滚动通知',
+          icon: 'i-carbon-star-review',
+          showParent: true,
         },
       }, {
         name: 'demo-pdf',
