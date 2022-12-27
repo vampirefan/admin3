@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
 definePageMeta({ layout: 'admin' })
+const iconifyProvider = useRuntimeConfig().public.iconifyProvider
+
 const { copy } = useClipboard()
 const iconCollections = ref<{ name: string; prefix: string }[]>([])
 const iconCollectionSelected = ref('ep')
@@ -29,14 +31,14 @@ const iconListShow = computed(() => {
 
 async function getIconCollections() {
   loading.value = true
-  const collections = await $fetch('https://api.iconify.design/collections', { method: 'get' })
+  const collections = await $fetch(`${iconifyProvider}/collections`, { method: 'get' })
   if (collections)
     iconCollections.value = Object.entries(collections).map((item) => { return { name: item[1].name, prefix: item[0] } })
   loading.value = false
 }
 async function getIconList() {
   loading.value = true
-  const list: any = await $fetch(`https://api.iconify.design/collection?prefix=${iconCollectionSelected.value}`, { method: 'get' })
+  const list: any = await $fetch(`${iconifyProvider}/collection?prefix=${iconCollectionSelected.value}`, { method: 'get' })
   if (list) {
     let allIcons: any[] = []
     if (list.uncategorized)
@@ -49,9 +51,10 @@ async function getIconList() {
   }
   loading.value = false
 }
-
-await getIconCollections()
-await getIconList()
+onMounted(async () => {
+  await getIconCollections()
+  await getIconList()
+})
 </script>
 
 <template>

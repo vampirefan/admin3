@@ -5,6 +5,12 @@ export default defineNuxtConfig({
     keepalive: true,
   },
 
+  runtimeConfig: {
+    public: {
+      iconifyProvider: 'https://api.iconify.design',
+    },
+  },
+
   nitro: {
     devStorage: {
       db: {

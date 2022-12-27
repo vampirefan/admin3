@@ -10,9 +10,9 @@
   },
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --port=8087",
+    "dev": "nuxt dev --port=8086",
     "generate": "nuxt generate",
-    "preview": "nuxt preview --port=8087",
+    "preview": "nuxt preview --port=8086",
     "postinstall": "nuxt prepare",
     "commit": "czg"
   },
