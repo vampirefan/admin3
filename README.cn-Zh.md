@@ -25,11 +25,16 @@ Admin 3
 
 ## 开发  
 ```sh
+# 下载源码
 clone  
-corepack enable  # 如果没有开启 yarn，请使用管理员模式运行该命令以开启使用 yarn
-npm config -g set registry http://10.102.2.119:8081/repository/localNpm/
-yarn config -g set registry http://10.102.2.119:8081/repository/localNpm/ # 这里需要同时对 yarn 和 npm 的仓库源进行设置
+# 如果没有开启 yarn，请使用管理员模式运行以下命令以开启使用 yarn
+corepack enable  
+# 这里需要同时对 yarn 和 npm 的仓库源进行设置
+npm config set registry http://10.102.2.119:8081/repository/localNpm/
+yarn config set registry http://10.102.2.119:8081/repository/localNpm/ 
+# 安装依赖
 yarn install  
+# 启动开发服务
 yarn dev  
 ```
 
