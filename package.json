@@ -1,6 +1,6 @@
 {
   "name": "admin3",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "anthor": "vampirefan",
   "private": true,
   "license": "MIT",
@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "nuxt build",
+    "build:docker": "nuxt build && docker rmi admin3 && docker build -t admin3 . && docker save -o D:\\Docker\\admin3.tar admin3",
     "dev": "nuxt dev --port=8086",
     "generate": "nuxt generate",
     "preview": "nuxt preview --port=8086",

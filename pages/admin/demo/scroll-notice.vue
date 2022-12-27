@@ -6,7 +6,7 @@ const interval = ref(1)
 const left = ref(0)
 const { pause, resume } = useIntervalFn(() => {
   left.value += 0.1
-  if (left.value > scrollWrapperRef.value.$el.clientWidth / scrollItemRef.value.clientWidth * 100)
+  if (left.value > scrollWrapperRef.value?.$el?.clientWidth / scrollItemRef.value?.clientWidth * 100)
     left.value = -100
 }, interval)
 </script>
@@ -24,9 +24,9 @@ const { pause, resume } = useIntervalFn(() => {
         通过 el-carousel(走马灯)实现的垂直滚动效果
       </el-divider>
       <el-carousel class="notice-wrapper" direction="vertical" :interval="2500" indicator-position="none">
-        <el-carousel-item v-for="item in 4" :key="item">
+        <el-carousel-item v-for="index in 4" :key="index">
           <span class="vertical-scroll text-xl">
-            我是第 {{ item }} 条比较重要的消息
+            我是第 {{ index }} 条比较重要的消息
           </span>
         </el-carousel-item>
       </el-carousel>
