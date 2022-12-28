@@ -48,7 +48,5 @@ export default defineNuxtConfig({
       preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
     },
   },
-  vueuse: {
-    ssrHandlers: true,
-  },
+
 })
