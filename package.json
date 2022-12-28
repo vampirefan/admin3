@@ -1,6 +1,6 @@
 {
   "name": "admin3",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "anthor": "vampirefan",
   "private": true,
   "license": "MIT",
@@ -10,9 +10,9 @@
   },
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --port=8087",
+    "dev": "nuxt dev --port=8086",
     "generate": "nuxt generate",
-    "preview": "nuxt preview --port=8087",
+    "preview": "nuxt preview --port=8086",
     "postinstall": "nuxt prepare",
     "commit": "czg"
   },
@@ -36,8 +36,8 @@
     "@types/pdfobject": "^2.2.3",
     "@types/sortablejs": "^1.15.0",
     "@unocss/nuxt": "^0.48.0",
-    "@vueuse/core": "^9.8.2",
-    "@vueuse/nuxt": "^9.8.2",
+    "@vueuse/core": "^9.9.0",
+    "@vueuse/nuxt": "^9.9.0",
     "czg": "^1.4.1",
     "eslint": "^8.30.0",
     "nuxt": "3.0.0",

@@ -5,6 +5,12 @@ export default defineNuxtConfig({
     keepalive: true,
   },
 
+  runtimeConfig: {
+    public: {
+      iconifyProvider: 'https://api.iconify.design',
+    },
+  },
+
   nitro: {
     devStorage: {
       db: {
@@ -41,8 +47,5 @@ export default defineNuxtConfig({
       theme: 'one-dark-pro',
       preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
     },
-  },
-  vueuse: {
-    ssrHandlers: true,
   },
 })

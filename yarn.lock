@@ -1519,7 +1519,7 @@
   resolved "https://registry.npmmirror.com/@vue/shared/-/shared-3.2.45.tgz#a3fffa7489eafff38d984e23d0236e230c818bc2"
   integrity sha512-Ewzq5Yhimg7pSztDV+RH1UDKBzmtqieXQlpTVm2AwraoRL/Rks96mvd8Vgi7Lj+h+TH8dv7mXD3FRZR3TUvbSg==
 
-"@vueuse/core@9.9.0", "@vueuse/core@^9.1.0", "@vueuse/core@^9.8.2":
+"@vueuse/core@9.9.0", "@vueuse/core@^9.1.0", "@vueuse/core@^9.9.0":
   version "9.9.0"
   resolved "https://registry.npmmirror.com/@vueuse/core/-/core-9.9.0.tgz#ad6849cd03ba7ee396ef93fa01d4f2e5b11a4942"
   integrity sha512-JdDb7TrE0imZnwBhMF4+0PCJqGD3AxzH8S2sfk54P0rqvklK+EAtAR/mPb1HwV/JPujQFQJhghQ190Yq03YpVw==
@@ -1544,7 +1544,7 @@
   resolved "https://registry.npmmirror.com/@vueuse/metadata/-/metadata-9.9.0.tgz#d3f3f40dcedb6a045e7940a1fba78828a70d9b7e"
   integrity sha512-pgxsUJv/d7IjKpLeB6TthggEsaBwM3ffc5jPrr5TmxAm/fup0mGR5VTzrdA/PSx85tpb+CIvP92D+55qBNc8ag==
 
-"@vueuse/nuxt@^9.8.2":
+"@vueuse/nuxt@^9.9.0":
   version "9.9.0"
   resolved "https://registry.npmmirror.com/@vueuse/nuxt/-/nuxt-9.9.0.tgz#00c00010e6c2912efd1e0cb7e62168c053968f88"
   integrity sha512-bhvHsy3vM38WWRhFgyjbDP/tfn0AMP7z1KeaWt5+ysxGHZ1EHMsY4lcFbpcFlQ6K9TKMcYvzzcBSzYxlWanMnQ==

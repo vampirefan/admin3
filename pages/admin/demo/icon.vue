@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
 definePageMeta({ layout: 'admin' })
+const iconifyProvider = useRuntimeConfig().public.iconifyProvider
+
 const { copy } = useClipboard()
 const iconCollections = ref<{ name: string; prefix: string }[]>([])
 const iconCollectionSelected = ref('ep')
@@ -29,14 +31,14 @@ const iconListShow = computed(() => {
 
 async function getIconCollections() {
   loading.value = true
-  const collections = await $fetch('https://api.iconify.design/collections', { method: 'get' })
+  const collections = await $fetch(`${iconifyProvider}/collections`, { method: 'get' })
   if (collections)
     iconCollections.value = Object.entries(collections).map((item) => { return { name: item[1].name, prefix: item[0] } })
   loading.value = false
 }
 async function getIconList() {
   loading.value = true
-  const list: any = await $fetch(`https://api.iconify.design/collection?prefix=${iconCollectionSelected.value}`, { method: 'get' })
+  const list: any = await $fetch(`${iconifyProvider}/collection?prefix=${iconCollectionSelected.value}`, { method: 'get' })
   if (list) {
     let allIcons: any[] = []
     if (list.uncategorized)
@@ -59,7 +61,7 @@ await getIconList()
     <AdminContainer>
       <template #header>
         <el-alert type="info" show-icon :closable="false">
-          <span class="text-4">这里的在线图标是通过使用 Iconify 官方提供的 API ( https://api.iconify.design ) 获取图标集和名称后，利用 "@iconify/vue"
+          <span class="text-4">这里的在线图标是通过使用 Iconify 官方提供的 API ( {{ iconifyProvider }} ) 获取图标集和名称后，利用 "@iconify/vue"
             组件实现的。只有连接了互联网才能用哦！</span>
         </el-alert>
         <div class="my-1">
