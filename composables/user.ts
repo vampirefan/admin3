@@ -52,4 +52,3 @@ export const useUserStore = defineStore('user', () => {
    */
   return { authToken, userInfo: skipHydrate(userInfo), login, logOut, handRefreshToken }
 })
-
