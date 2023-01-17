@@ -1824,6 +1824,13 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001400, caniuse-lite@^1.0.30001426:
   resolved "http://10.102.2.119:8081/repository/localNpm/caniuse-lite/-/caniuse-lite-1.0.30001441.tgz#987437b266260b640a23cd18fbddb509d7f69f3e"
   integrity sha1-mHQ3smYmC2QKI80Y+921Cdf2nz4=
 
+canvas-nest.js@^2.0.4:
+  version "2.0.4"
+  resolved "http://10.102.2.119:8081/repository/localNpm/canvas-nest.js/-/canvas-nest.js-2.0.4.tgz#e010075d5dbbf3cbfc1ef18942c266b1af873469"
+  integrity sha1-4BAHXV2788v8HvGJQsJmsa+HNGk=
+  dependencies:
+    size-sensor "^0.2.0"
+
 ccount@^2.0.0:
   version "2.0.1"
   resolved "http://10.102.2.119:8081/repository/localNpm/ccount/-/ccount-2.0.1.tgz#17a3bf82302e0870d6da43a01311a8bc02a3ecf5"
@@ -6327,6 +6334,11 @@ sirv@^2.0.2:
     "@polka/url" "^1.0.0-next.20"
     mrmime "^1.0.0"
     totalist "^3.0.0"
+
+size-sensor@^0.2.0:
+  version "0.2.6"
+  resolved "http://10.102.2.119:8081/repository/localNpm/size-sensor/-/size-sensor-0.2.6.tgz#6fe43afd570786f097171834002a97fe0b19a3da"
+  integrity sha1-b+Q6/VcHhvCXFxg0ACqX/gsZo9o=
 
 slash@^3.0.0:
   version "3.0.0"

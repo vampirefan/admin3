@@ -26,6 +26,7 @@ export default defineConfig({
     'i-ep-edit-pen',
     'i-carbon-row-insert',
     'i-carbon-star-review',
+    'i-ep-magic-stick',
   ],
   presets: [
     presetUno(),
