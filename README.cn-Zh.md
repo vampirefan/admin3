@@ -38,5 +38,10 @@ yarn install
 yarn dev  
 ```
 
+## Docker
+```sh
+yarn build:docker
+docker run --name admin3 -d -p 8086:8086 admin3
+```
 
 
