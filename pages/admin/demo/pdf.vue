@@ -5,18 +5,18 @@ const fileUrlOptions = [{
   label: '本地 /static/Nuxtjs-Cheat-Sheet.pdf',
   value: '/static/Nuxtjs-Cheat-Sheet.pdf',
 }, {
-  label: '在线 http://10.102.12.222:8081/assets/docs/git-cheat-sheet-education.pdf',
-  value: 'http://10.102.12.222:8081/assets/docs/git-cheat-sheet-education.pdf',
+  label: '在线 https://education.github.com/git-cheat-sheet-education.pdf',
+  value: 'https://education.github.com/git-cheat-sheet-education.pdf',
 }]
 const fileUrl = ref(fileUrlOptions[0].value)
-
+const pdfContainer = ref()
 function loadPdf() {
-  pdf.embed(fileUrl.value, '#pdfContainer', {
+  pdf.embed(fileUrl.value, pdfContainer.value, {
     pdfOpenParams: { view: 'FitV' },
   })
 }
 
-onMounted(() => {
+onMounted(async () => {
   loadPdf()
 })
 </script>
@@ -29,6 +29,6 @@ onMounted(() => {
         <el-option v-for="option in fileUrlOptions" :key="option.value" :label="option.label" :value="option.value" />
       </el-select>
     </template>
-    <div id="pdfContainer" class="w[880px] h[700px]" />
+    <div ref="pdfContainer" class="w[880px] h[700px]" />
   </AdminContainer>
 </template>
