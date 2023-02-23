@@ -74,6 +74,14 @@ export const initData = {
           showParent: true,
         },
       }, {
+        name: 'demo-animate-background',
+        path: '/admin/demo/animate-background',
+        meta: {
+          title: '动画页面背景',
+          icon: 'i-ep-magic-stick',
+          showParent: true,
+        },
+      }, {
         name: 'demo-pdf',
         path: '/admin/demo/pdf',
         meta: {

@@ -53,7 +53,6 @@ function toOfficial(url: string) {
       <img src="/image/admin3-logo.png" alt="Admin3" height="100">
       Admin3
     </h1>
-    <el-alert title="正在开发中" type="warning" center show-icon :closable="false" />
     <div class="color-teal-6 text-xl py-4">
       <span class="pr-2">一个基于 Nuxt 3 的后台管理模板，查看</span>
       <AdminIcon name="i-twemoji-open-book" class="vertical-bottom" />
@@ -91,7 +90,7 @@ function toOfficial(url: string) {
     </ClientOnly>
 
     <div class="mt-16 flex justify-center gap-2">
-      <el-link class="text-2xl" :underline="false" href="https://github.com/vampirefan/admin3" target="_blank">
+      <el-link class="text-2xl" :underline="false" href="http://10.102.2.114:3000/wang_f/admin3" target="_blank">
         <AdminIcon name="i-logos-github-octocat" />
       </el-link>
       <AdminDarkToggle class="pb-2 text-xl" />

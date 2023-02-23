@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "nuxt build",
+    "build:docker": "nuxt build && docker rmi admin3 && docker build -t admin3 . && docker save -o D:\\Docker\\admin3.tar admin3",
     "dev": "nuxt dev --port=8086",
     "generate": "nuxt generate",
     "preview": "nuxt preview --port=8086",
@@ -19,6 +20,7 @@
   "dependencies": {
     "@province-city-china/level": "^8.5.4",
     "@tinymce/tinymce-vue": "^5.0.0",
+    "canvas-nest.js": "^2.0.4",
     "element-plus": "^2.2.27",
     "pdfobject": "^2.2.8",
     "pinyin-pro": "^3.13.0",

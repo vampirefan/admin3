@@ -8,4 +8,3 @@ export default defineAppConfig({
   tagbar: true,
   transitionType: 'slide',
 })
-

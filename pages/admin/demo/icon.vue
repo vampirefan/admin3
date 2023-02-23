@@ -51,9 +51,10 @@ async function getIconList() {
   }
   loading.value = false
 }
-
-await getIconCollections()
-await getIconList()
+onMounted(async () => {
+  await getIconCollections()
+  await getIconList()
+})
 </script>
 
 <template>

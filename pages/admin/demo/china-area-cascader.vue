@@ -11,10 +11,12 @@ const valueFilterable = ref()
 const valuePinyinFilterable = ref()
 
 const handleFilter = (node: any, keyword: string) => {
-  const matched = match(node.text, keyword)
-  if (matched === null)
-    return false
-  else return true
+  if (keyword) {
+    const matched = match(node.text, keyword)
+    if (matched === null)
+      return false
+  }
+  return true
 }
 </script>
 
