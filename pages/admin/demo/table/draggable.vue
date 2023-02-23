@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Sortable from 'sortablejs'
 definePageMeta({ layout: 'admin' })
+const tableRowDragRef = ref()
+const tableColumnDragRef = ref()
 const tableData = ref([
   {
     id: '1',
@@ -36,7 +38,7 @@ const columnData = ref([
   },
 ])
 onMounted(() => {
-  const rows = document.querySelector(
+  const rows = tableRowDragRef.value.$el.querySelector(
     '.row-drag .el-table__body tbody',
   )
   Sortable.create(rows as HTMLElement, {
@@ -47,7 +49,8 @@ onMounted(() => {
       tableData.value.splice(newIndex as number, 0, currentRow)
     },
   })
-  const columns = document.querySelector(
+
+  const columns = tableColumnDragRef.value.$el.querySelector(
     '.column-drag .el-table__header tr',
   )
   Sortable.create(columns as HTMLElement, {
@@ -73,7 +76,7 @@ onMounted(() => {
         <code>
             <pre class="w-[400px]"> {{ tableData }}</pre>
           </code>
-        <el-table :data="tableData" row-key="id" class="row-drag">
+        <el-table ref="tableRowDragRef" :data="tableData" row-key="id" class="row-drag">
           <el-table-column width="40">
             <AdminIcon name="i-carbon-draggable" class="vertical-sub cursor-grab drag-btn" />
           </el-table-column>
@@ -87,7 +90,7 @@ onMounted(() => {
         <code>
             <pre class="w-[400px]"> {{ columnData }}</pre>
           </code>
-        <el-table :data="tableData" class="column-drag">
+        <el-table ref="tableColumnDragRef" :data="tableData" class="column-drag">
           <el-table-column v-for="(column, index) in columnData" :key="`col_${index}`" :prop="column.prop">
             <template #header>
               <span class="cursor-grab drag-header">{{ column.label }}</span>
