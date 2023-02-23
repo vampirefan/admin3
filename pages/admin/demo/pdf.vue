@@ -22,15 +22,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <NuxtLayout>
-    <AdminContainer>
-      <template #header>
-        <span>文件地址:</span>
-        <el-select v-model="fileUrl" class="m-2 w[500px]" @change="loadPdf">
-          <el-option v-for="option in fileUrlOptions" :key="option.value" :label="option.label" :value="option.value" />
-        </el-select>
-      </template>
-      <div id="pdfContainer" class="w[880px] h[700px]" />
-    </AdminContainer>
-  </NuxtLayout>
+  <AdminContainer>
+    <template #header>
+      <span>文件地址:</span>
+      <el-select v-model="fileUrl" class="m-2 w[500px]" @change="loadPdf">
+        <el-option v-for="option in fileUrlOptions" :key="option.value" :label="option.label" :value="option.value" />
+      </el-select>
+    </template>
+    <div id="pdfContainer" class="w[880px] h[700px]" />
+  </AdminContainer>
 </template>

@@ -4,9 +4,8 @@ definePageMeta({ layout: 'doc' })
 </script>
 
 <template>
-  <NuxtLayout>
+  <div>
     <ContentDoc />
     <el-backtop />
-  </NuxtLayout>
+  </div>
 </template>
-

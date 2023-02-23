@@ -31,20 +31,18 @@ function handleChangeBg() {
 </script>
 
 <template>
-  <NuxtLayout>
-    <AdminContainer ref="mainContainer">
-      <div v-show="bgStyle === 'mouseLight'" ref="mouseLight"
-        class="mouse-gradient absolute top-0 transition-opacity h-[100px] w-[100px]" />
-      <el-radio-group v-model="bgStyle" class="mx-2" @change="handleChangeBg">
-        <el-radio label="mouseLight">
-          发光的鼠标
-        </el-radio>
-        <el-radio label="nestLine">
-          聚合的线条
-        </el-radio>
-      </el-radio-group>
-    </AdminContainer>
-  </NuxtLayout>
+  <AdminContainer ref="mainContainer">
+    <div v-show="bgStyle === 'mouseLight'" ref="mouseLight"
+      class="mouse-gradient absolute top-0 transition-opacity h-[100px] w-[100px]" />
+    <el-radio-group v-model="bgStyle" class="mx-2" @change="handleChangeBg">
+      <el-radio label="mouseLight">
+        发光的鼠标
+      </el-radio>
+      <el-radio label="nestLine">
+        聚合的线条
+      </el-radio>
+    </el-radio-group>
+  </AdminContainer>
 </template>
 
 <style scoped>
