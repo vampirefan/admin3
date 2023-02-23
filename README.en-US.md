@@ -2,7 +2,7 @@
 Admin 3
 </h1>
 
-**English** | [中文](./README.cn-Zh.md)
+**English** | [中文](./README.md)
 
 ## Introduce  
 A Vue3 admin template, powered by `Nuxt 3`, `TypeScript`, `Vue 3`, `Pinia`, `Element-Plus`, `Unocss`.  
