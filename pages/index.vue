@@ -90,7 +90,7 @@ function toOfficial(url: string) {
     </ClientOnly>
 
     <div class="mt-16 flex justify-center gap-2">
-      <el-link class="text-2xl" :underline="false" href="http://10.102.2.114:3000/wang_f/admin3" target="_blank">
+      <el-link class="text-2xl" :underline="false" href="https://github.com/vampirefan/admin3" target="_blank">
         <AdminIcon name="i-logos-github-octocat" />
       </el-link>
       <AdminDarkToggle class="pb-2 text-xl" />
