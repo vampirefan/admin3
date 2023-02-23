@@ -42,7 +42,7 @@ function closeAll() {
 <style scoped>
 .tagbar {
   position: fixed;
-  z-index: 2000;
+  /* z-index: 2000; */
   top: var(--admin-navbar-height);
   left: var(--admin-sidebar-width);
   right: 0;

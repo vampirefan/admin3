@@ -6,7 +6,7 @@ const permissionStore = usePermissionStore()
 const { menus } = storeToRefs(permissionStore)
 const levelList = computed(() => {
   const matched = useTreeFindPath(menus.value, (item: any) => item.path === route.path)
-  const indexRoute = { path: '/admin/welcome', meta: { title: '首页' } }
+  const indexRoute = { path: '/admin/Welcome', meta: { title: '首页' } }
   /* 判断是否为首页 */
   if (route.path === indexRoute.path)
     return [indexRoute]
@@ -33,4 +33,3 @@ function routeExists(path: string) {
     </transition-group>
   </el-breadcrumb>
 </template>
-
