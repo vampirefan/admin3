@@ -13,7 +13,6 @@ export const initData = {
         meta: {
           title: '表格用法',
           icon: 'i-carbon-cross-tab',
-          showParent: true,
         },
         children: [{
           name: 'demo-table-draggable',
@@ -21,7 +20,6 @@ export const initData = {
           meta: {
             title: '可拖拽表格',
             icon: 'i-carbon-move',
-            showParent: true,
           },
         }, {
           name: 'demo-table-inline-edit',
@@ -29,7 +27,6 @@ export const initData = {
           meta: {
             title: '行内编辑',
             icon: 'i-ep-edit-pen',
-            showParent: true,
           },
         }, {
           name: 'demo-table-dynamic-row',
@@ -37,7 +34,6 @@ export const initData = {
           meta: {
             title: '动态增减行',
             icon: 'i-carbon-row-insert',
-            showParent: true,
           },
         }],
       }, {
@@ -46,7 +42,6 @@ export const initData = {
         meta: {
           title: 'Element 组件',
           icon: 'i-ep-element-plus',
-          showParent: true,
         },
       }, {
         name: 'demo-china-area-cascader',
@@ -54,7 +49,6 @@ export const initData = {
         meta: {
           title: '省市区选择器',
           icon: 'i-carbon-map',
-          showParent: true,
         },
       }, {
         name: 'demo-count-up',
@@ -62,7 +56,6 @@ export const initData = {
         meta: {
           title: '数字动画',
           icon: 'i-carbon-character-whole-number',
-          showParent: true,
           // noCache: true,
         },
       }, {
@@ -71,7 +64,6 @@ export const initData = {
         meta: {
           title: '滚动通知',
           icon: 'i-carbon-star-review',
-          showParent: true,
         },
       }, {
         name: 'demo-animate-background',
@@ -79,7 +71,6 @@ export const initData = {
         meta: {
           title: '动画页面背景',
           icon: 'i-ep-magic-stick',
-          showParent: true,
         },
       }, {
         name: 'demo-pdf',
@@ -87,7 +78,6 @@ export const initData = {
         meta: {
           title: 'PDF 预览',
           icon: 'i-carbon-document-pdf',
-          showParent: true,
         },
       }, {
         name: 'demo-tinyMCE',
@@ -95,7 +85,6 @@ export const initData = {
         meta: {
           title: '富文本编辑器',
           icon: 'i-carbon-language',
-          showParent: true,
         },
       }, {
         name: 'demo-icon',
@@ -103,7 +92,6 @@ export const initData = {
         meta: {
           title: 'Iconify 在线图标',
           icon: 'i-carbon-face-satisfied',
-          showParent: true,
         },
       }],
     },

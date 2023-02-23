@@ -6,29 +6,27 @@ const route = useRoute()
 const permissionStore = usePermissionStore()
 const configStore = useConfigStore()
 const { config } = storeToRefs(configStore)
-const { menus } = storeToRefs(permissionStore)
-const defaultActive = ref(route.path)
-/* Hack for KeepAlive: 重新刷新以选中菜单 */
-onActivated(() => {
-  defaultActive.value = route.path
+const { menus, currentMenu } = storeToRefs(permissionStore)
+
+const defaultActive = computed(() => {
+  return currentMenu.value.activePath ? currentMenu.value.activePath : route.path
 })
-onDeactivated(() => {
-  defaultActive.value = ''
+const defaultOpens = computed(() => {
+  return menus.value.map(menu => menu.path)
 })
 </script>
 
 <template>
-  <ClientOnly>
-    <Logo />
-    <div class="sidebar">
-      <el-scrollbar>
-        <el-menu :key="route.fullPath" class="sidebar-menu" router unique-opened mode="vertical"
-          :collapse="config.sidebarCollapse" :collapse-transition="false" :default-active="defaultActive">
-          <SidebarItem v-for="(item, index) in menus" :key="item.path + index" :item="item" />
-        </el-menu>
-      </el-scrollbar>
-    </div>
-  </ClientOnly>
+  <Logo />
+  <div class="sidebar">
+    <el-scrollbar>
+      <el-menu :key="route.fullPath" class="sidebar-menu" router unique-opened mode="vertical"
+        :collapse="config.sidebarCollapse" :collapse-transition="false" :default-active="defaultActive"
+        :default-openeds="defaultOpens">
+        <SidebarItem v-for="(item, index) in menus" :key="item.path + index" :item="item" />
+      </el-menu>
+    </el-scrollbar>
+  </div>
 </template>
 
 <style>

@@ -13,6 +13,7 @@ const props = defineProps({
 
 interface childrenType {
   path?: string
+  hidden?: boolean
   noShowingChildren?: boolean
   children?: childrenType[]
   meta?: {
@@ -30,8 +31,13 @@ function hasOneShowingChild(
   parent: childrenType,
 ) {
   const showingChildren = children.filter((item: any) => {
-    onlyChild.value = item
-    return true
+    if (item.hidden) {
+      return false
+    }
+    else {
+      onlyChild.value = item
+      return true
+    }
   })
   if (showingChildren[0]?.meta?.showParent)
     return false
@@ -47,16 +53,16 @@ function hasOneShowingChild(
 
 <template>
   <el-menu-item v-if="
-  hasOneShowingChild(props.item.children, props.item)
-  && (!onlyChild.children || onlyChild.noShowingChildren) && onlyChild.meta" :index="onlyChild.path">
+    hasOneShowingChild(props.item.children, props.item)
+    && (!onlyChild.children || onlyChild.noShowingChildren) && onlyChild.meta" :index="onlyChild.path">
     <AdminIcon v-if="onlyChild.meta.icon" :name="onlyChild.meta.icon" />
     <template #title>
       <span>{{ onlyChild.meta.title }}</span>
     </template>
   </el-menu-item>
   <el-sub-menu v-else :index="item.path">
-    <template v-if="item.meta" #title>
-      <AdminIcon v-if="item.meta.icon" :name="item.meta.icon" />
+    <template #title>
+      <div class="inline-block el-icon" :class="item.meta.icon" />
       <span>{{ item.meta.title }}</span>
     </template>
     <SidebarItem v-for="child in item.children" :key="child.path" :is-nest="true" :item="child" />

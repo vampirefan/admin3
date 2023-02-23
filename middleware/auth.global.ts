@@ -14,17 +14,22 @@ export default defineNuxtRouteMiddleware((to) => {
   else to.meta.documentDriven = false
 
   const userStore = useUserStore()
-  const authToken = userStore.authToken
-  if (authToken) {
+  const { authToken } = storeToRefs(userStore)
+  if (authToken.value) {
     const permissionStore = usePermissionStore()
     if (permissionStore.menus.length === 0)
       permissionStore.generateMenus()
 
-    const { menus, taggedMenus } = storeToRefs(permissionStore)
+    const { menus, taggedMenus, currentMenu } = storeToRefs(permissionStore)
     const tagged = taggedMenus.value.find(menu => menu.path === to.path)
-    const menuItem = useTreeFind(menus.value, (menu: any) => menu.path === to.path)
-    if (!tagged && menuItem)
-      permissionStore.addMenuTag(menuItem)
+    if (tagged)
+      currentMenu.value = tagged
+    const menuItem = useTreeFind(menus.value, (menu: any) => menu.path === to.matched[0].path)
+    if (!tagged && menuItem) {
+      const menuTag = JSON.parse(JSON.stringify(menuItem))
+      menuTag.path = to.path
+      permissionStore.addMenuTag(menuTag)
+    }
   }
 
   /** 路径不在白名单内，重定向至登陆页面 */

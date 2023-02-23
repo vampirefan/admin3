@@ -20,7 +20,7 @@ function copyIconName(iconName: string) {
 }
 
 const iconListShow = computed(() => {
-  let result = []
+  let result: any = []
   if (iconSearch.value)
     result = iconList.value.filter(item => item.includes(iconSearch.value))
   else result = iconList.value
