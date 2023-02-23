@@ -6,8 +6,10 @@ Admin 3
 
 ## 简介
 `admin3` 是一个基于 `Nuxt 3` 的后台管理模板，使用最新的`Nuxt 3`、`TypeScript`、`Vue 3`、`Pinia`、`Element-Plus`、`Unocss` 等主流技术。  
-**演示地址：** [http://10.102.12.222:8086/](http://10.102.12.222:8086/)  
-**项目文档：** [http://10.102.12.222:8086/doc/guide](http://10.102.12.222:8086/doc/guide)  
+**演示地址：:** [https://admin3.netlify.app/](https://admin3.netlify.app/)  
+**项目文档：:** [https://admin3.netlify.app/doc/guide](https://admin3.netlify.app/doc/guide)  
+**Github：** [https://github.com/vampirefan/admin3](https://github.com/vampirefan/admin3)  
+**Gitee：** [https://gitee.com/vampirefan/admin3](https://gitee.com/vampirefan/admin3)  
 
 ## 环境框架
 - Nuxt 3， `Node.js` 版本要 `>16.11`, 集成 `Vue 3`  
@@ -29,9 +31,6 @@ Admin 3
 clone  
 # 如果没有开启 yarn，请使用管理员模式运行以下命令以开启使用 yarn
 corepack enable  
-# 这里需要同时对 yarn 和 npm 的仓库源进行设置
-npm config set registry http://10.102.2.119:8081/repository/localNpm/
-yarn config set registry http://10.102.2.119:8081/repository/localNpm/ 
 # 安装依赖
 yarn install  
 # 启动开发服务
