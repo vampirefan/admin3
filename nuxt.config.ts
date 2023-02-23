@@ -48,4 +48,11 @@ export default defineNuxtConfig({
       preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
     },
   },
+
+  /* Fix unocss sourcemap warning */
+  sourcemap: {
+    server: true,
+    client: false,
+  },
+
 })
