@@ -45,7 +45,7 @@ const layoutOptions = [
         <el-form-item label="布局样式">
           <SelectButton
             v-model="config.layout" :options="layoutOptions" option-label="title" option-value="label"
-            aria-labelledby="basic"
+            aria-labelledby="basic" :allow-empty="false"
           />
         </el-form-item>
         <el-form-item label="主题样式">
