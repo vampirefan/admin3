@@ -22,7 +22,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      iconifyProvider: 'http://10.102.4.80:7001', // 'https://api.iconify.design',
+      iconifyProvider: 'https://api.iconify.design',
       apiBase: '/mock-api', // 'http://localhost:8001/mock-api'
     },
   },
