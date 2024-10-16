@@ -26,6 +26,6 @@ export const pdfFileUrlOptions = [{
   label: '本地 /static/Nuxtjs-Cheat-Sheet.pdf',
   value: '/static/Nuxtjs-Cheat-Sheet.pdf',
 }, {
-  label: '在线 http://10.102.81.133:6001/assets/docs/git-cheat-sheet-education.pdf',
-  value: 'http://10.102.81.133:6001/assets/docs/git-cheat-sheet-education.pdf',
+  label: '在线 https://education.github.com/git-cheat-sheet-education.pdf',
+  value: 'https://education.github.com/git-cheat-sheet-education.pdf',
 }]
