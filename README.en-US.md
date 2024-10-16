@@ -1,4 +1,5 @@
 <h1 align="center">
+<img src='./src/public/image/logo/admin3.png'>
 Admin 3
 </h1>
 

@@ -3,8 +3,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "README.md": "backup.sh, deploy.sh, index.html, LICENSE, CHANGELOG.md",
-    "Jenkinsfile": "Dockerfile, k8s.yaml, k8s-svc.yaml",
+    "README.md": "README*, backup.sh, deploy.sh, index.html, LICENSE, CHANGELOG.md",
     "nuxt.config.ts": "*config.ts, *config.json, .env.*",
     "package.json": ".gitignore, yarn.lock, *config.js"
   },

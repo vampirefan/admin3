@@ -1,4 +1,9 @@
-# Admin 3
+<h1 align="center">
+<img src='./src/public/image/logo/admin3.png'>
+Admin 3
+</h1>
+
+[English](./README.en-US.md) | **中文**
 
 ## 简介
 
