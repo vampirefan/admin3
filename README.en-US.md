@@ -1,5 +1,5 @@
-<h1 align="center">
-<img src='./src/public/image/logo/admin3.png'>
+<h1 style="display: flex; align-items: center; justify-content: center; gap: 1rem;" >
+<img src='./src/public/image/logo/admin3.png' style="width: 36px; height: 36px">
 Admin 3
 </h1>
 
