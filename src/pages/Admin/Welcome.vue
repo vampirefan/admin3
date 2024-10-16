@@ -71,7 +71,8 @@ const todo = [
             @click="openUrl(item.url)"
           >
             <div class="flex items-center justify-center">
-              <img :src="item.image" class="h-12 w-12">
+              <Icon v-if="item.icon" :name="item.icon" class="h12 w12" />
+              <img v-else-if="item.image" class="h12 w12" :src="item.image">
               <div class="ml font-800">
                 {{ item.label }}
               </div>

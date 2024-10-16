@@ -15,12 +15,10 @@ export const docList = [
 ]
 
 export const showcase = {
-  label: '项目案例',
+  label: '快速链接',
   list: [
-    { label: '信息所门户', image: '/image/ChuKe-logo.png', url: 'http://10.102.4.80/Home' },
-    { label: '旅服公司服务与经营管理应用', image: '/image/LvFu-logo.jpg', url: 'http://10.102.12.222:8088/Home' },
-    { label: '武铁物流门户', image: '/image/WuLiu-logo.png', url: 'http://10.102.16.52' },
-    { label: '建设部门户', image: '/image/JianShe-logo.png', url: 'http://10.102.12.222:8084/Home' },
+    { label: 'Admin3 文档', image: '/image/logo/admin3.png', url: 'https://admin3-docs.netlify.app' },
+    { label: 'Admin3 源码', icon: 'i-logos-github-octocat', url: 'https://github.com/vampirefan/admin3' },
   ],
 }
 
