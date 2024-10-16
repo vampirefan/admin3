@@ -6,7 +6,10 @@
 - 利用 primevue 实现自定义动态主题、自定义主题色、自定义背景色
 - 添加 primevue 示例页面
 - 修复侧边栏动画不同步
-- 
+- 将文档摘除，删除`@nuxt/content`模块，单独建立 admin3-docs 文档项目，让本项目更“干净”
+- 优化图标组件,组件名 `<AdminIcon>` 改为 `<Icon>`，本地 svg 文件引入作为 plugins 只引入一次
+- 更新所有依赖：nuxt->3.13.2, element-plus->2.8.4, primevue->4.1.0
+
 
 ## 2023.11.27
 - 更新 layout 配置功能

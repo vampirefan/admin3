@@ -1,4 +1,4 @@
-<h1 style="display: flex; align-items: center; justify-content: center; gap: 1rem;" >
+<h1 align="center" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 1rem;" >
 <img src='./src/public/image/logo/admin3.png' style="width: 36px; height: 36px">
 Admin 3
 </h1>
