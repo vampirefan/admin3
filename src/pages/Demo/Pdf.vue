@@ -23,6 +23,6 @@ onMounted(async () => {
         <el-option v-for="option in pdfFileUrlOptions" :key="option.value" :label="option.label" :value="option.value" />
       </el-select>
     </template>
-    <div ref="pdfContainer" class="w[880px] h[700px]" />
+    <div ref="pdfContainer" class="h[700px] w[880px]" />
   </AdminContainer>
 </template>
