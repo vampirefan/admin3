@@ -1,0 +1,1 @@
+[{"username":"模拟用户","roles":["admin"],"accessToken":"mocked-access-token","maxAge":60,"refreshToken":"mockedRefreshedToken.adminRefresh"}]

@@ -1,0 +1,71 @@
+:root {
+  /* layout vars */
+  --admin-navbar-height: 4rem;
+  --admin-tagbar-height: 2.5rem;
+  --admin-sidebar-width: 220px;
+  --admin-sidebar-collapse-width: calc(var(--el-menu-icon-width) + var(--el-menu-base-level-padding) * 2);
+
+  /* 基础配色：这里直接使用 primevue 的配色，也可以使用下方我精心调制的 庄重蓝、若依灰 2 种配色 */
+  --admin-color-50: var(--p-primary-50);
+  --admin-color-100: var(--p-primary-100);
+  --admin-color-200: var(--p-primary-200);
+  --admin-color-300: var(--p-primary-300);
+  --admin-color-400: var(--p-primary-400);
+  --admin-color-500: var(--p-primary-500);
+  --admin-color-600: var(--p-primary-600);
+  --admin-color-700: var(--p-primary-700);
+  --admin-color-800: var(--p-primary-800);
+  --admin-color-900: var(--p-primary-900);
+  --admin-color-950: var(--p-primary-950);
+
+  /* 庄重蓝 */
+  /* --admin-color-50: #f3f8fc;
+  --admin-color-100: #e5eef9;
+  --admin-color-200: #c5dcf2;
+  --admin-color-300: #92bde7;
+  --admin-color-400: #589cd8;
+  --admin-color-500: #327fc5;
+  --admin-color-600: #2364a6;
+  --admin-color-700: #1d5087;
+  --admin-color-800: #1c4570;
+  --admin-color-900: #1c3b5e;
+  --admin-color-950: #13263e; */
+
+   /* 若依灰 */
+  /* --admin-color-50: #f5f7fa;
+  --admin-color-100: #eaeef4;
+  --admin-color-200: #d1dae6;
+  --admin-color-300: #a9b9d0;
+  --admin-color-400: #7b95b5;
+  --admin-color-500: #5b789c;
+  --admin-color-600: #476082;
+  --admin-color-700: #3a4d6a;
+  --admin-color-800: #324157;
+  --admin-color-900: #2e3a4c;
+  --admin-color-950: #1f2532; */
+
+  /* 丛林绿 */
+  /* --admin-color-50: #f4f7fb;
+  --admin-color-100: #e8eff6;
+  --admin-color-200: #ccddeb;
+  --admin-color-300: #9fc2da;
+  --admin-color-400: #82b6d9;
+  --admin-color-500: #73aacf;
+  --admin-color-600: #6ca1c4;
+  --admin-color-700: #4985ae;
+  --admin-color-800: #386c93;
+  --admin-color-900: #2e5676;
+  --admin-color-950: #294963; */
+
+  /* sidebar dark as default */
+  --admin-sidebar-bg-color: var(--admin-color-800);
+  --admin-sidebar-hover-bg-color: var(--admin-color-50);
+  --admin-sidebar-text-color: #fff;
+
+  /* navbar dark as default */
+  --admin-navbar-bg-color: var(--admin-color-900);
+
+  /* transition */
+  --admin-transition-duration: 0.3s;
+  --admin-transition-function-ease-in-out-bezier: cubic-bezier(0.645,0.045,0.355,1);
+}

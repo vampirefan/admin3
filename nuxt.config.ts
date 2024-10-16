@@ -1,58 +1,73 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import Aura from '@primevue/themes/aura'
+import { primeLocaleCN } from './src/assets/primeLocaleCN'
+
+const baseUrl = '/'
+
 export default defineNuxtConfig({
   ssr: false,
-  app: {
-    keepalive: true,
-  },
+  devtools: { enabled: false },
+  srcDir: 'src/',
 
-  runtimeConfig: {
-    public: {
-      iconifyProvider: 'https://api.iconify.design',
-    },
-  },
+  /* 模拟后端 */
+  serverDir: 'server-mock/',
 
   nitro: {
     devStorage: {
       db: {
         driver: 'fs',
-        base: 'server/db',
+        base: 'server-mock/db',
       },
     },
   },
 
-  css: [
-    'element-plus/dist/index.css',
-    'element-plus/theme-chalk/dark/css-vars.css',
-    '@/assets/css/main.css',
-  ],
+  runtimeConfig: {
+    public: {
+      iconifyProvider: 'http://10.102.4.80:7001', // 'https://api.iconify.design',
+      apiBase: '/mock-api', // 'http://localhost:8001/mock-api'
+    },
+  },
 
-  /** full-Static mode payload extraction option:
-   *  see: https://github.com/nuxt/framework/discussions/7691?sort=new */
+  app: {
+    baseURL: baseUrl,
+  },
+
+  /* 禁用载入的 nuxt loading 动画 */
+  spaLoadingTemplate: false,
+
   experimental: {
+    /* 加快首次启动速度 */
+    watcher: 'chokidar',
+    /* 生成静态文件 */
     payloadExtraction: false,
   },
 
+  css: [
+    '@/assets/css/main.css',
+  ],
+
   modules: [
-    '@nuxt/content',
     '@unocss/nuxt',
+    '@element-plus/nuxt',
+    '@primevue/nuxt-module',
     '@vueuse/nuxt',
     ['@pinia/nuxt', { autoImports: ['defineStore'] }],
   ],
 
-  content: {
-    documentDriven: {
-      injectPage: false,
+  elementPlus: {
+    defaultLocale: 'zh-cn',
+  },
+
+  primevue: {
+    options: {
+      locale: primeLocaleCN,
+      theme: {
+        preset: Aura,
+      },
     },
-    highlight: {
-      theme: 'one-dark-pro',
-      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
+    composables: {
+      include: '*',
     },
   },
 
-  /* Fix unocss sourcemap warning */
-  sourcemap: {
-    server: true,
-    client: false,
-  },
-
+  compatibilityDate: '2024-09-30',
 })

@@ -1,28 +1,45 @@
 {
-  "editor.tabSize": 2,
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  // ========== FileNesting Config ==========
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "README.md": "backup.sh, deploy.sh, index.html, LICENSE, CHANGELOG.md",
+    "Jenkinsfile": "Dockerfile, k8s.yaml, k8s-svc.yaml",
+    "nuxt.config.ts": "*config.ts, *config.json, .env.*",
+    "package.json": ".gitignore, yarn.lock, *config.js"
+  },
+  // ========== ESlint Config ==========
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true, // this allows ESLint to auto fix on save
-    "source.organizeImports": false
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
-  "editor.linkedEditing": true,
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "[markdown]": {
-    "files.trimTrailingWhitespace": false
-  },
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml"
+  ],
+  // ========== cSpell Config ==========
   "cSpell.words": [
     "antfu",
     "Attributify",
+    "bumpp",
     "cascader",
     "Commitizen",
     "Cpath",
     "Csvg",
+    "datav",
     "dimm",
     "docus",
     "Gitee",
     "iconify",
+    "Jian",
+    "keyid",
     "nuxt",
     "nuxtjs",
     "octocat",
@@ -30,8 +47,13 @@
     "pinceau",
     "Pinia",
     "Prefixs",
+    "primevue",
+    "shiki",
+    "shimo",
     "sortablejs",
+    "ssjson",
     "tada",
+    "taze",
     "tiktok",
     "tinymce",
     "todos",
@@ -43,6 +65,7 @@
     "vitesse",
     "vuepress",
     "vueuse",
-    "Vuex"
+    "Vuex",
+    "Zhongsong"
   ]
 }

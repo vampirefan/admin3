@@ -29,15 +29,12 @@
 		"prefix": "newpagevue",
 		"body": [
 			"<script setup lang=\"ts\">",
-			"definePageMeta({ layout: 'admin' })",
 			"</script>",
 			"",
 			"<template>",
-			"  <NuxtLayout>",
-			"    <AdminContainer>",
-			"      content$0",
-			"    </AdminContainer>",
-			"  </NuxtLayout>",
+			"  <AdminContainer>",
+			"    content$0",
+			"  </AdminContainer>",
 			"</template>",
 		],
 		"description": "new-vue-page"
