@@ -93,12 +93,11 @@ const defaultActive = computed(() => {
   color: var(--admin-sidebar-text-color);
 }
 
-:deep(.el-menu-item){
+:deep(.el-menu-item) {
   color: var(--admin-sidebar-text-color) !important;
   font-weight: bold;
-  border:solid 4px var(--admin-navbar-bg-color)!important;
-  box-sizing:border-box;
-  --el-menu-active-color:var(--admin-sidebar-text-color);
+  border: solid 4px var(--admin-navbar-bg-color) !important;
+  box-sizing: border-box !important;
 }
 
 :deep(.el-menu-item:hover),
@@ -108,14 +107,14 @@ const defaultActive = computed(() => {
   background-color: var(--admin-sidebar-hover-bg-color) !important;
 }
 
-:deep(.el-sub-menu){
-  --el-menu-hover-text-color: var(--admin-sidebar-text-color);
+:deep(.el-sub-menu) {
+  --el-menu-hover-text-color: var(--admin-sidebar-text-color) !important;
 }
 
 :deep(.el-sub-menu.is-active),
 :deep(.el-sub-menu.is-opened) {
-  color: var(--admin-color-800);
-  background-color: var(--admin-sidebar-hover-bg-color);
+  color: var(--admin-color-800) !important;
+  background-color: var(--admin-sidebar-hover-bg-color) !important;
 }
 
 :deep(.el-sub-menu .el-sub-menu__title) {
@@ -125,8 +124,8 @@ const defaultActive = computed(() => {
 
 :deep(.el-sub-menu.is-active .el-sub-menu__title),
 :deep(.el-sub-menu.is-opened .el-sub-menu__title) {
-  color: var(--admin-color-800);
-  background-color: var(--admin-sidebar-hover-bg-color);
-  border: unset;
+  color: var(--admin-color-800) !important;
+  background-color: var(--admin-sidebar-hover-bg-color) !important;
+  border: unset !important;
 }
 </style>
