@@ -13,18 +13,14 @@ const demoData = reactive({
   textarea: '',
 })
 
-const docs = [
-  { label: 'Nuxt3', icon: 'i-logos-nuxt-icon', url: 'http://10.102.81.15:30576/admin3/intro' },
-  { label: 'Vue3', icon: 'i-logos-vue', url: 'http://10.102.81.15:32467' },
-  { label: 'VueUse', icon: 'i-logos-vueuse', url: 'http://10.102.81.15:32050' },
-  { label: 'Typescript', icon: 'i-logos-typescript-icon', url: 'http://10.102.81.15:30576/codes/typescript-basic' },
-  { label: 'Eslint', icon: 'i-logos-eslint', url: 'http://10.102.81.15:30576/apps/vscode#eslint' },
-  { label: 'Element-Plus', icon: 'i-logos-element', url: 'http://10.102.81.15:31488/zh-CN/' },
-  { label: 'Unocss', icon: 'i-logos-unocss', url: 'http://10.102.81.15:30905' },
-  { label: 'TailwindCSS', icon: 'i-logos-tailwindcss-icon', url: 'http://10.102.81.15:31883' },
-  { label: 'Iconify', icon: 'i-carbon-face-satisfied', url: '/Demo/Icon' },
-  { label: 'Wiki3', icon: 'i-twemoji-open-book', url: ' http://10.102.81.15:30576' },
-]
+const carouselRef = ref<any>()
+const { isOutside } = useMouseInElement(carouselRef)
+watch(isOutside, (value) => {
+  if (value)
+    carouselRef.value.startAutoplay()
+  else
+    carouselRef.value.stopAutoplay()
+})
 </script>
 
 <template>
@@ -175,33 +171,24 @@ const docs = [
       </template>
       <template #content>
         <Carousel
-          :value="docs" :num-visible="5" :num-scroll="1" circular :autoplay-interval="3000" :show-indicators="false"
+          ref="carouselRef"
+          :value="docList" :num-visible="5" :num-scroll="1" circular :autoplay-interval="3000" :show-indicators="false"
           :show-navigators="false"
         >
           <template #item="slotProps">
-            <div
-              class="surface-border border-round m-2 cursor-pointer border-1 px-3 py-5 text-center"
+            <Button
+              plain text raised
+              class="my w[220px] cursor-pointer"
               @click="openUrl(slotProps.data.url)"
             >
-              <div class="mb-3">
-                <Icon class="text-6xl" :name="slotProps.data.icon" />
-              </div>
-              <div>
-                <h4 class="mb-1">
-                  {{ slotProps.data.label }}
-                </h4>
-              </div>
-            </div>
+              <Icon v-if="slotProps.data.icon" class="text-4xl" :name="slotProps.data.icon" />
+              <img v-else-if="slotProps.data.image" class="h10 w10" :src="slotProps.data.image">
+              <h4>{{ slotProps.data.label }}</h4>
+            </Button>
           </template>
         </Carousel>
       </template>
     </Card>
-    <!-- <span class="p-float-label">
-      <InputText id="input" v-model="input">
-      </InputText>
-      <label for="input">输入框</label>
-    </span> -->
-    <!-- <Calendar v-model="date"></Calendar> -->
   </AdminContainer>
 </template>
 

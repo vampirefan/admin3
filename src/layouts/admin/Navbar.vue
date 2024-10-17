@@ -93,27 +93,34 @@ const defaultActive = computed(() => {
   color: var(--admin-sidebar-text-color);
 }
 
+:deep(.el-menu-item){
+  color: var(--admin-sidebar-text-color) !important;
+  font-weight: bold;
+  border:solid 4px var(--admin-navbar-bg-color)!important;
+  box-sizing:border-box;
+  --el-menu-active-color:var(--admin-sidebar-text-color);
+}
+
 :deep(.el-menu-item:hover),
 :deep(.el-menu-item.is-active),
 :deep(.el-menu-item:not(.is-disabled):hover) {
-  border: unset;
-  font-weight: bold !important;
   color: var(--admin-color-800) !important;
   background-color: var(--admin-sidebar-hover-bg-color) !important;
 }
 
-:deep(.el-sub-menu:hover),
+:deep(.el-sub-menu){
+  --el-menu-hover-text-color: var(--admin-sidebar-text-color);
+}
+
 :deep(.el-sub-menu.is-active),
 :deep(.el-sub-menu.is-opened) {
   color: var(--admin-color-800);
-  background-color: var(--admin-color-50);
+  background-color: var(--admin-sidebar-hover-bg-color);
 }
 
 :deep(.el-sub-menu .el-sub-menu__title) {
   color: var(--admin-sidebar-text-color);
   font-weight: bold;
-  font-size: large;
-  /* letter-spacing: 0.2rem; */
 }
 
 :deep(.el-sub-menu.is-active .el-sub-menu__title),
@@ -121,6 +128,5 @@ const defaultActive = computed(() => {
   color: var(--admin-color-800);
   background-color: var(--admin-sidebar-hover-bg-color);
   border: unset;
-  /* border: 2px solid var(--admin-sidebar-hover-bg-color); */
 }
 </style>
