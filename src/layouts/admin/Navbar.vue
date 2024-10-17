@@ -98,6 +98,7 @@ const defaultActive = computed(() => {
   font-weight: bold;
   border: solid 4px var(--admin-navbar-bg-color) !important;
   box-sizing: border-box !important;
+  --el-menu-active-color: var(--admin-color-800) !important;
 }
 
 :deep(.el-menu-item:hover),
