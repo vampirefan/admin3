@@ -6,7 +6,7 @@ const max = ref(100)
 
 const output = useTransition(count, {
   duration: 1000,
-  transition: TransitionPresets.easeOutCubic,
+  transition: TransitionPresets.linear,
 })
 const progress = computed(() => {
   return Math.round(100 * output.value / max.value)
@@ -22,11 +22,12 @@ useTimeoutFn(() => {
 
 <template>
   <AdminContainer>
-    <el-alert type="info" show-icon :closable="false">
-      <p class="text-4">
-        数字动画主要使用的是 VueUse 中的 useTransition() 方法，具体更多的示例可以参考官方文档。
-      </p>
-    </el-alert>
+    <Message severity="secondary">
+      <template #icon>
+        <Icon name="i-carbon-information" />
+      </template>
+      数字动画主要使用的是 VueUse 中的 useTransition() 方法，具体更多的示例可以 VueUse 的参考官方文档。
+    </Message>
     <div class="mt">
       <el-button type="success" plain class="mr-8 inline" @click="handleToggle()">
         Toggle
@@ -35,7 +36,10 @@ useTimeoutFn(() => {
       <h1 class="text-6xl">
         {{ Math.round(output) }}
       </h1>
-      <el-progress :text-inside="true" :stroke-width="26" :percentage="progress" class="w1/2" />
+      <ProgressBar
+        :value="progress" class="w[600px]"
+        :pt:root:style="{ '--p-progressbar-label-font-size': '1.2rem', 'height': '40px' }"
+      />
     </div>
   </AdminContainer>
 </template>

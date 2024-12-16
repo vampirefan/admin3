@@ -21,6 +21,11 @@ watch(isOutside, (value) => {
   else
     carouselRef.value.stopAutoplay()
 })
+
+const toast = useToast()
+function makeToast() {
+  toast.add({ severity: 'info', summary: 'A Info Toast!', life: 0 })
+}
 </script>
 
 <template>
@@ -68,8 +73,11 @@ watch(isOutside, (value) => {
           按钮组件
         </template>
         <template #content>
+          <Toast
+            :pt:root:style="{ '--p-toast-info-background': 'var(--p-blue-50)' }"
+          />
           <div class="flex flex-wrap gap-2">
-            <Button label="Primary" />
+            <Button label="Primary" @click="makeToast()" />
             <Button label="Secondary" severity="secondary" />
             <Button label="Success" severity="success" />
             <Button label="Info" severity="info" />
@@ -183,7 +191,9 @@ watch(isOutside, (value) => {
             >
               <Icon v-if="slotProps.data.icon" class="text-4xl" :name="slotProps.data.icon" />
               <img v-else-if="slotProps.data.image" class="h10 w10" :src="slotProps.data.image">
-              <h4>{{ slotProps.data.label }}</h4>
+              <h4 class="ml">
+                {{ slotProps.data.label }}
+              </h4>
             </Button>
           </template>
         </Carousel>
