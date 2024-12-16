@@ -42,10 +42,9 @@ watch(isOutside, (value) => {
   <div class="home-body">
     <Toast />
     <main class="ma w[1050px] px-10 py-20 text-center">
-      <div class="flex items-center justify-center text-5xl color-teal-9 font-bold font-serif">
+      <div class="logo flex items-center justify-center text-5xl color-teal-9 font-bold font-serif">
         <img src="/image/logo/admin3.png" alt="Admin3" class="mr h[100px]">
-        <span>Admin</span>
-        <span class="ml">3</span>
+        <span>Admin 3</span>
       </div>
 
       <Tag class="mb ml-10 font-bold font-mono">
@@ -124,6 +123,10 @@ watch(isOutside, (value) => {
   background-image: url('/image/bg.jpg');
   background-size: cover;
   min-height: 100vh;
+}
+
+.logo {
+  font-family: "High Tower Text", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .bounce-enter-active {
