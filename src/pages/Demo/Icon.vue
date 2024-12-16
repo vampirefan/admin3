@@ -67,11 +67,16 @@ onMounted(async () => {
 <template>
   <AdminContainer>
     <template #header>
-      <el-alert type="info" show-icon :closable="false">
-        <span class="text-4">这里的在线图标是通过使用 Iconify 官方提供的 API ( {{ iconifyProvider }} ) 获取图标集和名称后，利用 "@iconify/vue"
+      <Message severity="secondary">
+        <template #icon>
+          <Icon name="i-carbon-information" class="mr2 text-2xl" />
+        </template>
+        <span>  这里的在线图标是通过使用 Iconify 官方提供的 API ( {{ iconifyProvider }} ) 获取图标集和名称后，利用 "@iconify/vue"
           组件实现的。项目中使用时请根据需要添加相应的 json 依赖，如："@iconify-json/carbon"(Carbon 图标), "@iconify-json/ep"(Element-Plus 图标),
-          "@iconify-json/logos"(Logo 图标), "@iconify-json/twemoji"(Twitter Emoji 图标) 等。</span>
-      </el-alert>
+          "@iconify-json/logos"(Logo 图标), "@iconify-json/twemoji"(Twitter Emoji 图标) 等。
+        </span>
+      </Message>
+
       <el-form class="mt" inline>
         <el-form-item label="选择 Iconify 在线图标集：" class="w[400px]">
           <el-select v-model="iconCollectionSelected" placeholder="选择图标集" filterable @change="getIconList">
@@ -86,15 +91,14 @@ onMounted(async () => {
         </el-form-item>
       </el-form>
     </template>
-    <ButtonGroup v-loading="loading">
-      <Button
-        v-for="iconName of iconListShow" :key="iconName" class="h20 text-black"
-        outlined severity="secondary"
+    <el-button-group v-loading="loading">
+      <el-button
+        v-for="iconName of iconListShow" :key="iconName" class="!h18"
         @click="copyIconName(iconName)"
       >
         <IconifyIcon :icon="iconName" class="m4 text-4xl" />
-      </Button>
-    </ButtonGroup>
+      </el-button>
+    </el-button-group>
     <template #footer>
       <el-pagination
         v-show="totalNum > 0" v-model:page-size="pageSize" v-model:current-page="pageNum" :total="totalNum"

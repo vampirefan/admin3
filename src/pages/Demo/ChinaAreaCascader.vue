@@ -21,13 +21,14 @@ function handleFilter(node: any, keyword: string) {
 
 <template>
   <AdminContainer>
-    <el-alert type="info" show-icon :closable="false" >
-      <p class="text-4">
-        <span v-text="`<AdminChinaAreaCascader />`" />
-        组件使用 element-plus 组件中的级联选择器 (Cascader) 进行封装，保留了除插槽外的所有属性、事件，选项数据取自
-        "@province-city-china/level"，以下是一些用法示例：
-      </p>
-    </el-alert>
+    <Message severity="secondary">
+      <template #icon>
+        <Icon name="i-carbon-information" />
+      </template>
+      <span v-text="`<AdminChinaAreaCascader />`" />
+      组件使用 element-plus 组件中的级联选择器 (Cascader) 进行封装，保留了除插槽外的所有属性、事件，选项数据取自
+      "@province-city-china/level"，以下是一些用法示例：
+    </Message>
     <div class="demo-wrapper mt flex flex-wrap gap-15">
       <el-card>
         <h3>基础用法</h3>
