@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2024-12-24
+
+### 🚀 Features
+
+- 使用 git-cliff 自动生成更新文档
+- 实现“深色侧边栏”配置，直接调整侧边栏的深浅主题
+
+### ⚙️ Miscellaneous Tasks
+
+- Update deps
+- Release v2.1.0
+
 ## [2.0.6] - 2024-12-16
 
 ### 🚀 Features
