@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.1] - 2024-12-24
+
+### 🚀 Features
+
+- 利用 vue data ui 实现动态图表功能
+
+### ⚙️ Miscellaneous Tasks
+
+- 添加版本日志
+- Release v2.1.1
+
 ## [2.1.0] - 2024-12-24
 
 ### 🚀 Features
