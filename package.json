@@ -37,7 +37,7 @@
     "sortablejs": "^1.15.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.12.0",
+    "@antfu/eslint-config": "^3.12.1",
     "@iconify/json": "^2.2.288",
     "@pinia/nuxt": "^0.9.0",
     "@types/pdfobject": "^2.2.5",
@@ -51,6 +51,7 @@
     "git-cliff": "^2.7.0",
     "nuxt": "^3.14.1592",
     "taze": "^0.18.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vue-data-ui": "^2.4.50"
   }
 }

@@ -1,39 +1,59 @@
 <script setup lang="ts">
-const done = [
-  '使用 content 模块渲染 markdown 文档。',
-  '集成 element-plus, unocss, pinia 等基本模块。',
-  'logo',
-  '图标集成: svg、iconify',
-  'docker, netlify 部署演示',
-  '登陆/登出，用户信息存入 localstorage/cookie',
-  '后台布局',
-  'sidebar, navbar',
-  '路由',
-  '顶栏面包屑',
-  '布局组件: 固定 header、footer, content auto scroll',
-  '侧边栏折叠',
-  'iconify 在线图标演示、elementplus 演示',
-  '页面缓存, tagsView',
-  '页面切换动画',
-  '富文本编辑',
-  'pdf在线预览',
-  '布局切换',
-  '后端mock',
-]
+import { VueUiBullet, type VueUiBulletDataset, VueUiHeatmap, type VueUiHeatmapConfig, type VueUiHeatmapDatasetItem } from 'vue-data-ui'
+import 'vue-data-ui/style.css'
 
-const todo = [
-  '各种演示demo: icon、表单、树状选择、系统管理',
-  '权限管理',
-  '全局搜索',
-  '集成 E-chart',
-  '优化和封装 table',
-  '文件上传',
-  '水印',
-  '二维码、条形码',
-  '虚拟列表',
-  '引导页面',
-  '在线表格',
-]
+const configBullet = ref({
+  style: {
+    chart: {
+      valueBar: { color: '#1d7318' },
+      title: {
+        text: 'Vue Data UI 示例 1',
+        color: '#0c4a6e',
+        subtitle: { text: 'Bullet' },
+      },
+    },
+  },
+})
+
+const datasetBullet = ref<VueUiBulletDataset>({
+  value: 80,
+  target: 75,
+  segments: [
+    { name: 'Low', from: 0, to: 50, color: '#3178C6' },
+    { name: 'Medium', from: 50, to: 70, color: '#cc9433' },
+    { name: 'High', from: 70, to: 100, color: '#cde0cc' },
+  ],
+})
+
+const configHeatmap = ref<VueUiHeatmapConfig>({
+  style: {
+    layout: {
+      cells: { colors: { hot: '#1d7318', cold: '#cde0cc' } },
+      dataLabels: {
+        xAxis: {
+          values: ['W0', 'W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10', 'W11', 'W12', 'W13', 'W14', 'W15', 'W16', 'W17', 'W18', 'W19', 'W20', 'W21', 'W22', 'W23'],
+        },
+      },
+    },
+    title: {
+      text: 'Vue Data UI 示例 2',
+      color: '#0c4a6e',
+      textAlign: 'left',
+      subtitle: { text: 'Heatmap Demo' },
+    },
+  },
+})
+
+function generateRandomValues(count: number) {
+  return Array.from({ length: count }, () => Math.floor(Math.random() * 100) + 1)
+}
+
+const datasetHeatMap = ref<VueUiHeatmapDatasetItem[]>(
+  ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map(day => ({
+    name: day,
+    values: generateRandomValues(24), // 24小时的数据
+  })),
+)
 </script>
 
 <template>
@@ -80,30 +100,16 @@ const todo = [
           </el-card>
         </div>
       </el-card>
-
-      <el-card shadow="never">
-        <template #header>
-          <Icon name="i-twemoji-check-mark-button" class="mr text-xl" />
-          <span class="font-bold">开发进度</span>
-        </template>
-        <ul>
-          <li v-for="item in done" :key="item" class="mb-3 flex items-center">
-            <Icon name="i-carbon-checkmark-outline" class="mr-2 w-5 flex-shrink-0 color-green-500" />{{ item
-            }}
-          </li>
-        </ul>
-      </el-card>
-      <el-card shadow="never">
-        <template #header>
-          <Icon name="i-twemoji-information" class="mr text-xl" />
-          <span class="font-bold">待完成</span>
-        </template>
-        <ul>
-          <li v-for="item in todo" :key="item" class="mb-3 flex items-center">
-            <Icon name="i-carbon-information" class="mr-2 w-5 flex-shrink-0 color-blue-500" />{{ item }}
-          </li>
-        </ul>
-      </el-card>
+      <div class="p8">
+        <ClientOnly>
+          <VueUiBullet :dataset="datasetBullet" :config="configBullet" />
+        </ClientOnly>
+      </div>
+      <div class="p8">
+        <ClientOnly>
+          <VueUiHeatmap :dataset="datasetHeatMap" :config="configHeatmap" />
+        </ClientOnly>
+      </div>
     </div>
   </AdminContainer>
 </template>
