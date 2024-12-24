@@ -3,7 +3,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "README.md": "README*, backup.sh, deploy.sh, index.html, LICENSE, CHANGELOG.md",
+    "README.md": "backup.sh, deploy.sh, index.html, LICENSE, *.md",
     "nuxt.config.ts": "*config.ts, *config.json, .env.*",
     "package.json": ".gitignore, yarn.lock, *config.js"
   },
