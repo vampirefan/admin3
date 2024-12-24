@@ -1,6 +1,6 @@
 export default defineAppConfig({
   title: 'Admin3 管理后台',
-  version: '2.1.0',
+  version: '2.1.1',
   layout: 'default',
   primePreset: 'Aura',
   primaryColor: 'sky',
