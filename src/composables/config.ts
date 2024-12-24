@@ -12,6 +12,7 @@ export const useConfigStore = defineStore('config', () => {
     setTitle(config.value.title)
     setVersion(appConfig.version)
     setLayout(config.value.layout)
+    setSidebarDark(config.value.sidebarDark)
     setSidebarWidth(config.value.sidebarWidth)
     setSidebarCollapse(config.value.sidebarCollapse)
     setNavBreadcrumb(config.value.navBreadcrumb)
@@ -47,6 +48,23 @@ export const useConfigStore = defineStore('config', () => {
 
   function setLayout(layout: string) {
     config.value.layout = layout
+  }
+
+  function setSidebarDark(sidebarDark: boolean) {
+    if (sidebarDark) {
+      useCssVar('--admin-sidebar-bg-color').value = `var(--admin-color-700)`
+      useCssVar('--admin-sidebar-hover-bg-color').value = `var(--admin-color-50)`
+      useCssVar('--admin-sidebar-text-color').value = `var(--admin-color-50)`
+      useCssVar('--admin-sidebar-hover-text-color').value = `var(--admin-color-900)`
+      useCssVar('--admin-navbar-bg-color').value = `var(--admin-color-900)`
+    }
+    else {
+      useCssVar('--admin-sidebar-bg-color').value = `var(--admin-color-50)`
+      useCssVar('--admin-sidebar-hover-bg-color').value = `var(--admin-color-100)`
+      useCssVar('--admin-sidebar-text-color').value = `var(--admin-color-900)`
+      useCssVar('--admin-sidebar-hover-text-color').value = `var(--admin-color-900)`
+      useCssVar('--admin-navbar-bg-color').value = `var(--admin-color-50)`
+    }
   }
 
   function setSidebarWidth(width: number | any) {
@@ -100,6 +118,7 @@ export const useConfigStore = defineStore('config', () => {
     setTitle,
     setVersion,
     setLayout,
+    setSidebarDark,
     setSidebarWidth,
     setSidebarCollapse,
     setNavBreadcrumb,

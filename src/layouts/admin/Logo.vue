@@ -21,12 +21,10 @@ const { config } = storeToRefs(configStore)
   height: var(--admin-navbar-height);
   color: var(--admin-sidebar-text-color);
   background-color: var(--admin-navbar-bg-color);
-  transition: all var(--t-transform);
   box-sizing: border-box;
+  transition: all var(--t-transform);
   display: inline-flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  vertical-align: middle;
 }
 </style>

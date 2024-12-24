@@ -60,7 +60,8 @@
   /* sidebar dark as default */
   --admin-sidebar-bg-color: var(--admin-color-800);
   --admin-sidebar-hover-bg-color: var(--admin-color-50);
-  --admin-sidebar-text-color: #fff;
+  --admin-sidebar-text-color: var(--admin-color-50);
+  --admin-sidebar-hover-text-color: var(--admin-color-900);
 
   /* navbar dark as default */
   --admin-navbar-bg-color: var(--admin-color-900);

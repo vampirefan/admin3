@@ -39,7 +39,7 @@ const todo = [
 <template>
   <AdminContainer>
     <div class="grid grid-cols-2 gap-8">
-      <el-card>
+      <el-card shadow="never">
         <template #header>
           <Icon name="i-twemoji-books" class="mr text-xl" />
           <span class="font-bold">相关文档</span>
@@ -58,7 +58,7 @@ const todo = [
           </el-card>
         </div>
       </el-card>
-      <el-card>
+      <el-card shadow="never">
         <template #header>
           <Icon name="i-twemoji-desktop-computer" class="mr text-xl" />
           <span class="font-bold">{{ showcase.label }}</span>
@@ -81,7 +81,7 @@ const todo = [
         </div>
       </el-card>
 
-      <el-card>
+      <el-card shadow="never">
         <template #header>
           <Icon name="i-twemoji-check-mark-button" class="mr text-xl" />
           <span class="font-bold">开发进度</span>
@@ -93,7 +93,7 @@ const todo = [
           </li>
         </ul>
       </el-card>
-      <el-card>
+      <el-card shadow="never">
         <template #header>
           <Icon name="i-twemoji-information" class="mr text-xl" />
           <span class="font-bold">待完成</span>
@@ -110,8 +110,8 @@ const todo = [
 
 <style scoped>
 :deep(.el-card__header) {
-  background-image: linear-gradient(to right, var(--admin-color-700), var(--admin-color-500));
+  background-image: linear-gradient(to right, var(--admin-navbar-bg-color), var(--admin-sidebar-bg-color));
   padding: 12px 15px;
-  color: white;
+  color: var(--admin-sidebar-text-color);
 }
 </style>

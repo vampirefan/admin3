@@ -81,6 +81,13 @@ const layoutOptions = [
             />
           </div>
         </el-form-item>
+        <el-form-item label="深色侧边栏">
+          <ToggleSwitch v-model="config.sidebarDark" @change="configStore.setSidebarDark(config.sidebarDark)">
+            <template #handle="{ checked }">
+              <Icon :name="checked ? 'i-ep-check' : 'i-ep-close'" />
+            </template>
+          </ToggleSwitch>
+        </el-form-item>
         <el-form-item label="顶栏面包屑">
           <ToggleSwitch v-model="config.navBreadcrumb">
             <template #handle="{ checked }">

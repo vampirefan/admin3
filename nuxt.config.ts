@@ -55,6 +55,9 @@ export default defineNuxtConfig({
 
   elementPlus: {
     defaultLocale: 'zh-cn',
+    globalConfig: {
+      size: 'default',
+    },
   },
 
   primevue: {

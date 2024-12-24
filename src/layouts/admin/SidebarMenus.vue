@@ -61,19 +61,16 @@ const menuTreeData = computed(() => {
 :deep(.el-menu-item.is-active),
 :deep(.el-menu--collapse .el-sub-menu.is-active) {
   font-weight: bold;
-  color: var(--admin-color-800);
+  color: var(--admin-sidebar-hover-text-color);
   background-color: var(--admin-sidebar-hover-bg-color);
 }
 
-/* .el-menu--horizontal>.el-sub-menu .el-sub-menu__title:hover {
-  background-color: var(--el-menu-bg-color); */
-
 :deep(.el-menu-item:hover) {
-  color: var(--admin-color-800);
+  color: var(--admin-sidebar-hover-text-color);
 }
 
 :deep(.el-sub-menu__title:hover) {
-  color: var(--admin-color-700);
+  color: var(--admin-sidebar-hover-text-color);
   background-color: var(--admin-sidebar-hover-bg-color);
 }
 </style>

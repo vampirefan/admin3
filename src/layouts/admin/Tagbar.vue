@@ -62,7 +62,7 @@ function closeAll() {
   height: var(--admin-tagbar-height);
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%), 0 0 3px 0 rgb(0 0 0 / 4%);
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 8%), 0 0 1px 0 rgb(0 0 0 / 4%);
   border-bottom: 1px solid var(--el-menu-border-color);
   transition: all var(--t-transform);
 }

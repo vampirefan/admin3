@@ -6,6 +6,7 @@ export default defineAppConfig({
   primaryColor: 'sky',
   surfaceColor: 'slate',
   rippleActive: true,
+  sidebarDark: false,
   sidebarWidth: 250,
   sidebarCollapse: false,
   navBreadcrumb: true,
