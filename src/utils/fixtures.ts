@@ -93,6 +93,13 @@ export const routers_data = [
         icon: 'i-carbon-language',
       },
     }, {
+      name: 'Demo-Print',
+      path: '/Demo/Print',
+      meta: {
+        title: '区域打印',
+        icon: 'i-carbon-printer',
+      },
+    }, {
       name: 'Demo-Icon',
       path: '/Demo/Icon',
       meta: {
