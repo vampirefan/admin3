@@ -9,7 +9,7 @@ Admin 3
 
 `admin3` 是一个基于 `Nuxt 3` 的后台管理模板，使用最新的`Nuxt 3`、`TypeScript`、`Vue 3`、`Pinia`、`Element-Plus`、`PrimeVue`、`Unocss` 等主流技术。
 
-**当前版本：** 2.1.1
+**当前版本：** 2.1.2
 
 **演示地址:** [https://admin3.netlify.app/](https://admin3.netlify.app/)
 

@@ -1,7 +1,7 @@
 {
   "name": "admin3",
   "type": "module",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "anthor": "vampirefan",
   "packageManager": "yarn@1.22.22",
   "license": "MIT",
