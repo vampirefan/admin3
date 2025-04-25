@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import type { VueUiCarouselTableConfig, VueUiCarouselTableDataset, VueUiDonutConfig, VueUiDonutDatasetItem, VueUiDumbbellConfig, VueUiDumbbellDataset, VueUiXyConfig, VueUiXyDatasetItem } from 'vue-data-ui'
 import dayjs from 'dayjs'
-import { VueUiCarouselTable, type VueUiCarouselTableConfig, type VueUiCarouselTableDataset, VueUiDonut, type VueUiDonutConfig, type VueUiDonutDatasetItem, VueUiDumbbell, type VueUiDumbbellConfig, type VueUiDumbbellDataset, type VueUiXyConfig, type VueUiXyDatasetItem } from 'vue-data-ui'
+import { VueUiCarouselTable, VueUiDonut, VueUiDumbbell } from 'vue-data-ui'
 
 const screen = ref(null)
 
@@ -12,7 +13,7 @@ useIntervalFn(() => {
 }, 1000)
 
 const configXy: VueUiXyConfig = {
-  responsive: true,
+  showTable: false,
   chart: {
     userOptions: { show: false },
     padding: { bottom: 0 },
@@ -46,6 +47,7 @@ const datasetXy: VueUiXyDatasetItem[] = [
 ]
 
 const configTable: VueUiCarouselTableConfig | any = {
+  showTable: false,
   responsiveBreakpoint: 200,
   style: { backgroundColor: 'transparent' },
   userOptions: { show: false },
@@ -69,6 +71,7 @@ const datasetTable: VueUiCarouselTableDataset = {
 
 const configDonut: VueUiDonutConfig = {
   userOptions: { show: false },
+  table: { show: false },
   style: { chart: {
     color: 'white',
     backgroundColor: 'transparent',
@@ -90,6 +93,7 @@ const datasetDonut: VueUiDonutDatasetItem[] = [
 
 const configDumbbell: VueUiDumbbellConfig = {
   userOptions: { show: false },
+  table: { show: false },
   style: {
     chart: {
       backgroundColor: 'transparent',
